@@ -305,7 +305,7 @@ namespace azur_application
             this.labelTitre.AutoSize = true;
             this.labelTitre.Font = new System.Drawing.Font("Lato Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitre.ForeColor = System.Drawing.Color.White;
-            this.labelTitre.Location = new System.Drawing.Point(509, 26);
+            this.labelTitre.Location = new System.Drawing.Point(495, 26);
             this.labelTitre.Name = "labelTitre";
             this.labelTitre.Size = new System.Drawing.Size(110, 29);
             this.labelTitre.TabIndex = 0;

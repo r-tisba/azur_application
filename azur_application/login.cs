@@ -21,15 +21,8 @@ namespace azur_application
         public Connexion()
         {
             InitializeComponent();
-            try
-            {
-                conn.Open();
-                MessageBox.Show("Connexion effectué !");
-            }
-            catch
-            {
-                MessageBox.Show("Connexion echoué...");
-            }
+            conn.Open();
+
             // Masque la saisie du mdp
             inputMdp.PasswordChar = '*';
             // Avertit si CapsLock est activé dans l'input de mdp

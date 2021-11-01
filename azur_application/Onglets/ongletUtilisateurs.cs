@@ -77,9 +77,25 @@ namespace azur_application.Onglets
 
             if (String.IsNullOrEmpty(nomSaisi) || String.IsNullOrEmpty(prenomSaisi) || String.IsNullOrEmpty(mdpSaisi) || String.IsNullOrEmpty(posteSaisi))
             {
-                MessageBox.Show("Les inputs : 'Nom', 'Prénom', 'Mot de passe' et 'Poste' sont obligatoires");
+                if (String.IsNullOrEmpty(posteSaisi))
+                {
+                    label_erreur.Text = "Le champ 'Poste' est obligatoire";
+                }
+                if (String.IsNullOrEmpty(mdpSaisi))
+                {
+                    label_erreur.Text = "Le champ 'Mot de passe' est obligatoire";
+                }
+                if (String.IsNullOrEmpty(prenomSaisi))
+                {
+                    label_erreur.Text = "Le champ 'Prénom' est obligatoire";
+                }
+                if (String.IsNullOrEmpty(nomSaisi))
+                {
+                    label_erreur.Text = "Le champ 'Nom' est obligatoire";
+                }
                 conn.Close();
             }
+
             else
             {
                 // Oui cette condition est stupide mais ça marche (vide != null)
@@ -101,7 +117,10 @@ namespace azur_application.Onglets
                 command.Parameters.AddWithValue("@idRoleSaisi", idRoleSaisi);
 
                 command.CommandText = "INSERT INTO utilisateurs (nom, prenom, identifiant, mdp, poste, idEquipe, idRole) VALUES(@nomSaisi, @prenomSaisi, @identifiant, @mdpSaisi, @posteSaisi, @idEquipeSaisi, @idRoleSaisi)";
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                } catch { }
 
                 conn.Close();
                 displayData();
