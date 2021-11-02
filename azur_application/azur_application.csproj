@@ -42,6 +42,30 @@
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\..\..\Users\rapha\OneDrive\Documents\IPSSI\2021 - 2022\Prog\C#\MySQL DLL\v4.5.2\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.Grid.Base, Version=19.3460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grid.Base.19.3.0.47\lib\net46\Syncfusion.Grid.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Windows, Version=19.3460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grid.Windows.19.3.0.47\lib\net46\Syncfusion.Grid.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=19.3460.0.47, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.19.3.0.47\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=19.3460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.19.3.0.47\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Windows, Version=19.3460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Windows.19.3.0.47\lib\net46\Syncfusion.Shared.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SpellChecker.Base, Version=19.3460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SpellChecker.Base.19.3.0.47\lib\net46\Syncfusion.SpellChecker.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Base, Version=19.3460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.Base.19.3.0.47\lib\net46\Syncfusion.Tools.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Windows, Version=19.3460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.Windows.19.3.0.47\lib\net46\Syncfusion.Tools.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -71,19 +95,74 @@
     <Compile Include="ButtonZ.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="gestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="gestion.Designer.cs">
+      <DependentUpon>gestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="MinMaxButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Onglets\ongletParametres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Onglets\ongletParametres.Designer.cs">
+      <DependentUpon>ongletParametres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Onglets\ongletProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Onglets\ongletProfil.Designer.cs">
+      <DependentUpon>ongletProfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Onglets\ongletProjets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Onglets\ongletProjets.Designer.cs">
+      <DependentUpon>ongletProjets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Onglets\ongletStatistiques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Onglets\ongletStatistiques.Designer.cs">
+      <DependentUpon>ongletStatistiques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Onglets\ongletUtilisateurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Onglets\ongletUtilisateurs.Designer.cs">
+      <DependentUpon>ongletUtilisateurs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ThemeColor.cs" />
+    <EmbeddedResource Include="gestion.resx">
+      <DependentUpon>gestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Onglets\ongletParametres.resx">
+      <DependentUpon>ongletParametres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Onglets\ongletProfil.resx">
+      <DependentUpon>ongletProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Onglets\ongletProjets.resx">
+      <DependentUpon>ongletProjets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Onglets\ongletStatistiques.resx">
+      <DependentUpon>ongletStatistiques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Onglets\ongletUtilisateurs.resx">
+      <DependentUpon>ongletUtilisateurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,5 +187,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
