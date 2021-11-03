@@ -7,28 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CustomWindowsForm;
 using System.Threading;
+using CustomWindowsForm;
 using MySql.Data.MySqlClient;
-using Syncfusion.Windows.Forms.Tools;
+using azur_application.Modeles;
 
 namespace azur_application
 {
-    public partial class gestion : Form
+    using BCrypt.Net;
+    public partial class Connexion : Form
     {
+        Thread th;
         MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
-
-        private Button currentButton;
-        private Random random;
-        private int tempIndex;
-        private Form activeForm;
-
-
-        public gestion()
+        public Connexion()
         {
             InitializeComponent();
-            random = new Random();
-            btnCloseChild.Visible = false;
+            conn.Open();
+
+            // Masque la saisie du mdp
+            inputMdp.PasswordChar = '*';
+            // Avertit si CapsLock est activé dans l'input de mdp
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                MessageBox.Show("The Caps Lock key is ON.");
+            }
         }
 
         bool isTopPanelDragged = false;
@@ -41,7 +43,9 @@ namespace azur_application
         Size _normalWindowSize;
         Point _normalWindowLocation = Point.Empty;
 
-        // ------------------------------------ DEPLACEMENT & RESIZE DE LA FENETRE ------------------------------------
+        bool exit = true;
+
+        // ------------------------------ DEPLACEMENT & RESIZE DE LA FENETRE ------------------------------
         private void TopBorderPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Y < this.Location.Y)
@@ -243,7 +247,7 @@ namespace azur_application
             }
         }
 
-        // ------------------------------------ BOUTONS MIN, MAX, CLOSE ------------------------------------
+        // ------------------------------ BOUTONS MIN, MAX, CLOSE ------------------------------
         private void _MinButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -276,128 +280,87 @@ namespace azur_application
             this.Close();
         }
 
-        // ------------------------------------ STYLE BOUTONS MENU ------------------------------------
+        // ------------------------------ BOUTON CONNEXION, VERIFICATION CONFORMITE ------------------------------
+        private void boutonConnexion_Click(object sender, EventArgs e)
+        {
+            string identifiantSaisi = inputIdentifiant.Text;
+            string mdpSaisi = inputMdp.Text;
 
-        // Selectionne une couleur random à partir de la liste
-        private Color SelectThemeColor()
-        {
-            int index = random.Next(ThemeColor.ColorList.Count);
-            // Si la couleur à déjà été selectionné, on en pioche une nouvelle
-            while (tempIndex == index)
+            if(String.IsNullOrEmpty(identifiantSaisi))
             {
-                index = random.Next(ThemeColor.ColorList.Count);
+                message_erreur.Text = "Veuillez saisir un identifiant";
+                Color rouge = Color.FromArgb(255, 0, 0);
+                message_erreur.ForeColor = rouge;
             }
-            tempIndex = index;
-            string color = ThemeColor.ColorList[index];
-            return ColorTranslator.FromHtml(color);
-        }
-        private void ActivateButton(object btnSender)
-        {
-            if (btnSender != null)
+            else if(String.IsNullOrEmpty(mdpSaisi))
             {
-                // Modifie l'apparence du bouton cliqué & panel titre
-                if (currentButton != (Button)btnSender)
+                message_erreur.Text = "Veuillez saisir un mot de passe";
+                Color rouge = Color.FromArgb(255, 0, 0);
+                message_erreur.ForeColor = rouge;
+            } 
+            else
+            {
+                Utilisateur user = new Utilisateur();
+                try 
                 {
-                    DisableButton();
-                    Color color = SelectThemeColor();
-                    currentButton = (Button)btnSender;
-                    currentButton.BackColor = color;
-                    currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Lato", 12.5F);
-                    // Modifie la couleur du panel titre
-                    panelTitle.BackColor = color;
-
-                    ThemeColor.ActiveColor = color;
-
-                    btnCloseChild.Visible = true;
-                }
-            }
-        }
-        // Etat par défaut du bouton
-        private void DisableButton()
-        {
-            foreach (Control previousBtn in panelMenu.Controls)
-            {
-                if (previousBtn.GetType() == typeof(Button))
+                    conn.Open();
+                } 
+                catch
                 {
-                    previousBtn.BackColor = Color.FromArgb(52, 58, 64);
-                    previousBtn.ForeColor = Color.Gainsboro;
-                    previousBtn.Font = new System.Drawing.Font("Lato", 10F);
+                    message_erreur.Text = "Cet identifiant n'existe pas";
+                    Color rouge = Color.FromArgb(255, 0, 0);
+                    message_erreur.ForeColor = rouge;
                 }
+                MySqlDataReader reader = user.recupererInfosConnexion(identifiantSaisi);
+
+                while (reader.Read())
+                {
+                    string mdp = reader.GetString(0);
+                    int idRole = reader.GetInt32(1);
+
+                    // Renvoi booléen
+                    if (BCrypt.Verify(mdpSaisi, mdp) == false)
+                    {
+                        message_erreur.Text = "Mot de passe erroné";
+                        Color rouge = Color.FromArgb(255, 0, 0);
+                        message_erreur.ForeColor = rouge;
+                    }
+                    else
+                    {
+                        if (idRole != 1 && idRole != 2)
+                        {
+                            message_erreur.Text = "Vous n'êtes pas admin";
+                            Color rouge = Color.FromArgb(255, 0, 0);
+                            message_erreur.ForeColor = rouge;
+                        }
+                        else
+                        {
+                            message_erreur.Text = "Vous êtes connecté";
+                            Color vert = Color.FromArgb(0, 128, 0);
+                            message_erreur.ForeColor = vert;
+
+                            
+                            this.Close();
+                            th = new Thread(ouvrirNouvellePage);
+                            th.SetApartmentState(ApartmentState.STA);
+                            th.Start();
+
+                            /*
+                            this.Hide();
+                            gestion gest = new gestion();
+                            gest.ShowDialog();
+                            */
+
+                        }
+                    }
+                }
+                conn.Close();
             }
         }
 
-        // ------------------------------------ OUVERTURE DES ONGLETS ------------------------------------
-
-        // Ouverture de la sous-page dans le panel body
-        private void OpenChildForm(Form childForm, object btnSender)
+        private void ouvrirNouvellePage()
         {
-            if(activeForm != null)
-            {
-                activeForm.Close();
-            }
-            ActivateButton(btnSender);
-            // Display de l'onglet dans le panel body
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            this.panelBody.Controls.Add(childForm);
-            this.panelBody.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            // Change le titre par celui de l'onglet
-            labelTitre.Text = childForm.Text;
-            labelTitre.ForeColor = Color.White;
-
-
-        }
-
-        // ------------------------------------ BOUTONS NAVBAR ------------------------------------
-        private void btnProfil_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Onglets.ongletProfil(), sender);
-        }
-
-        private void btnUtilisateurs_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Onglets.ongletUtilisateurs(), sender);
-        }
-
-        private void btnProjets_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Onglets.ongletProjets(), sender);
-        }
-
-        private void btnStatistiques_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Onglets.ongletStatistiques(), sender);
-        }
-
-        private void btnParametres_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Onglets.ongletParametres(), sender);
-        }
-
-        private void btnCloseChild_Click(object sender, EventArgs e)
-        {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-            Reset();
-
-
-        }
-        // ------------------------------------ RESET ------------------------------------
-        private void Reset()
-        {
-            DisableButton();
-            labelTitre.Text = "ACCUEIL";
-            panelTitle.BackColor = Color.FromArgb(36, 42, 48);
-            panelLogo.BackColor = Color.FromArgb(0, 132, 234);
-            currentButton = null;
-            btnCloseChild.Visible = false;
+            Application.Run(new gestion());
         }
     }
 }
