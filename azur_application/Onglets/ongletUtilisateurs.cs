@@ -40,12 +40,12 @@ namespace azur_application.Onglets
         public void displayData()
         {
             conn.Open();
-            adpt = new MySqlDataAdapter("SELECT idEmploye, nom, prenom, identifiant, poste, idEquipe, idRole FROM utilisateurs", conn);
+            adpt = new MySqlDataAdapter("SELECT idUtilisateur, nom, prenom, identifiant, poste, idEquipe, idRole FROM utilisateurs", conn);
             dt = new DataTable();
             adpt.Fill(dt);
             dataGrid_utilisateurs.DataSource = dt;
-            // Par défaut : Tri croissant par idEmploye
-            this.dataGrid_utilisateurs.Sort(this.dataGrid_utilisateurs.Columns["idEmploye"], ListSortDirection.Ascending);
+            // Par défaut : Tri croissant par idUtilisateur
+            this.dataGrid_utilisateurs.Sort(this.dataGrid_utilisateurs.Columns["idUtilisateur"], ListSortDirection.Ascending);
             conn.Close();
         }
         // ------------------------------------ DOUBLECLICK sur DataGrid pour préremplir inputs ------------------------------------
@@ -167,7 +167,7 @@ namespace azur_application.Onglets
 
                 command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
                 command.CommandText = "UPDATE utilisateurs SET nom = @nomSaisi, prenom = @prenomSaisi, mdp = @mdpSaisi, " +
-                    "poste = @posteSaisi, idEquipe = @idEquipeSaisi, idRole = @idRoleSaisi WHERE idEmploye = @idUtilisateur";
+                    "poste = @posteSaisi, idEquipe = @idEquipeSaisi, idRole = @idRoleSaisi WHERE idUtilisateur = @idUtilisateur";
                 command.ExecuteNonQuery();
 
                 conn.Close();
@@ -183,7 +183,7 @@ namespace azur_application.Onglets
             MySqlCommand command = conn.CreateCommand();
 
             command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
-            command.CommandText = "DELETE FROM utilisateurs WHERE idEmploye = @idUtilisateur";
+            command.CommandText = "DELETE FROM utilisateurs WHERE idUtilisateur = @idUtilisateur";
             command.ExecuteNonQuery();
 
             conn.Close();
