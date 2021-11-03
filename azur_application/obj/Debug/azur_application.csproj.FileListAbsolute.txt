@@ -54,7 +54,6 @@ C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.On
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletParametres.resources
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletProfil.resources
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletProjets.resources
-C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\MySql.Data.dll
 C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\Google.Protobuf.dll
 C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\ZstdNet.dll
 C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\K4os.Compression.LZ4.Streams.dll

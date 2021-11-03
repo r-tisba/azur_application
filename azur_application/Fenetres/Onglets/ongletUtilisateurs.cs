@@ -42,7 +42,7 @@ namespace azur_application.Onglets
         public void displayData()
         {
             conn.Open();
-            adpt = new MySqlDataAdapter("SELECT idUtilisateur, nom, prenom, identifiant, poste, idEquipe, idRole FROM utilisateurs", conn);
+            adpt = new MySqlDataAdapter("SELECT idUtilisateur, nom, prenom, identifiant, poste, idRole FROM utilisateurs", conn);
             dt = new DataTable();
             adpt.Fill(dt);
             dataGrid_utilisateurs.DataSource = dt;
@@ -70,7 +70,6 @@ namespace azur_application.Onglets
             string mdpSaisi = input_mdp.Text;
             string mdpSaisiHash = BCrypt.HashPassword(mdpSaisi);
             string posteSaisi = input_poste.Text;
-            string idEquipeSaisi = input_idEquipe.Text;
             string idRoleSaisi = input_idRole.Text;
 
             MySqlCommand command = conn.CreateCommand();
@@ -99,10 +98,6 @@ namespace azur_application.Onglets
             else
             {
                 // Oui cette condition est stupide mais ça marche (vide != null)
-                if (String.IsNullOrEmpty(idEquipeSaisi))
-                {
-                    idEquipeSaisi = null;
-                }
                 if (String.IsNullOrEmpty(idRoleSaisi))
                 {
                     idRoleSaisi = "0";
@@ -110,7 +105,7 @@ namespace azur_application.Onglets
 
                 Utilisateur user = new Utilisateur();
 
-                if (user.ajouterUtilisateur(nomSaisi, prenomSaisi, identifiant, mdpSaisiHash, posteSaisi, idEquipeSaisi, idRoleSaisi) == false)
+                if (user.ajouterUtilisateur(nomSaisi, prenomSaisi, identifiant, mdpSaisiHash, posteSaisi, idRoleSaisi) == false)
                 {
                     label_erreur.Text = "Erreur lors de l'ajout";
                     Color rouge = Color.FromArgb(255, 0, 0);
@@ -130,7 +125,6 @@ namespace azur_application.Onglets
             string nomSaisi = input_nom.Text;
             string prenomSaisi = input_prenom.Text;
             string posteSaisi = input_poste.Text;
-            string idEquipeSaisi = input_idEquipe.Text;
             string idRoleSaisi = input_idRole.Text;
 
             if (String.IsNullOrEmpty(nomSaisi) || String.IsNullOrEmpty(prenomSaisi) || String.IsNullOrEmpty(posteSaisi))
@@ -141,10 +135,6 @@ namespace azur_application.Onglets
             else
             {
                 // Oui cette condition est stupide mais ça marche (vide != null)
-                if (String.IsNullOrEmpty(idEquipeSaisi))
-                {
-                    idEquipeSaisi = null;
-                }
                 if (String.IsNullOrEmpty(idRoleSaisi))
                 {
                     idRoleSaisi = "0";
@@ -152,19 +142,12 @@ namespace azur_application.Onglets
 
                 Utilisateur user = new Utilisateur();
 
-<<<<<<< HEAD:azur_application/Onglets/ongletUtilisateurs.cs
-                command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
-                command.CommandText = "UPDATE utilisateurs SET nom = @nomSaisi, prenom = @prenomSaisi, mdp = @mdpSaisi, " +
-                    "poste = @posteSaisi, idEquipe = @idEquipeSaisi, idRole = @idRoleSaisi WHERE idUtilisateur = @idUtilisateur";
-                command.ExecuteNonQuery();
-=======
-                if (user.modifierUtilisateur(idUtilisateur, nomSaisi, prenomSaisi, posteSaisi, idEquipeSaisi, idRoleSaisi) == false)
+                if (user.modifierUtilisateur(idUtilisateur, nomSaisi, prenomSaisi, posteSaisi, idRoleSaisi) == false)
                 {
                     label_erreur.Text = "Erreur lors de la modification";
                     Color rouge = Color.FromArgb(255, 0, 0);
                     label_erreur.ForeColor = rouge;
                 }
->>>>>>> 2324c197d6353ee1777fdc5cb3833e13f876d99d:azur_application/Fenetres/Onglets/ongletUtilisateurs.cs
 
                 displayData();
                 clear();
@@ -175,11 +158,6 @@ namespace azur_application.Onglets
         private void btn_supprimer_Click(object sender, EventArgs e)
         {
 
-<<<<<<< HEAD:azur_application/Onglets/ongletUtilisateurs.cs
-            command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
-            command.CommandText = "DELETE FROM utilisateurs WHERE idUtilisateur = @idUtilisateur";
-            command.ExecuteNonQuery();
-=======
             Utilisateur user = new Utilisateur();
 
             if (user.supprimerUtilisateur(idUtilisateur) == false)
@@ -194,7 +172,6 @@ namespace azur_application.Onglets
                     label_erreur.ForeColor = rouge;
                 }
             }
->>>>>>> 2324c197d6353ee1777fdc5cb3833e13f876d99d:azur_application/Fenetres/Onglets/ongletUtilisateurs.cs
 
             displayData();
             clear();

@@ -42,8 +42,10 @@ namespace azur_application.Services
             {
                 if (ctrl.Name == "toolTip1")
                 {
+                    /*
                     string s = Tooltip.GetTooltip(ctrl);
                     ctrl.ShowTooltip(s, this);
+                    */
                 }
             }
                 foreach (Control ctrl in form.Controls)
@@ -111,13 +113,15 @@ namespace azur_application.Services
                         form.Location = _normalWindowLocation;
                         form.Size = _normalWindowSize;
                         toolTip1.SetToolTip(_MaxButton, "Maximiser");
+                        /*
                         _MaxButton.CFormState = MinMaxButton.CustomFormState.Normal;
+                        */
                         isWindowMaximized = false;
                     }
                 }
             }
         }
-    
+        /*
         private void TopPanel_MouseUp(object sender, MouseEventArgs e)
         {
             isTopPanelDragged = false;
@@ -295,5 +299,6 @@ namespace azur_application.Services
         {
             form.Close();
         }
+        */
     }
 }
