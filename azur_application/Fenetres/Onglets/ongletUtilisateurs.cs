@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using CustomWindowsForm;
 using System.Threading;
 using MySql.Data.MySqlClient;
+using azur_application.Modeles;
+using azur_application.Services;
 
 namespace azur_application.Onglets
 {
@@ -71,8 +73,6 @@ namespace azur_application.Onglets
             string idEquipeSaisi = input_idEquipe.Text;
             string idRoleSaisi = input_idRole.Text;
 
-            conn.Open();
-
             MySqlCommand command = conn.CreateCommand();
 
             if (String.IsNullOrEmpty(nomSaisi) || String.IsNullOrEmpty(prenomSaisi) || String.IsNullOrEmpty(mdpSaisi) || String.IsNullOrEmpty(posteSaisi))
@@ -108,21 +108,15 @@ namespace azur_application.Onglets
                     idRoleSaisi = "0";
                 }
 
-                command.Parameters.AddWithValue("@nomSaisi", nomSaisi);
-                command.Parameters.AddWithValue("@prenomSaisi", prenomSaisi);
-                command.Parameters.AddWithValue("@identifiant", identifiant);
-                command.Parameters.AddWithValue("@mdpSaisi", mdpSaisiHash);
-                command.Parameters.AddWithValue("@posteSaisi", posteSaisi);
-                command.Parameters.AddWithValue("@idEquipeSaisi", idEquipeSaisi);
-                command.Parameters.AddWithValue("@idRoleSaisi", idRoleSaisi);
+                Utilisateur user = new Utilisateur();
 
-                command.CommandText = "INSERT INTO utilisateurs (nom, prenom, identifiant, mdp, poste, idEquipe, idRole) VALUES(@nomSaisi, @prenomSaisi, @identifiant, @mdpSaisi, @posteSaisi, @idEquipeSaisi, @idRoleSaisi)";
-                try
+                if (user.ajouterUtilisateur(nomSaisi, prenomSaisi, identifiant, mdpSaisiHash, posteSaisi, idEquipeSaisi, idRoleSaisi) == false)
                 {
-                    command.ExecuteNonQuery();
-                } catch { }
+                    label_erreur.Text = "Erreur lors de l'ajout";
+                    Color rouge = Color.FromArgb(255, 0, 0);
+                    label_erreur.ForeColor = rouge;
+                }
 
-                conn.Close();
                 displayData();
                 clear();
             }
@@ -131,19 +125,17 @@ namespace azur_application.Onglets
         // ------------------------------------ MODIFIER ------------------------------------
         private void btn_modifier_Click(object sender, EventArgs e)
         {
-            conn.Open();
             MySqlCommand command = conn.CreateCommand();
 
             string nomSaisi = input_nom.Text;
             string prenomSaisi = input_prenom.Text;
-            string mdpSaisi = input_mdp.Text;
             string posteSaisi = input_poste.Text;
             string idEquipeSaisi = input_idEquipe.Text;
             string idRoleSaisi = input_idRole.Text;
 
-            if (String.IsNullOrEmpty(nomSaisi) || String.IsNullOrEmpty(prenomSaisi) || String.IsNullOrEmpty(mdpSaisi) || String.IsNullOrEmpty(posteSaisi))
+            if (String.IsNullOrEmpty(nomSaisi) || String.IsNullOrEmpty(prenomSaisi) || String.IsNullOrEmpty(posteSaisi))
             {
-                MessageBox.Show("Les inputs : 'Nom', 'Prénom', 'Mot de passe' et 'Poste' sont obligatoires");
+                MessageBox.Show("Les inputs : 'Nom', 'Prénom' et 'Poste' sont obligatoires");
                 conn.Close();
             }
             else
@@ -158,19 +150,15 @@ namespace azur_application.Onglets
                     idRoleSaisi = "0";
                 }
 
-                command.Parameters.AddWithValue("@nomSaisi", nomSaisi);
-                command.Parameters.AddWithValue("@prenomSaisi", prenomSaisi);
-                command.Parameters.AddWithValue("@mdpSaisi", mdpSaisi);
-                command.Parameters.AddWithValue("@posteSaisi", posteSaisi);
-                command.Parameters.AddWithValue("@idEquipeSaisi", idEquipeSaisi);
-                command.Parameters.AddWithValue("@idRoleSaisi", idRoleSaisi);
+                Utilisateur user = new Utilisateur();
 
-                command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
-                command.CommandText = "UPDATE utilisateurs SET nom = @nomSaisi, prenom = @prenomSaisi, mdp = @mdpSaisi, " +
-                    "poste = @posteSaisi, idEquipe = @idEquipeSaisi, idRole = @idRoleSaisi WHERE idEmploye = @idUtilisateur";
-                command.ExecuteNonQuery();
+                if (user.modifierUtilisateur(idUtilisateur, nomSaisi, prenomSaisi, posteSaisi, idEquipeSaisi, idRoleSaisi) == false)
+                {
+                    label_erreur.Text = "Erreur lors de la modification";
+                    Color rouge = Color.FromArgb(255, 0, 0);
+                    label_erreur.ForeColor = rouge;
+                }
 
-                conn.Close();
                 displayData();
                 clear();
             }
@@ -179,14 +167,22 @@ namespace azur_application.Onglets
         // ------------------------------------ SUPPRIMER ------------------------------------
         private void btn_supprimer_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
 
-            command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
-            command.CommandText = "DELETE FROM utilisateurs WHERE idEmploye = @idUtilisateur";
-            command.ExecuteNonQuery();
+            Utilisateur user = new Utilisateur();
 
-            conn.Close();
+            if (user.supprimerUtilisateur(idUtilisateur) == false)
+            {
+                label_erreur.Text = "Erreur lors de la supression";
+                Color rouge = Color.FromArgb(255, 0, 0);
+                label_erreur.ForeColor = rouge;
+
+                if (idUtilisateur == 0)
+                {
+                    label_erreur.Text = "Veuillez sélectionner un utilisateur";
+                    label_erreur.ForeColor = rouge;
+                }
+            }
+
             displayData();
             clear();
         }
@@ -194,10 +190,13 @@ namespace azur_application.Onglets
         // ------------------------------------ RESET VALEUR INPUT ------------------------------------
         public void clear()
         {
+            label_erreur.Text = "";
             input_nom.Text = "";
             input_prenom.Text = "";
             input_mdp.Text = "";
             input_poste.Text = "";
+            input_idEquipe.Text = "";
+            input_idRole.Text = "";
         }
     }
 }
