@@ -29,8 +29,8 @@ namespace azur_application.Onglets
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_ajouter = new System.Windows.Forms.Button();
             this.label_nom = new System.Windows.Forms.Label();
             this.label_prenom = new System.Windows.Forms.Label();
@@ -71,25 +71,23 @@ namespace azur_application.Onglets
             // 
             // label_nom
             // 
-            this.label_nom.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_nom.AutoSize = true;
             this.label_nom.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_nom.Location = new System.Drawing.Point(38, 58);
+            this.label_nom.Location = new System.Drawing.Point(75, 59);
             this.label_nom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_nom.Name = "label_nom";
-            this.label_nom.Size = new System.Drawing.Size(47, 17);
+            this.label_nom.Size = new System.Drawing.Size(55, 21);
             this.label_nom.TabIndex = 3;
             this.label_nom.Text = "Nom :";
             // 
             // label_prenom
             // 
-            this.label_prenom.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_prenom.AutoSize = true;
             this.label_prenom.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_prenom.Location = new System.Drawing.Point(21, 105);
+            this.label_prenom.Location = new System.Drawing.Point(58, 106);
             this.label_prenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_prenom.Name = "label_prenom";
-            this.label_prenom.Size = new System.Drawing.Size(64, 17);
+            this.label_prenom.Size = new System.Drawing.Size(76, 21);
             this.label_prenom.TabIndex = 7;
             this.label_prenom.Text = "Prénom :";
             // 
@@ -98,10 +96,10 @@ namespace azur_application.Onglets
             this.label_poste.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_poste.AutoSize = true;
             this.label_poste.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_poste.Location = new System.Drawing.Point(395, 105);
+            this.label_poste.Location = new System.Drawing.Point(432, 106);
             this.label_poste.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_poste.Name = "label_poste";
-            this.label_poste.Size = new System.Drawing.Size(50, 17);
+            this.label_poste.Size = new System.Drawing.Size(60, 21);
             this.label_poste.TabIndex = 9;
             this.label_poste.Text = "Poste :";
             // 
@@ -113,26 +111,27 @@ namespace azur_application.Onglets
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGrid_utilisateurs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_utilisateurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_utilisateurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_utilisateurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid_utilisateurs.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid_utilisateurs.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid_utilisateurs.Location = new System.Drawing.Point(13, 231);
             this.dataGrid_utilisateurs.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_utilisateurs.Name = "dataGrid_utilisateurs";
+            this.dataGrid_utilisateurs.RowHeadersWidth = 51;
             this.dataGrid_utilisateurs.Size = new System.Drawing.Size(1082, 251);
             this.dataGrid_utilisateurs.TabIndex = 15;
             this.dataGrid_utilisateurs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_utilisateurs_CellDoubleClick);
@@ -174,19 +173,18 @@ namespace azur_application.Onglets
             this.label_mdp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_mdp.AutoSize = true;
             this.label_mdp.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_mdp.Location = new System.Drawing.Point(352, 58);
+            this.label_mdp.Location = new System.Drawing.Point(389, 59);
             this.label_mdp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_mdp.Name = "label_mdp";
-            this.label_mdp.Size = new System.Drawing.Size(99, 17);
+            this.label_mdp.Size = new System.Drawing.Size(118, 21);
             this.label_mdp.TabIndex = 19;
             this.label_mdp.Text = "Mot de passe :";
             // 
             // input_nom
             // 
-            this.input_nom.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.input_nom.Depth = 0;
             this.input_nom.Hint = "";
-            this.input_nom.Location = new System.Drawing.Point(92, 58);
+            this.input_nom.Location = new System.Drawing.Point(129, 59);
             this.input_nom.MaxLength = 32767;
             this.input_nom.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_nom.Name = "input_nom";
@@ -194,17 +192,16 @@ namespace azur_application.Onglets
             this.input_nom.SelectedText = "";
             this.input_nom.SelectionLength = 0;
             this.input_nom.SelectionStart = 0;
-            this.input_nom.Size = new System.Drawing.Size(187, 23);
+            this.input_nom.Size = new System.Drawing.Size(187, 28);
             this.input_nom.TabIndex = 21;
             this.input_nom.TabStop = false;
             this.input_nom.UseSystemPasswordChar = false;
             // 
             // input_prenom
             // 
-            this.input_prenom.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.input_prenom.Depth = 0;
             this.input_prenom.Hint = "";
-            this.input_prenom.Location = new System.Drawing.Point(92, 105);
+            this.input_prenom.Location = new System.Drawing.Point(129, 106);
             this.input_prenom.MaxLength = 32767;
             this.input_prenom.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_prenom.Name = "input_prenom";
@@ -212,7 +209,7 @@ namespace azur_application.Onglets
             this.input_prenom.SelectedText = "";
             this.input_prenom.SelectionLength = 0;
             this.input_prenom.SelectionStart = 0;
-            this.input_prenom.Size = new System.Drawing.Size(187, 23);
+            this.input_prenom.Size = new System.Drawing.Size(187, 28);
             this.input_prenom.TabIndex = 22;
             this.input_prenom.TabStop = false;
             this.input_prenom.UseSystemPasswordChar = false;
@@ -222,7 +219,7 @@ namespace azur_application.Onglets
             this.input_mdp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.input_mdp.Depth = 0;
             this.input_mdp.Hint = "";
-            this.input_mdp.Location = new System.Drawing.Point(458, 58);
+            this.input_mdp.Location = new System.Drawing.Point(495, 59);
             this.input_mdp.MaxLength = 32767;
             this.input_mdp.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_mdp.Name = "input_mdp";
@@ -230,7 +227,7 @@ namespace azur_application.Onglets
             this.input_mdp.SelectedText = "";
             this.input_mdp.SelectionLength = 0;
             this.input_mdp.SelectionStart = 0;
-            this.input_mdp.Size = new System.Drawing.Size(187, 23);
+            this.input_mdp.Size = new System.Drawing.Size(187, 28);
             this.input_mdp.TabIndex = 23;
             this.input_mdp.TabStop = false;
             this.input_mdp.UseSystemPasswordChar = false;
@@ -240,7 +237,7 @@ namespace azur_application.Onglets
             this.input_poste.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.input_poste.Depth = 0;
             this.input_poste.Hint = "";
-            this.input_poste.Location = new System.Drawing.Point(458, 105);
+            this.input_poste.Location = new System.Drawing.Point(495, 106);
             this.input_poste.MaxLength = 32767;
             this.input_poste.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_poste.Name = "input_poste";
@@ -248,17 +245,17 @@ namespace azur_application.Onglets
             this.input_poste.SelectedText = "";
             this.input_poste.SelectionLength = 0;
             this.input_poste.SelectionStart = 0;
-            this.input_poste.Size = new System.Drawing.Size(187, 23);
+            this.input_poste.Size = new System.Drawing.Size(187, 28);
             this.input_poste.TabIndex = 24;
             this.input_poste.TabStop = false;
             this.input_poste.UseSystemPasswordChar = false;
             // 
             // input_idRole
             // 
-            this.input_idRole.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.input_idRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.input_idRole.Depth = 0;
             this.input_idRole.Hint = "";
-            this.input_idRole.Location = new System.Drawing.Point(824, 105);
+            this.input_idRole.Location = new System.Drawing.Point(861, 106);
             this.input_idRole.MaxLength = 32767;
             this.input_idRole.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_idRole.Name = "input_idRole";
@@ -266,17 +263,17 @@ namespace azur_application.Onglets
             this.input_idRole.SelectedText = "";
             this.input_idRole.SelectionLength = 0;
             this.input_idRole.SelectionStart = 0;
-            this.input_idRole.Size = new System.Drawing.Size(187, 23);
+            this.input_idRole.Size = new System.Drawing.Size(187, 28);
             this.input_idRole.TabIndex = 28;
             this.input_idRole.TabStop = false;
             this.input_idRole.UseSystemPasswordChar = false;
             // 
             // input_idEquipe
             // 
-            this.input_idEquipe.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.input_idEquipe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.input_idEquipe.Depth = 0;
             this.input_idEquipe.Hint = "";
-            this.input_idEquipe.Location = new System.Drawing.Point(824, 58);
+            this.input_idEquipe.Location = new System.Drawing.Point(861, 59);
             this.input_idEquipe.MaxLength = 32767;
             this.input_idEquipe.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_idEquipe.Name = "input_idEquipe";
@@ -284,32 +281,32 @@ namespace azur_application.Onglets
             this.input_idEquipe.SelectedText = "";
             this.input_idEquipe.SelectionLength = 0;
             this.input_idEquipe.SelectionStart = 0;
-            this.input_idEquipe.Size = new System.Drawing.Size(187, 23);
+            this.input_idEquipe.Size = new System.Drawing.Size(187, 28);
             this.input_idEquipe.TabIndex = 27;
             this.input_idEquipe.TabStop = false;
             this.input_idEquipe.UseSystemPasswordChar = false;
             // 
             // label_idEquipe
             // 
-            this.label_idEquipe.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_idEquipe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_idEquipe.AutoSize = true;
             this.label_idEquipe.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_idEquipe.Location = new System.Drawing.Point(740, 58);
+            this.label_idEquipe.Location = new System.Drawing.Point(777, 59);
             this.label_idEquipe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_idEquipe.Name = "label_idEquipe";
-            this.label_idEquipe.Size = new System.Drawing.Size(83, 17);
+            this.label_idEquipe.Size = new System.Drawing.Size(99, 21);
             this.label_idEquipe.TabIndex = 26;
             this.label_idEquipe.Text = "ID Équipe* :";
             // 
             // label_idRole
             // 
-            this.label_idRole.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_idRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_idRole.AutoSize = true;
             this.label_idRole.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_idRole.Location = new System.Drawing.Point(755, 105);
+            this.label_idRole.Location = new System.Drawing.Point(792, 106);
             this.label_idRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_idRole.Name = "label_idRole";
-            this.label_idRole.Size = new System.Drawing.Size(68, 17);
+            this.label_idRole.Size = new System.Drawing.Size(80, 21);
             this.label_idRole.TabIndex = 25;
             this.label_idRole.Text = "ID Rôle* :";
             // 
@@ -319,7 +316,7 @@ namespace azur_application.Onglets
             this.label_table.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_table.Location = new System.Drawing.Point(19, 181);
             this.label_table.Name = "label_table";
-            this.label_table.Size = new System.Drawing.Size(202, 29);
+            this.label_table.Size = new System.Drawing.Size(254, 36);
             this.label_table.TabIndex = 29;
             this.label_table.Text = "Table utilisateurs :";
             // 
@@ -330,7 +327,7 @@ namespace azur_application.Onglets
             this.label1.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(1002, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 16);
+            this.label1.Size = new System.Drawing.Size(134, 21);
             this.label1.TabIndex = 30;
             this.label1.Text = "* : Pas obligatoire";
             // 
@@ -341,12 +338,12 @@ namespace azur_application.Onglets
             this.label_erreur.ForeColor = System.Drawing.Color.Red;
             this.label_erreur.Location = new System.Drawing.Point(20, 20);
             this.label_erreur.Name = "label_erreur";
-            this.label_erreur.Size = new System.Drawing.Size(0, 19);
+            this.label_erreur.Size = new System.Drawing.Size(0, 24);
             this.label_erreur.TabIndex = 31;
             // 
             // ongletUtilisateurs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 495);
             this.Controls.Add(this.label_erreur);
