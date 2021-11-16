@@ -90,8 +90,13 @@ namespace azur_application.Modeles
             conn.Close();
         }
 
+<<<<<<< HEAD
         // ------------------------------------ AJOUTER ------------------------------------
         public bool ajouterUtilisateur(string nomSaisi, string prenomSaisi, string identifiant, string mdpSaisiHash, string posteSaisi, string roleSaisi)
+=======
+        // ------------------------------------------------------------------------------------ AJOUTER ------------------------------------------------------------------------------------
+        public bool ajouterUtilisateur(string nomSaisi, string prenomSaisi, string identifiant, string mdpSaisiHash, string posteSaisi, string idRoleSaisi)
+>>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -101,7 +106,13 @@ namespace azur_application.Modeles
             command.Parameters.AddWithValue("@identifiant", identifiant);
             command.Parameters.AddWithValue("@mdpSaisi", mdpSaisiHash);
             command.Parameters.AddWithValue("@posteSaisi", posteSaisi);
+<<<<<<< HEAD
             command.Parameters.AddWithValue("@roleSaisi", roleSaisi);
+=======
+            command.Parameters.AddWithValue("@idRoleSaisi", idRoleSaisi);
+
+            command.CommandText = "INSERT INTO utilisateurs (nom, prenom, identifiant, mdp, poste, idRole) VALUES(@nomSaisi, @prenomSaisi, @identifiant, @mdpSaisi, @posteSaisi, @idRoleSaisi)";
+>>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
 
             command.CommandText = "INSERT INTO utilisateurs (nom, prenom, identifiant, mdp, poste, role) VALUES(@nomSaisi, @prenomSaisi, @identifiant, @mdpSaisi, @posteSaisi, @roleSaisi)";
             try
@@ -117,8 +128,13 @@ namespace azur_application.Modeles
             }
         }
 
+<<<<<<< HEAD
         // ------------------------------------ MODIFIER ------------------------------------
         public bool modifierUtilisateur(int idUtilisateur, string nomSaisi, string prenomSaisi, string posteSaisi, string roleSaisi)
+=======
+        // ------------------------------------------------------------------------------------ MODIFIER ------------------------------------------------------------------------------------
+        public bool modifierUtilisateur(int idUtilisateur, string nomSaisi, string prenomSaisi, string posteSaisi, string idRoleSaisi)
+>>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -126,11 +142,19 @@ namespace azur_application.Modeles
             command.Parameters.AddWithValue("@nomSaisi", nomSaisi);
             command.Parameters.AddWithValue("@prenomSaisi", prenomSaisi);
             command.Parameters.AddWithValue("@posteSaisi", posteSaisi);
+<<<<<<< HEAD
             command.Parameters.AddWithValue("@roleSaisi", roleSaisi);
 
             command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
             command.CommandText = "UPDATE utilisateurs SET nom = @nomSaisi, prenom = @prenomSaisi, poste = @posteSaisi, " +
                                   "role = @roleSaisi WHERE idUtilisateur = @idUtilisateur";
+=======
+            command.Parameters.AddWithValue("@idRoleSaisi", idRoleSaisi);
+
+            command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
+            command.CommandText = "UPDATE utilisateurs SET nom = @nomSaisi, prenom = @prenomSaisi, poste = @posteSaisi, " +
+                                  "idRole = @idRoleSaisi WHERE idUtilisateur = @idUtilisateur";
+>>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
 
             try
             {
