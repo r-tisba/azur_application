@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using System.Threading;
 using CustomWindowsForm;
 using MySql.Data.MySqlClient;
+using Microsoft.AspNetCore.Http;
+using System.Web;
+
+
 
 namespace azur_application
 {
@@ -280,10 +284,14 @@ namespace azur_application
         }
 
         // ------------------------------ BOUTON CONNEXION, VERIFICATION CONFORMITE ------------------------------
+        
+
+
         private void boutonConnexion_Click(object sender, EventArgs e)
         {
             string identifiantSaisi = inputIdentifiant.Text;
             string mdpSaisi = inputMdp.Text;
+
 
             if(String.IsNullOrEmpty(identifiantSaisi))
             {
@@ -297,6 +305,7 @@ namespace azur_application
                 Color rouge = Color.FromArgb(255, 0, 0);
                 message_erreur.ForeColor = rouge;
             } 
+
             else
             {
                 MySqlCommand command = conn.CreateCommand();
@@ -336,11 +345,14 @@ namespace azur_application
                         }
                         else
                         {
+
                             message_erreur.Text = "Vous êtes connecté";
                             Color vert = Color.FromArgb(0, 128, 0);
                             message_erreur.ForeColor = vert;
 
-                            
+
+
+
                             this.Close();
                             th = new Thread(ouvrirNouvellePage);
                             th.SetApartmentState(ApartmentState.STA);
@@ -362,6 +374,11 @@ namespace azur_application
         private void ouvrirNouvellePage()
         {
             Application.Run(new gestion());
+        }
+
+        private void Connexion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

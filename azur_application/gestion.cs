@@ -356,7 +356,7 @@ namespace azur_application
         // ------------------------------------ BOUTONS NAVBAR ------------------------------------
         private void btnProfil_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Onglets.ongletProfil(), sender);
+            OpenChildForm(new Onglets.ongletEquipe(), sender);
         }
 
         private void btnUtilisateurs_Click(object sender, EventArgs e)
@@ -389,6 +389,10 @@ namespace azur_application
 
 
         }
+        private void button_gestion_membre_equipe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Onglets.ongletMembreGroupe(), sender);
+        }
         // ------------------------------------ RESET ------------------------------------
         private void Reset()
         {
@@ -399,5 +403,12 @@ namespace azur_application
             currentButton = null;
             btnCloseChild.Visible = false;
         }
+
+        private void panelTitle_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
     }
 }

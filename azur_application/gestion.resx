@@ -121,6 +121,22 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_gestion_membre_equipe.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAlhJREFUSEvdlU1LVVEUhm8hVDN/gAOhQRRE+g9UCisHGQQ2kLBBONCggqKB0dcg
+        0D6QQAdF0iB01/ZrIFJEShIURH5AERHYNAr6Cfm8e61bJ7rIPec26oWHu8/ea6+119rrnFuqSTFshQZ/
+        +geKoQnGYBw6oQWuwTSccqsaFcNjaIejsAIXQMHqYdqtalQM89ABykjZXIR3MAwBFKzRrQsqhsvwEO7C
+        gs+pfMfhNfwElXBnWsulGPaAnE3CnQwK+MzHOsAiKJtD0OO7q5Q22AVfgkFQqXTi63AfFHwBRkF3pICd
+        vrtKWSZToC6S8znQfSioHN4CleoHnAPZ1fvuHIqhFZbgJijgFTgPT+AMKIjdUyHFsD85sHKo/p9AHXbQ
+        19VZH2EsPReSOb4KuhsFUjmsVe0OtN4AD9JcIVn9V+EeyKFeRKu5BVG5tsPLNFe1rBXVtmuguxiANzAL
+        E3AWdsNeuAFtsOi7N5E5Vreog1Sa76DyvAWrt538kf8qu9OgTNTiz92m7Kc5Pf8hc64uWYYRmIEvoPdg
+        xG26oR96QZnKmVpZ9iqlMtUB5KdCI8SwBYbgRTKwAK/gG7S4lex0Rx/SXAzroKC3QVmXO1Ctvct3ZPT7
+        BHqp1LLqIrVqk1v8rRj2uZ3u6SSoVApc4b2xADq9Ftd9tnrFcABOwFNQg1QMUgdffTF/EMnKdAQ2+QLE
+        0AdKXaXK+YFzWbkUTA0x47MZ2cJhUAMs+Ww+WRDLIIb3sCONf8ladxvYf3lRxfDZf3XozP+KnaArM+5O
+        4yIqOzY/x9L4P1GptAHojNlla/Qm+wAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnParametres.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -195,19 +211,20 @@
         AQft2mHOXwoDAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnProfil.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGestEquipe.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAi1JREFUSEullj9oFEEUhw9iqoBGxQgi5BAsJYcSiHeGXOwsNAlYBYuAtRa2Fqaw
-        FcXOxoCFt6IhkMZGsDBpRAiCtRbibroYSKGVfr+9d9wwvv2jPviYnffe/N7M7MzeNepaO8kmOknWgjmY
-        pX/MQv9nJvgAPsEvh314BE0bUt8YNA4P4Tt44h6PO7101CTKjWRtyZdg8N+wBy2T8k0JlugJ1OUA/EIE
-        jkLVCjSBb5HPQ3knTXpoOPUOvAFCwrdg3NKVvwBlk1q31L7hmIKilyyhU6CT9ho+wwYstHvZEdod8MaJ
-        4amjcz8KhmjG8+C9q0VoRr6QNSuRFyla9teLSTpCqxV48b2K8XmchLRsJlsmshv5Q3SntH1eTDQlcD5y
-        hlTOtPMiG6XdjPwhXQl0I2eMVqq992KcyPQ47c/IH7KkItORM+aNreZe4NMh0DdLW/XSfEVc1WAlesGQ
-        pyok41lfhfy+0N61eBn9Y8xD8Z4n2W3QRM7BMtyBm5B/OmivgO6OOz4vIKPzJAqKHX4zJmn1zt4F/pD3
-        MEfeGO3bwD+gZyXyImeioD4jJ0Cr8C5hzEo7SQ/Tfoz8XSvRNxzPguB1mIE6BQZcBm3poL9h0kPDqX2X
-        6Afrb0MoUsXgTr3SM5xW/w8joIupo6pVeEJV3IBrsGiSxUaSTpAnUsWqSVQbydq6tWBwHXS6/ukPxQVQ
-        sR/gCWvvEyj/Xa9rCJ0F7fcS6O60Lj1PD1m4xBqN30WXwPGqzu4DAAAAAElFTkSuQmCC
+        wwAADsMBx2+oZAAAAlhJREFUSEvdlU1LVVEUhm8hVDN/gAOhQRRE+g9UCisHGQQ2kLBBONCggqKB0dcg
+        0D6QQAdF0iB01/ZrIFJEShIURH5AERHYNAr6Cfm8e61bJ7rIPec26oWHu8/ea6+119rrnFuqSTFshQZ/
+        +geKoQnGYBw6oQWuwTSccqsaFcNjaIejsAIXQMHqYdqtalQM89ABykjZXIR3MAwBFKzRrQsqhsvwEO7C
+        gs+pfMfhNfwElXBnWsulGPaAnE3CnQwK+MzHOsAiKJtD0OO7q5Q22AVfgkFQqXTi63AfFHwBRkF3pICd
+        vrtKWSZToC6S8znQfSioHN4CleoHnAPZ1fvuHIqhFZbgJijgFTgPT+AMKIjdUyHFsD85sHKo/p9AHXbQ
+        19VZH2EsPReSOb4KuhsFUjmsVe0OtN4AD9JcIVn9V+EeyKFeRKu5BVG5tsPLNFe1rBXVtmuguxiANzAL
+        E3AWdsNeuAFtsOi7N5E5Vreog1Sa76DyvAWrt538kf8qu9OgTNTiz92m7Kc5Pf8hc64uWYYRmIEvoPdg
+        xG26oR96QZnKmVpZ9iqlMtUB5KdCI8SwBYbgRTKwAK/gG7S4lex0Rx/SXAzroKC3QVmXO1Ctvct3ZPT7
+        BHqp1LLqIrVqk1v8rRj2uZ3u6SSoVApc4b2xADq9Ftd9tnrFcABOwFNQg1QMUgdffTF/EMnKdAQ2+QLE
+        0AdKXaXK+YFzWbkUTA0x47MZ2cJhUAMs+Ww+WRDLIIb3sCONf8ladxvYf3lRxfDZf3XozP+KnaArM+5O
+        4yIqOzY/x9L4P1GptAHojNlla/Qm+wAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="logo_azur.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

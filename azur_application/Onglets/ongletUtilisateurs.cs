@@ -40,7 +40,7 @@ namespace azur_application.Onglets
         public void displayData()
         {
             conn.Open();
-            adpt = new MySqlDataAdapter("SELECT idEmploye, nom, prenom, identifiant, poste, idEquipe, idRole FROM utilisateurs", conn);
+            adpt = new MySqlDataAdapter("SELECT idEmploye, nom, prenom, identifiant, poste, idRole FROM utilisateurs", conn);
             dt = new DataTable();
             adpt.Fill(dt);
             dataGrid_utilisateurs.DataSource = dt;
@@ -55,8 +55,7 @@ namespace azur_application.Onglets
             input_nom.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[1].Value.ToString();
             input_prenom.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[2].Value.ToString();
             input_poste.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[4].Value.ToString();
-            input_idEquipe.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[5].Value.ToString();
-            input_idRole.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[6].Value.ToString();
+            input_idRole.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[5].Value.ToString();
         }
 
         // ------------------------------------ AJOUT ------------------------------------
@@ -68,7 +67,6 @@ namespace azur_application.Onglets
             string mdpSaisi = input_mdp.Text;
             string mdpSaisiHash = BCrypt.HashPassword(mdpSaisi);
             string posteSaisi = input_poste.Text;
-            string idEquipeSaisi = input_idEquipe.Text;
             string idRoleSaisi = input_idRole.Text;
 
             conn.Open();
@@ -99,10 +97,7 @@ namespace azur_application.Onglets
             else
             {
                 // Oui cette condition est stupide mais ça marche (vide != null)
-                if (String.IsNullOrEmpty(idEquipeSaisi))
-                {
-                    idEquipeSaisi = null;
-                }
+                
                 if (String.IsNullOrEmpty(idRoleSaisi))
                 {
                     idRoleSaisi = "0";
@@ -113,10 +108,9 @@ namespace azur_application.Onglets
                 command.Parameters.AddWithValue("@identifiant", identifiant);
                 command.Parameters.AddWithValue("@mdpSaisi", mdpSaisiHash);
                 command.Parameters.AddWithValue("@posteSaisi", posteSaisi);
-                command.Parameters.AddWithValue("@idEquipeSaisi", idEquipeSaisi);
                 command.Parameters.AddWithValue("@idRoleSaisi", idRoleSaisi);
 
-                command.CommandText = "INSERT INTO utilisateurs (nom, prenom, identifiant, mdp, poste, idEquipe, idRole) VALUES(@nomSaisi, @prenomSaisi, @identifiant, @mdpSaisi, @posteSaisi, @idEquipeSaisi, @idRoleSaisi)";
+                command.CommandText = "INSERT INTO utilisateurs (nom, prenom, identifiant, mdp, poste, idRole) VALUES(@nomSaisi, @prenomSaisi, @identifiant, @mdpSaisi, @posteSaisi, @idRoleSaisi)";
                 try
                 {
                     command.ExecuteNonQuery();
@@ -138,7 +132,6 @@ namespace azur_application.Onglets
             string prenomSaisi = input_prenom.Text;
             string mdpSaisi = input_mdp.Text;
             string posteSaisi = input_poste.Text;
-            string idEquipeSaisi = input_idEquipe.Text;
             string idRoleSaisi = input_idRole.Text;
 
             if (String.IsNullOrEmpty(nomSaisi) || String.IsNullOrEmpty(prenomSaisi) || String.IsNullOrEmpty(mdpSaisi) || String.IsNullOrEmpty(posteSaisi))
@@ -149,10 +142,7 @@ namespace azur_application.Onglets
             else
             {
                 // Oui cette condition est stupide mais ça marche (vide != null)
-                if (String.IsNullOrEmpty(idEquipeSaisi))
-                {
-                    idEquipeSaisi = null;
-                }
+                
                 if (String.IsNullOrEmpty(idRoleSaisi))
                 {
                     idRoleSaisi = "0";
@@ -162,12 +152,11 @@ namespace azur_application.Onglets
                 command.Parameters.AddWithValue("@prenomSaisi", prenomSaisi);
                 command.Parameters.AddWithValue("@mdpSaisi", mdpSaisi);
                 command.Parameters.AddWithValue("@posteSaisi", posteSaisi);
-                command.Parameters.AddWithValue("@idEquipeSaisi", idEquipeSaisi);
                 command.Parameters.AddWithValue("@idRoleSaisi", idRoleSaisi);
 
                 command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
                 command.CommandText = "UPDATE utilisateurs SET nom = @nomSaisi, prenom = @prenomSaisi, mdp = @mdpSaisi, " +
-                    "poste = @posteSaisi, idEquipe = @idEquipeSaisi, idRole = @idRoleSaisi WHERE idEmploye = @idUtilisateur";
+                    "poste = @posteSaisi, idRole = @idRoleSaisi WHERE idEmploye = @idUtilisateur";
                 command.ExecuteNonQuery();
 
                 conn.Close();
@@ -199,5 +188,7 @@ namespace azur_application.Onglets
             input_mdp.Text = "";
             input_poste.Text = "";
         }
+
+       
     }
 }

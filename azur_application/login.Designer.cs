@@ -39,9 +39,6 @@ namespace azur_application
             this.RightPanel = new System.Windows.Forms.Panel();
             this.BottomPanel = new System.Windows.Forms.Panel();
             this.TopPanel = new System.Windows.Forms.Panel();
-            this._MaxButton = new CustomWindowsForm.MinMaxButton();
-            this._MinButton = new CustomWindowsForm.ButtonZ();
-            this._CloseButton = new CustomWindowsForm.ButtonZ();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.inputIdentifiant = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.boutonConnexion = new MaterialSkin.Controls.MaterialFlatButton();
@@ -51,6 +48,9 @@ namespace azur_application
             this.message_erreur = new MaterialSkin.Controls.MaterialLabel();
             this.labelIdentifiant = new MaterialSkin.Controls.MaterialLabel();
             this.labelMdp = new MaterialSkin.Controls.MaterialLabel();
+            this._MaxButton = new CustomWindowsForm.MinMaxButton();
+            this._MinButton = new CustomWindowsForm.ButtonZ();
+            this._CloseButton = new CustomWindowsForm.ButtonZ();
             this.header.SuspendLayout();
             this.TopPanel.SuspendLayout();
             this.body.SuspendLayout();
@@ -73,11 +73,11 @@ namespace azur_application
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(84, 55);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 19);
+            this.label1.Size = new System.Drawing.Size(255, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Connexion vers l\'application";
             // 
@@ -86,11 +86,11 @@ namespace azur_application
             this.label_azur.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_azur.AutoSize = true;
             this.label_azur.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label_azur.Font = new System.Drawing.Font("Lato Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_azur.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_azur.Location = new System.Drawing.Point(143, 18);
             this.label_azur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_azur.Name = "label_azur";
-            this.label_azur.Size = new System.Drawing.Size(75, 29);
+            this.label_azur.Size = new System.Drawing.Size(98, 36);
             this.label_azur.TabIndex = 0;
             this.label_azur.Text = "AZUR";
             // 
@@ -176,6 +176,131 @@ namespace azur_application
             this.TopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseMove);
             this.TopPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseUp);
             // 
+            // inputIdentifiant
+            // 
+            this.inputIdentifiant.Depth = 0;
+            this.inputIdentifiant.Hint = " Identifiant";
+            this.inputIdentifiant.Location = new System.Drawing.Point(62, 94);
+            this.inputIdentifiant.Margin = new System.Windows.Forms.Padding(2);
+            this.inputIdentifiant.MaxLength = 32767;
+            this.inputIdentifiant.MouseState = MaterialSkin.MouseState.HOVER;
+            this.inputIdentifiant.Name = "inputIdentifiant";
+            this.inputIdentifiant.PasswordChar = '\0';
+            this.inputIdentifiant.SelectedText = "";
+            this.inputIdentifiant.SelectionLength = 0;
+            this.inputIdentifiant.SelectionStart = 0;
+            this.inputIdentifiant.Size = new System.Drawing.Size(238, 28);
+            this.inputIdentifiant.TabIndex = 8;
+            this.inputIdentifiant.TabStop = false;
+            this.inputIdentifiant.UseSystemPasswordChar = false;
+            // 
+            // boutonConnexion
+            // 
+            this.boutonConnexion.AutoSize = true;
+            this.boutonConnexion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.boutonConnexion.Depth = 0;
+            this.boutonConnexion.Icon = null;
+            this.boutonConnexion.Location = new System.Drawing.Point(108, 290);
+            this.boutonConnexion.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.boutonConnexion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.boutonConnexion.Name = "boutonConnexion";
+            this.boutonConnexion.Primary = false;
+            this.boutonConnexion.Size = new System.Drawing.Size(146, 36);
+            this.boutonConnexion.TabIndex = 9;
+            this.boutonConnexion.Text = "Se connecter";
+            this.boutonConnexion.UseVisualStyleBackColor = true;
+            this.boutonConnexion.Click += new System.EventHandler(this.boutonConnexion_Click);
+            // 
+            // inputMdp
+            // 
+            this.inputMdp.Depth = 0;
+            this.inputMdp.Hint = " Mot de passe";
+            this.inputMdp.Location = new System.Drawing.Point(62, 183);
+            this.inputMdp.Margin = new System.Windows.Forms.Padding(2);
+            this.inputMdp.MaxLength = 32767;
+            this.inputMdp.MouseState = MaterialSkin.MouseState.HOVER;
+            this.inputMdp.Name = "inputMdp";
+            this.inputMdp.PasswordChar = '\0';
+            this.inputMdp.SelectedText = "";
+            this.inputMdp.SelectionLength = 0;
+            this.inputMdp.SelectionStart = 0;
+            this.inputMdp.Size = new System.Drawing.Size(238, 28);
+            this.inputMdp.TabIndex = 11;
+            this.inputMdp.TabStop = false;
+            this.inputMdp.UseSystemPasswordChar = false;
+            // 
+            // checkBoxEnregistrer
+            // 
+            this.checkBoxEnregistrer.AutoSize = true;
+            this.checkBoxEnregistrer.Depth = 0;
+            this.checkBoxEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.checkBoxEnregistrer.Location = new System.Drawing.Point(63, 229);
+            this.checkBoxEnregistrer.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxEnregistrer.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.checkBoxEnregistrer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.checkBoxEnregistrer.Name = "checkBoxEnregistrer";
+            this.checkBoxEnregistrer.Ripple = true;
+            this.checkBoxEnregistrer.Size = new System.Drawing.Size(177, 30);
+            this.checkBoxEnregistrer.TabIndex = 12;
+            this.checkBoxEnregistrer.Text = "Se souvenir de moi";
+            this.checkBoxEnregistrer.UseVisualStyleBackColor = true;
+            // 
+            // body
+            // 
+            this.body.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.body.Controls.Add(this.message_erreur);
+            this.body.Controls.Add(this.labelIdentifiant);
+            this.body.Controls.Add(this.labelMdp);
+            this.body.Controls.Add(this.checkBoxEnregistrer);
+            this.body.Controls.Add(this.inputMdp);
+            this.body.Controls.Add(this.boutonConnexion);
+            this.body.Controls.Add(this.inputIdentifiant);
+            this.body.Location = new System.Drawing.Point(2, 131);
+            this.body.Margin = new System.Windows.Forms.Padding(2);
+            this.body.Name = "body";
+            this.body.Size = new System.Drawing.Size(356, 371);
+            this.body.TabIndex = 13;
+            // 
+            // message_erreur
+            // 
+            this.message_erreur.AutoSize = true;
+            this.message_erreur.Depth = 0;
+            this.message_erreur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.message_erreur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.message_erreur.Location = new System.Drawing.Point(59, 17);
+            this.message_erreur.MouseState = MaterialSkin.MouseState.HOVER;
+            this.message_erreur.Name = "message_erreur";
+            this.message_erreur.Size = new System.Drawing.Size(0, 24);
+            this.message_erreur.TabIndex = 15;
+            // 
+            // labelIdentifiant
+            // 
+            this.labelIdentifiant.AutoSize = true;
+            this.labelIdentifiant.Depth = 0;
+            this.labelIdentifiant.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.labelIdentifiant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelIdentifiant.Location = new System.Drawing.Point(58, 60);
+            this.labelIdentifiant.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelIdentifiant.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelIdentifiant.Name = "labelIdentifiant";
+            this.labelIdentifiant.Size = new System.Drawing.Size(98, 24);
+            this.labelIdentifiant.TabIndex = 14;
+            this.labelIdentifiant.Text = "Identifiant :";
+            // 
+            // labelMdp
+            // 
+            this.labelMdp.AutoSize = true;
+            this.labelMdp.Depth = 0;
+            this.labelMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.labelMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelMdp.Location = new System.Drawing.Point(58, 147);
+            this.labelMdp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelMdp.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelMdp.Name = "labelMdp";
+            this.labelMdp.Size = new System.Drawing.Size(133, 24);
+            this.labelMdp.TabIndex = 13;
+            this.labelMdp.Text = "Mot de passe :";
+            // 
             // _MaxButton
             // 
             this._MaxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -243,131 +368,6 @@ namespace azur_application
             this._CloseButton.UseVisualStyleBackColor = false;
             this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
-            // inputIdentifiant
-            // 
-            this.inputIdentifiant.Depth = 0;
-            this.inputIdentifiant.Hint = " Identifiant";
-            this.inputIdentifiant.Location = new System.Drawing.Point(62, 94);
-            this.inputIdentifiant.Margin = new System.Windows.Forms.Padding(2);
-            this.inputIdentifiant.MaxLength = 32767;
-            this.inputIdentifiant.MouseState = MaterialSkin.MouseState.HOVER;
-            this.inputIdentifiant.Name = "inputIdentifiant";
-            this.inputIdentifiant.PasswordChar = '\0';
-            this.inputIdentifiant.SelectedText = "";
-            this.inputIdentifiant.SelectionLength = 0;
-            this.inputIdentifiant.SelectionStart = 0;
-            this.inputIdentifiant.Size = new System.Drawing.Size(238, 23);
-            this.inputIdentifiant.TabIndex = 8;
-            this.inputIdentifiant.TabStop = false;
-            this.inputIdentifiant.UseSystemPasswordChar = false;
-            // 
-            // boutonConnexion
-            // 
-            this.boutonConnexion.AutoSize = true;
-            this.boutonConnexion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.boutonConnexion.Depth = 0;
-            this.boutonConnexion.Icon = null;
-            this.boutonConnexion.Location = new System.Drawing.Point(108, 290);
-            this.boutonConnexion.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.boutonConnexion.MouseState = MaterialSkin.MouseState.HOVER;
-            this.boutonConnexion.Name = "boutonConnexion";
-            this.boutonConnexion.Primary = false;
-            this.boutonConnexion.Size = new System.Drawing.Size(120, 36);
-            this.boutonConnexion.TabIndex = 9;
-            this.boutonConnexion.Text = "Se connecter";
-            this.boutonConnexion.UseVisualStyleBackColor = true;
-            this.boutonConnexion.Click += new System.EventHandler(this.boutonConnexion_Click);
-            // 
-            // inputMdp
-            // 
-            this.inputMdp.Depth = 0;
-            this.inputMdp.Hint = " Mot de passe";
-            this.inputMdp.Location = new System.Drawing.Point(62, 183);
-            this.inputMdp.Margin = new System.Windows.Forms.Padding(2);
-            this.inputMdp.MaxLength = 32767;
-            this.inputMdp.MouseState = MaterialSkin.MouseState.HOVER;
-            this.inputMdp.Name = "inputMdp";
-            this.inputMdp.PasswordChar = '\0';
-            this.inputMdp.SelectedText = "";
-            this.inputMdp.SelectionLength = 0;
-            this.inputMdp.SelectionStart = 0;
-            this.inputMdp.Size = new System.Drawing.Size(238, 23);
-            this.inputMdp.TabIndex = 11;
-            this.inputMdp.TabStop = false;
-            this.inputMdp.UseSystemPasswordChar = false;
-            // 
-            // checkBoxEnregistrer
-            // 
-            this.checkBoxEnregistrer.AutoSize = true;
-            this.checkBoxEnregistrer.Depth = 0;
-            this.checkBoxEnregistrer.Font = new System.Drawing.Font("Roboto", 10F);
-            this.checkBoxEnregistrer.Location = new System.Drawing.Point(63, 229);
-            this.checkBoxEnregistrer.Margin = new System.Windows.Forms.Padding(0);
-            this.checkBoxEnregistrer.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.checkBoxEnregistrer.MouseState = MaterialSkin.MouseState.HOVER;
-            this.checkBoxEnregistrer.Name = "checkBoxEnregistrer";
-            this.checkBoxEnregistrer.Ripple = true;
-            this.checkBoxEnregistrer.Size = new System.Drawing.Size(147, 30);
-            this.checkBoxEnregistrer.TabIndex = 12;
-            this.checkBoxEnregistrer.Text = "Se souvenir de moi";
-            this.checkBoxEnregistrer.UseVisualStyleBackColor = true;
-            // 
-            // body
-            // 
-            this.body.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.body.Controls.Add(this.message_erreur);
-            this.body.Controls.Add(this.labelIdentifiant);
-            this.body.Controls.Add(this.labelMdp);
-            this.body.Controls.Add(this.checkBoxEnregistrer);
-            this.body.Controls.Add(this.inputMdp);
-            this.body.Controls.Add(this.boutonConnexion);
-            this.body.Controls.Add(this.inputIdentifiant);
-            this.body.Location = new System.Drawing.Point(2, 131);
-            this.body.Margin = new System.Windows.Forms.Padding(2);
-            this.body.Name = "body";
-            this.body.Size = new System.Drawing.Size(356, 371);
-            this.body.TabIndex = 13;
-            // 
-            // message_erreur
-            // 
-            this.message_erreur.AutoSize = true;
-            this.message_erreur.Depth = 0;
-            this.message_erreur.Font = new System.Drawing.Font("Roboto", 11F);
-            this.message_erreur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.message_erreur.Location = new System.Drawing.Point(59, 17);
-            this.message_erreur.MouseState = MaterialSkin.MouseState.HOVER;
-            this.message_erreur.Name = "message_erreur";
-            this.message_erreur.Size = new System.Drawing.Size(0, 19);
-            this.message_erreur.TabIndex = 15;
-            // 
-            // labelIdentifiant
-            // 
-            this.labelIdentifiant.AutoSize = true;
-            this.labelIdentifiant.Depth = 0;
-            this.labelIdentifiant.Font = new System.Drawing.Font("Roboto", 11F);
-            this.labelIdentifiant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelIdentifiant.Location = new System.Drawing.Point(58, 60);
-            this.labelIdentifiant.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelIdentifiant.MouseState = MaterialSkin.MouseState.HOVER;
-            this.labelIdentifiant.Name = "labelIdentifiant";
-            this.labelIdentifiant.Size = new System.Drawing.Size(84, 19);
-            this.labelIdentifiant.TabIndex = 14;
-            this.labelIdentifiant.Text = "Identifiant :";
-            // 
-            // labelMdp
-            // 
-            this.labelMdp.AutoSize = true;
-            this.labelMdp.Depth = 0;
-            this.labelMdp.Font = new System.Drawing.Font("Roboto", 11F);
-            this.labelMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelMdp.Location = new System.Drawing.Point(58, 147);
-            this.labelMdp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelMdp.MouseState = MaterialSkin.MouseState.HOVER;
-            this.labelMdp.Name = "labelMdp";
-            this.labelMdp.Size = new System.Drawing.Size(108, 19);
-            this.labelMdp.TabIndex = 13;
-            this.labelMdp.Text = "Mot de passe :";
-            // 
             // Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,6 +386,7 @@ namespace azur_application
             this.Name = "Connexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connexion";
+            this.Load += new System.EventHandler(this.Connexion_Load);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             this.TopPanel.ResumeLayout(false);
