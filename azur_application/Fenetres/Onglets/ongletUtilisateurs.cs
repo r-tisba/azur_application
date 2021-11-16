@@ -49,21 +49,12 @@ namespace azur_application.Onglets
         // ------------------------------------ AFFICHAGE DATAGRID ------------------------------------
         public void displayData()
         {
-<<<<<<< HEAD
             Utilisateur user = new Utilisateur();
-=======
-            conn.Open();
-            adpt = new MySqlDataAdapter("SELECT idUtilisateur, nom, prenom, identifiant, poste, idRole FROM utilisateurs", conn);
->>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
             dt = new DataTable();
             user.recupererInfosUtilisateur().Fill(dt);
             dataGrid_utilisateurs.DataSource = dt;
             // Par défaut : Tri croissant par idUtilisateur
             this.dataGrid_utilisateurs.Sort(this.dataGrid_utilisateurs.Columns["idUtilisateur"], ListSortDirection.Ascending);
-<<<<<<< HEAD
-=======
-            conn.Close();
->>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
         }
 
         // ------------------------------------ DOUBLECLICK sur DataGrid pour préremplir inputs ------------------------------------
@@ -85,11 +76,7 @@ namespace azur_application.Onglets
             string mdpSaisi = input_mdp.Text;
             string mdpSaisiHash = BCrypt.HashPassword(mdpSaisi);
             string posteSaisi = input_poste.Text;
-<<<<<<< HEAD
             string roleSaisi = input_role.Text;
-=======
-            string idRoleSaisi = input_idRole.Text;
->>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
 
             MySqlCommand command = conn.CreateCommand();
 
@@ -116,27 +103,19 @@ namespace azur_application.Onglets
             else
             {
                 // Oui cette condition est stupide mais ça marche (vide != null)
-<<<<<<< HEAD
                 if (String.IsNullOrEmpty(roleSaisi))
-=======
-                if (String.IsNullOrEmpty(idRoleSaisi))
->>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
                 {
                     roleSaisi = "Utilisateur";
                 }
 
                 Utilisateur user = new Utilisateur();
 
-<<<<<<< HEAD
                 if (user.ajouterUtilisateur(nomSaisi, prenomSaisi, identifiant, mdpSaisiHash, posteSaisi, roleSaisi) == true)
                 {
                     displayData();
                     clear();
                 } 
                 else
-=======
-                if (user.ajouterUtilisateur(nomSaisi, prenomSaisi, identifiant, mdpSaisiHash, posteSaisi, idRoleSaisi) == false)
->>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
                 {
                     label_erreur.Text = "Erreur lors de l'ajout";
                     Color rouge = Color.FromArgb(255, 0, 0);
@@ -154,11 +133,7 @@ namespace azur_application.Onglets
             string nomSaisi = input_nom.Text;
             string prenomSaisi = input_prenom.Text;
             string posteSaisi = input_poste.Text;
-<<<<<<< HEAD
             string roleSaisi = input_role.Text;
-=======
-            string idRoleSaisi = input_idRole.Text;
->>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
 
             if (String.IsNullOrEmpty(nomSaisi) || String.IsNullOrEmpty(prenomSaisi) || String.IsNullOrEmpty(posteSaisi))
             {
@@ -179,29 +154,19 @@ namespace azur_application.Onglets
             else
             {
                 // Oui cette condition est stupide mais ça marche (vide != null)
-<<<<<<< HEAD
                 if (String.IsNullOrEmpty(roleSaisi))
                 {
                     roleSaisi = "Utilisateur";
-=======
-                if (String.IsNullOrEmpty(idRoleSaisi))
-                {
-                    idRoleSaisi = "0";
->>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
                 }
 
                 Utilisateur user = new Utilisateur();
 
-<<<<<<< HEAD
                 if (user.modifierUtilisateur(idUtilisateur, nomSaisi, prenomSaisi, posteSaisi, roleSaisi) == true)
                 {
                     displayData();
                     clear();
                 }
                 else
-=======
-                if (user.modifierUtilisateur(idUtilisateur, nomSaisi, prenomSaisi, posteSaisi, idRoleSaisi) == false)
->>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
                 {
                     label_erreur.Text = "Erreur lors de la modification";
                     Color rouge = Color.FromArgb(255, 0, 0);

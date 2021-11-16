@@ -35,19 +35,6 @@ namespace azur_application.Services
             
             foreach (Control ctrl in form.Controls)
             {
-<<<<<<< HEAD
-=======
-                if (ctrl.Name == "toolTip1")
-                {
-                    /*
-                    string s = Tooltip.GetTooltip(ctrl);
-                    ctrl.ShowTooltip(s, this);
-                    */
-                }
-            }
-                foreach (Control ctrl in form.Controls)
-            {
->>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
                 if (ctrl.Name == "TopPanel")
                 {
                     TopPanel = ctrl;
@@ -106,25 +93,14 @@ namespace azur_application.Services
                     {
                         form.Location = _normalWindowLocation;
                         form.Size = _normalWindowSize;
-<<<<<<< HEAD
-=======
-                        toolTip1.SetToolTip(_MaxButton, "Maximiser");
-                        /*
->>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
                         _MaxButton.CFormState = MinMaxButton.CustomFormState.Normal;
-                        */
                         isWindowMaximized = false;
                     }
                 }
             }
         }
-<<<<<<< HEAD
         
         public void TopPanel_MouseUp(object sender, MouseEventArgs e)
-=======
-        /*
-        private void TopPanel_MouseUp(object sender, MouseEventArgs e)
->>>>>>> 9d482ba664c636bc1a1834c44d16044b99b4f7bd
         {
             isTopPanelDragged = false;
             if (form.Location.Y <= 5)
@@ -298,6 +274,5 @@ namespace azur_application.Services
         {
             form.Close();
         }
-        */
     }
 }
