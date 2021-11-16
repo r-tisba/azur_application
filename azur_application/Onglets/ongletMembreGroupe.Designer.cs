@@ -45,10 +45,11 @@ namespace azur_application.Onglets
             // dataGridView_utilisateur_equipe
             // 
             this.dataGridView_utilisateur_equipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_utilisateur_equipe.Location = new System.Drawing.Point(358, 254);
+            this.dataGridView_utilisateur_equipe.Location = new System.Drawing.Point(477, 313);
+            this.dataGridView_utilisateur_equipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView_utilisateur_equipe.Name = "dataGridView_utilisateur_equipe";
             this.dataGridView_utilisateur_equipe.RowHeadersWidth = 51;
-            this.dataGridView_utilisateur_equipe.Size = new System.Drawing.Size(453, 309);
+            this.dataGridView_utilisateur_equipe.Size = new System.Drawing.Size(604, 380);
             this.dataGridView_utilisateur_equipe.TabIndex = 22;
             this.dataGridView_utilisateur_equipe.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_utilisateur_equipe_CellDoubleClick);
             // 
@@ -57,9 +58,10 @@ namespace azur_application.Onglets
             this.ajout_utilisateur.BackColor = System.Drawing.Color.Lime;
             this.ajout_utilisateur.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ajout_utilisateur.ForeColor = System.Drawing.Color.FloralWhite;
-            this.ajout_utilisateur.Location = new System.Drawing.Point(856, 103);
+            this.ajout_utilisateur.Location = new System.Drawing.Point(1141, 127);
+            this.ajout_utilisateur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ajout_utilisateur.Name = "ajout_utilisateur";
-            this.ajout_utilisateur.Size = new System.Drawing.Size(177, 49);
+            this.ajout_utilisateur.Size = new System.Drawing.Size(236, 60);
             this.ajout_utilisateur.TabIndex = 21;
             this.ajout_utilisateur.Text = "Ajouter Utilisateur";
             this.ajout_utilisateur.UseVisualStyleBackColor = false;
@@ -67,23 +69,26 @@ namespace azur_application.Onglets
             // 
             // input_idEquipe
             // 
-            this.input_idEquipe.Location = new System.Drawing.Point(687, 111);
+            this.input_idEquipe.Location = new System.Drawing.Point(916, 137);
+            this.input_idEquipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.input_idEquipe.Name = "input_idEquipe";
-            this.input_idEquipe.Size = new System.Drawing.Size(100, 20);
+            this.input_idEquipe.Size = new System.Drawing.Size(132, 22);
             this.input_idEquipe.TabIndex = 20;
             // 
             // input_idUtilisateur
             // 
-            this.input_idUtilisateur.Location = new System.Drawing.Point(383, 111);
+            this.input_idUtilisateur.Location = new System.Drawing.Point(511, 137);
+            this.input_idUtilisateur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.input_idUtilisateur.Name = "input_idUtilisateur";
-            this.input_idUtilisateur.Size = new System.Drawing.Size(100, 20);
+            this.input_idUtilisateur.Size = new System.Drawing.Size(132, 22);
             this.input_idUtilisateur.TabIndex = 19;
             // 
             // label_idEquipe
             // 
             this.label_idEquipe.AutoSize = true;
             this.label_idEquipe.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_idEquipe.Location = new System.Drawing.Point(512, 103);
+            this.label_idEquipe.Location = new System.Drawing.Point(683, 127);
+            this.label_idEquipe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_idEquipe.Name = "label_idEquipe";
             this.label_idEquipe.Size = new System.Drawing.Size(129, 28);
             this.label_idEquipe.TabIndex = 18;
@@ -93,7 +98,8 @@ namespace azur_application.Onglets
             // 
             this.idUtilisateur.AutoSize = true;
             this.idUtilisateur.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idUtilisateur.Location = new System.Drawing.Point(208, 103);
+            this.idUtilisateur.Location = new System.Drawing.Point(277, 127);
+            this.idUtilisateur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.idUtilisateur.Name = "idUtilisateur";
             this.idUtilisateur.Size = new System.Drawing.Size(169, 28);
             this.idUtilisateur.TabIndex = 17;
@@ -103,7 +109,8 @@ namespace azur_application.Onglets
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(205, 45);
+            this.label1.Location = new System.Drawing.Point(273, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(565, 44);
             this.label1.TabIndex = 16;
@@ -113,21 +120,24 @@ namespace azur_application.Onglets
             // 
             this.button_modifier.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button_modifier.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_modifier.Location = new System.Drawing.Point(817, 291);
+            this.button_modifier.Location = new System.Drawing.Point(1089, 358);
+            this.button_modifier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_modifier.Name = "button_modifier";
-            this.button_modifier.Size = new System.Drawing.Size(152, 47);
+            this.button_modifier.Size = new System.Drawing.Size(203, 58);
             this.button_modifier.TabIndex = 23;
             this.button_modifier.Text = "Modifier";
             this.button_modifier.UseVisualStyleBackColor = false;
+            this.button_modifier.Click += new System.EventHandler(this.button_modifier_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Crimson;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(817, 413);
+            this.button1.Location = new System.Drawing.Point(1089, 508);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 50);
+            this.button1.Size = new System.Drawing.Size(201, 62);
             this.button1.TabIndex = 24;
             this.button1.Text = "Supprimer";
             this.button1.UseVisualStyleBackColor = false;
@@ -137,7 +147,8 @@ namespace azur_application.Onglets
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(351, 180);
+            this.label2.Location = new System.Drawing.Point(468, 222);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(426, 38);
             this.label2.TabIndex = 25;
@@ -145,9 +156,9 @@ namespace azur_application.Onglets
             // 
             // ongletMembreGroupe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 584);
+            this.ClientSize = new System.Drawing.Size(1709, 719);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_modifier);
@@ -158,6 +169,7 @@ namespace azur_application.Onglets
             this.Controls.Add(this.label_idEquipe);
             this.Controls.Add(this.idUtilisateur);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ongletMembreGroupe";
             this.Text = "Utilisateur et Équipe";
             this.Load += new System.EventHandler(this.ongletMembreGroupe_Load);

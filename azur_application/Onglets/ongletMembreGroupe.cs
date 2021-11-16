@@ -109,5 +109,43 @@ namespace azur_application.Onglets
              string idUtilisateur=input_idUtilisateur.Text;
 
         }
+
+        private void button_modifier_Click(object sender, EventArgs e)
+        {
+            string idEmploye = input_idUtilisateur.Text;
+            string idEquipe = input_idEquipe.Text;
+            
+
+            conn.Open();
+
+            MySqlCommand command = conn.CreateCommand();
+            if (String.IsNullOrEmpty(idEquipe) && String.IsNullOrEmpty(idEmploye))
+            {
+
+                MessageBox.Show("Vous devez selectioner une équipe et un employée", "Erreur équipe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                conn.Close();
+
+            }
+            else
+            {
+
+
+                command.Parameters.AddWithValue("@idEmploye", idEmploye);
+                command.Parameters.AddWithValue("@idEquipe", idEquipe);
+
+
+
+                command.CommandText = "UPDATE equipe_employe SET idEquipe=@idEquipe, idEmploye=idEmploye WHERE idEmploye=@idEmploye";
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch { }
+
+                conn.Close();
+                donneeUtilisateurEquipe();
+                clearEquipeUtilisateur();
+            }
+        }
     }
 }

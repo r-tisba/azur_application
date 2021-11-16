@@ -126,7 +126,7 @@ namespace azur_application.Onglets
 
 
 
-                command.CommandText = "DELETE FROM equipe WHERE idEquipe=@idEquipe";
+                command.CommandText = "DELETE FROM equipe WHERE idEquipe=@idEquipe; DELETE FROM equipe_employe WHERE idEquipe=@idEquipe";
                 try
                 {
                     command.ExecuteNonQuery();
@@ -196,7 +196,6 @@ namespace azur_application.Onglets
         }
         public void donneeSecteur()
         {
-            conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idSecteur", idSecteur);
