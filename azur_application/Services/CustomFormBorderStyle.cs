@@ -27,41 +27,24 @@ namespace azur_application.Services
         Point _normalWindowLocation = Point.Empty;
 
         Control TopPanel;
-        ToolTip toolTip1;
-        Control _MaxButton;
-
-        public List<ToolTip> tTipList;
+        MinMaxButton _MaxButton;
         
-        public CustomFormBorderStyle(Form form, System.ComponentModel.IContainer components)
+        public CustomFormBorderStyle(Form form, MinMaxButton maxButton, ButtonZ minButton, ButtonZ closeButton)
         {
             this.form = form;
             
-            tTipList = components.Components.OfType<ToolTip>().ToList();
-
             foreach (Control ctrl in form.Controls)
-            {
-                if (ctrl.Name == "toolTip1")
-                {
-                    string s = Tooltip.GetTooltip(ctrl);
-                    ctrl.ShowTooltip(s, this);
-                }
-            }
-                foreach (Control ctrl in form.Controls)
             {
                 if (ctrl.Name == "TopPanel")
                 {
                     TopPanel = ctrl;
                 }
-
-                if (ctrl.Name == "_MaxButton")
-                {
-                    _MaxButton = ctrl;
-                }
             }
+            _MaxButton = maxButton;
         }
 
         // ------------------------------------ DEPLACEMENT & RESIZE DE LA FENETRE ------------------------------------
-        private void TopBorderPanel_MouseMove(object sender, MouseEventArgs e)
+        public void TopBorderPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Y < form.Location.Y)
             {
@@ -80,11 +63,11 @@ namespace azur_application.Services
                 }
             }
         }
-        private void TopBorderPanel_MouseUp(object sender, MouseEventArgs e)
+        public void TopBorderPanel_MouseUp(object sender, MouseEventArgs e)
         {
             isTopBorderPanelDragged = false;
         }
-        private void TopBorderPanel_MouseDown(object sender, MouseEventArgs e)
+        public void TopBorderPanel_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -110,15 +93,14 @@ namespace azur_application.Services
                     {
                         form.Location = _normalWindowLocation;
                         form.Size = _normalWindowSize;
-                        toolTip1.SetToolTip(_MaxButton, "Maximiser");
                         _MaxButton.CFormState = MinMaxButton.CustomFormState.Normal;
                         isWindowMaximized = false;
                     }
                 }
             }
         }
-    
-        private void TopPanel_MouseUp(object sender, MouseEventArgs e)
+        
+        public void TopPanel_MouseUp(object sender, MouseEventArgs e)
         {
             isTopPanelDragged = false;
             if (form.Location.Y <= 5)
@@ -131,13 +113,12 @@ namespace azur_application.Services
                     Rectangle rect = Screen.PrimaryScreen.WorkingArea;
                     form.Location = new Point(0, 0);
                     form.Size = new System.Drawing.Size(rect.Width, rect.Height);
-                    toolTip1.SetToolTip(_MaxButton, "Restore Down");
                     _MaxButton.CFormState = MinMaxButton.CustomFormState.Maximize;
                     isWindowMaximized = true;
                 }
             }
         }
-        private void TopPanel_MouseDown(object sender, MouseEventArgs e)
+        public void TopPanel_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -157,8 +138,8 @@ namespace azur_application.Services
                 _MaxButton_Click(sender, e);
             }
         }
-
-        private void LeftPanel_MouseMove(object sender, MouseEventArgs e)
+        
+        public void LeftPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.X < form.Location.X)
             {
@@ -177,11 +158,11 @@ namespace azur_application.Services
                 }
             }
         }
-        private void LeftPanel_MouseUp(object sender, MouseEventArgs e)
+        public void LeftPanel_MouseUp(object sender, MouseEventArgs e)
         {
             isLeftPanelDragged = false;
         }
-        private void LeftPanel_MouseDown(object sender, MouseEventArgs e)
+        public void LeftPanel_MouseDown(object sender, MouseEventArgs e)
         {
             if (form.Location.X <= 0 || e.X < 0)
             {
@@ -201,7 +182,7 @@ namespace azur_application.Services
             }
         }
 
-        private void RightPanel_MouseMove(object sender, MouseEventArgs e)
+        public void RightPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (isRightPanelDragged)
             {
@@ -216,11 +197,11 @@ namespace azur_application.Services
                 }
             }
         }
-        private void RightPanel_MouseUp(object sender, MouseEventArgs e)
+        public void RightPanel_MouseUp(object sender, MouseEventArgs e)
         {
             isRightPanelDragged = false;
         }
-        private void RightPanel_MouseDown(object sender, MouseEventArgs e)
+        public void RightPanel_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -232,7 +213,7 @@ namespace azur_application.Services
             }
         }
 
-        private void BottomPanel_MouseMove(object sender, MouseEventArgs e)
+        public void BottomPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (isBottomPanelDragged)
             {
@@ -247,11 +228,11 @@ namespace azur_application.Services
                 }
             }
         }
-        private void BottomPanel_MouseUp(object sender, MouseEventArgs e)
+        public void BottomPanel_MouseUp(object sender, MouseEventArgs e)
         {
             isBottomPanelDragged = false;
         }
-        private void BottomPanel_MouseDown(object sender, MouseEventArgs e)
+        public void BottomPanel_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -264,17 +245,16 @@ namespace azur_application.Services
         }
 
         // ------------------------------------ BOUTONS MIN, MAX, CLOSE ------------------------------------
-        private void _MinButton_Click(object sender, EventArgs e)
+        public void _MinButton_Click(object sender, EventArgs e)
         {
             form.WindowState = FormWindowState.Minimized;
         }
-        private void _MaxButton_Click(object sender, EventArgs e)
+        public void _MaxButton_Click(object sender, EventArgs e)
         {
             if (isWindowMaximized)
             {
                 form.Location = _normalWindowLocation;
                 form.Size = _normalWindowSize;
-                toolTip1.SetToolTip(_MaxButton, "Maximizer");
                 _MaxButton.CFormState = MinMaxButton.CustomFormState.Normal;
                 isWindowMaximized = false;
             }
@@ -286,12 +266,11 @@ namespace azur_application.Services
                 Rectangle rect = Screen.PrimaryScreen.WorkingArea;
                 form.Location = new Point(0, 0);
                 form.Size = new System.Drawing.Size(rect.Width, rect.Height);
-                toolTip1.SetToolTip(_MaxButton, "Restore Down");
                 _MaxButton.CFormState = MinMaxButton.CustomFormState.Maximize;
                 isWindowMaximized = true;
             }
         }
-        private void _CloseButton_Click(object sender, EventArgs e)
+        public void _CloseButton_Click(object sender, EventArgs e)
         {
             form.Close();
         }
