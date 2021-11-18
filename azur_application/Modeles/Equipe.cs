@@ -50,7 +50,7 @@ namespace azur_application.Modeles
             command.Parameters.AddWithValue("@image", imageSaisi);
 
 
-            command.CommandText = "INSERT INTO equipe (nomEquipe, idSecteur, image) VALUES(@nom_equipe, @idSecteur, @image)";
+            command.CommandText = "INSERT INTO equipes (nomEquipe, idSecteur, image) VALUES(@nom_equipe, @idSecteur, @image)";
             try
             {
                 command.ExecuteNonQuery();
@@ -82,7 +82,7 @@ namespace azur_application.Modeles
 
 
 
-            command.CommandText = "UPDATE equipe SET nomEquipe=@nom_equipe, idSecteur=@idSecteur, image=@image WHERE idEquipe=@idEquipe";
+            command.CommandText = "UPDATE equipes SET nomEquipe=@nom_equipe, idSecteur=@idSecteur, image=@image WHERE idEquipe=@idEquipe";
            
 
             try
@@ -111,7 +111,7 @@ namespace azur_application.Modeles
 
 
 
-            command.CommandText = "DELETE FROM equipe WHERE idEquipe=@idEquipe; DELETE FROM equipe_employe WHERE idEquipe=@idEquipe";
+            command.CommandText = "DELETE FROM equipes WHERE idEquipe=@idEquipe; DELETE FROM equipe_employe WHERE idEquipe=@idEquipe";
             try
             {
                 command.ExecuteNonQuery();
@@ -135,7 +135,7 @@ namespace azur_application.Modeles
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
 
-            command = new MySqlCommand("SELECT idEquipe, idSecteur, nomEquipe, image FROM equipe", conn);
+            command = new MySqlCommand("SELECT idEquipe, idSecteur, nomEquipe, image FROM equipes", conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(command);
 
             conn.Close();

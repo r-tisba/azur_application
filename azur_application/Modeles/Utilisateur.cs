@@ -78,6 +78,7 @@ namespace azur_application.Modeles
                 Mdp = reader.GetString(0);
                 Role = reader.GetString(1);
             }
+            conn.Close();
             if(string.IsNullOrEmpty(mdp) || string.IsNullOrEmpty(role))
             {
                 return false;
@@ -87,7 +88,6 @@ namespace azur_application.Modeles
                 return true;
             }
 
-            conn.Close();
         }
 
         // ------------------------------------ AJOUTER ------------------------------------

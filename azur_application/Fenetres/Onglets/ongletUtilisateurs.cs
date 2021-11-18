@@ -19,8 +19,6 @@ namespace azur_application.Onglets
     public partial class ongletUtilisateurs : Form
     {
         MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
-        MySqlDataReader reader;
-        MySqlDataAdapter adpt;
         DataTable dt;
 
         int idUtilisateur;

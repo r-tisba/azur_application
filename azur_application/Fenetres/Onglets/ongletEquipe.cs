@@ -20,12 +20,8 @@ namespace azur_application.Onglets
     {
 
         MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
-        MySqlDataReader reader;
-        MySqlDataAdapter adpt;
-        MySqlDataAdapter da;
-
+        
         DataTable dt;
-        DataSet ds;
 
         Equipe equipe = new Equipe();
 
@@ -40,7 +36,7 @@ namespace azur_application.Onglets
         {
             
             dt = new DataTable();
-            equipe.recupererInfosEquipe();
+            equipe.recupererInfosEquipe().Fill(dt);
             dataGridView_equipe.DataSource = dt;
             this.dataGridView_equipe.Sort(this.dataGridView_equipe.Columns["idEquipe"], ListSortDirection.Ascending);
 
@@ -115,10 +111,14 @@ namespace azur_application.Onglets
 
         private void dataGridView_equipe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            label_idEquipe.Text= dataGridView_equipe.Rows[e.RowIndex].Cells[0].Value.ToString();
-            input_idSecteur.Text = dataGridView_equipe.Rows[e.RowIndex].Cells[1].Value.ToString();
-            input_nom_equipe.Text= dataGridView_equipe.Rows[e.RowIndex].Cells[2].Value.ToString();
-            input_image.Text = dataGridView_equipe.Rows[e.RowIndex].Cells[3].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                label_idEquipe.Text= dataGridView_equipe.Rows[e.RowIndex].Cells[0].Value.ToString();
+                input_idSecteur.Text = dataGridView_equipe.Rows[e.RowIndex].Cells[1].Value.ToString();
+                input_nom_equipe.Text= dataGridView_equipe.Rows[e.RowIndex].Cells[2].Value.ToString();
+                input_image.Text = dataGridView_equipe.Rows[e.RowIndex].Cells[3].Value.ToString();
+            }
+            
 
         }
 

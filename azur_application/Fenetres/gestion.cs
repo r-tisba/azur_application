@@ -216,7 +216,6 @@ namespace azur_application
 
         private void btnParametres_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Onglets.ongletParametres(), sender);
         }
 
         private void btnCloseChild_Click(object sender, EventArgs e)
@@ -247,6 +246,9 @@ namespace azur_application
 
         }
 
-        
+        private void btnGestEquipe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Onglets.ongletEquipe(), sender);
+        }
     }
 }

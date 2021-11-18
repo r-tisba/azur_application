@@ -150,20 +150,18 @@
     <Compile Include="MinMaxButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modeles\EquipeUtilisateur.cs" />
     <Compile Include="Modeles\Equipe.cs" />
-    <Compile Include="Onglets\ongletMembreGroupe.cs">
+    <Compile Include="Fenetres\Onglets\ongletMembreGroupe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Onglets\ongletMembreGroupe.Designer.cs">
+    <Compile Include="Fenetres\Onglets\ongletMembreGroupe.Designer.cs">
       <DependentUpon>ongletMembreGroupe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fenetres\Onglets\ongletParametres.Designer.cs">
-      <DependentUpon>ongletParametres.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Onglets\ongletEquipe.cs">
+    <Compile Include="Fenetres\Onglets\ongletEquipe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Onglets\ongletEquipe.Designer.cs">
+    <Compile Include="Fenetres\Onglets\ongletEquipe.Designer.cs">
       <DependentUpon>ongletEquipe.cs</DependentUpon>
     </Compile>
     <Compile Include="Fenetres\Onglets\ongletProjets.cs">
@@ -196,10 +194,10 @@
     <EmbeddedResource Include="Fenetres\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Onglets\ongletMembreGroupe.resx">
+    <EmbeddedResource Include="Fenetres\Onglets\ongletMembreGroupe.resx">
       <DependentUpon>ongletMembreGroupe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Onglets\ongletEquipe.resx">
+    <EmbeddedResource Include="Fenetres\Onglets\ongletEquipe.resx">
       <DependentUpon>ongletEquipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fenetres\Onglets\ongletProjets.resx">
@@ -234,6 +232,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Onglets\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
