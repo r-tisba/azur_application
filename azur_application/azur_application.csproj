@@ -135,16 +135,16 @@
     <Compile Include="ButtonZ.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="gestion.cs">
+    <Compile Include="Fenetres\gestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gestion.Designer.cs">
+    <Compile Include="Fenetres\gestion.Designer.cs">
       <DependentUpon>gestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
+    <Compile Include="Fenetres\login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.Designer.cs">
+    <Compile Include="Fenetres\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="MinMaxButton.cs">
@@ -159,7 +159,7 @@
     <Compile Include="Onglets\ongletParametres.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Onglets\ongletParametres.Designer.cs">
+    <Compile Include="Fenetres\Onglets\ongletParametres.Designer.cs">
       <DependentUpon>ongletParametres.cs</DependentUpon>
     </Compile>
     <Compile Include="Onglets\ongletEquipe.cs">
@@ -168,31 +168,34 @@
     <Compile Include="Onglets\ongletEquipe.Designer.cs">
       <DependentUpon>ongletEquipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Onglets\ongletProjets.cs">
+    <Compile Include="Fenetres\Onglets\ongletProjets.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Onglets\ongletProjets.Designer.cs">
+    <Compile Include="Fenetres\Onglets\ongletProjets.Designer.cs">
       <DependentUpon>ongletProjets.cs</DependentUpon>
     </Compile>
-    <Compile Include="Onglets\ongletStatistiques.cs">
+    <Compile Include="Fenetres\Onglets\ongletStatistiques.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Onglets\ongletStatistiques.Designer.cs">
+    <Compile Include="Fenetres\Onglets\ongletStatistiques.Designer.cs">
       <DependentUpon>ongletStatistiques.cs</DependentUpon>
     </Compile>
-    <Compile Include="Onglets\ongletUtilisateurs.cs">
+    <Compile Include="Fenetres\Onglets\ongletUtilisateurs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Onglets\ongletUtilisateurs.Designer.cs">
+    <Compile Include="Fenetres\Onglets\ongletUtilisateurs.Designer.cs">
       <DependentUpon>ongletUtilisateurs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modeles\Utilisateur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CustomFormBorderStyle.cs" />
+    <Compile Include="Services\Fonctions.cs" />
     <Compile Include="ThemeColor.cs" />
-    <EmbeddedResource Include="gestion.resx">
+    <EmbeddedResource Include="Fenetres\gestion.resx">
       <DependentUpon>gestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
+    <EmbeddedResource Include="Fenetres\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Onglets\ongletMembreGroupe.resx">
@@ -204,13 +207,13 @@
     <EmbeddedResource Include="Onglets\ongletEquipe.resx">
       <DependentUpon>ongletEquipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Onglets\ongletProjets.resx">
+    <EmbeddedResource Include="Fenetres\Onglets\ongletProjets.resx">
       <DependentUpon>ongletProjets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Onglets\ongletStatistiques.resx">
+    <EmbeddedResource Include="Fenetres\Onglets\ongletStatistiques.resx">
       <DependentUpon>ongletStatistiques.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Onglets\ongletUtilisateurs.resx">
+    <EmbeddedResource Include="Fenetres\Onglets\ongletUtilisateurs.resx">
       <DependentUpon>ongletUtilisateurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

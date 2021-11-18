@@ -44,13 +44,16 @@ namespace azur_application
             this.boutonConnexion = new MaterialSkin.Controls.MaterialFlatButton();
             this.inputMdp = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.checkBoxEnregistrer = new MaterialSkin.Controls.MaterialCheckBox();
-            this.body = new System.Windows.Forms.Panel();
-            this.message_erreur = new MaterialSkin.Controls.MaterialLabel();
-            this.labelIdentifiant = new MaterialSkin.Controls.MaterialLabel();
             this.labelMdp = new MaterialSkin.Controls.MaterialLabel();
+<<<<<<< HEAD:azur_application/login.Designer.cs
             this._MaxButton = new CustomWindowsForm.MinMaxButton();
             this._MinButton = new CustomWindowsForm.ButtonZ();
             this._CloseButton = new CustomWindowsForm.ButtonZ();
+=======
+            this.labelIdentifiant = new MaterialSkin.Controls.MaterialLabel();
+            this.message_erreur = new MaterialSkin.Controls.MaterialLabel();
+            this.body = new System.Windows.Forms.Panel();
+>>>>>>> dcdae15c248d135296407f4c627f3ec56dbcc3da:azur_application/Fenetres/login.Designer.cs
             this.header.SuspendLayout();
             this.TopPanel.SuspendLayout();
             this.body.SuspendLayout();
@@ -63,21 +66,28 @@ namespace azur_application
             this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(132)))), ((int)(((byte)(234)))));
             this.header.Controls.Add(this.label1);
             this.header.Controls.Add(this.label_azur);
-            this.header.Location = new System.Drawing.Point(1, 34);
-            this.header.Margin = new System.Windows.Forms.Padding(2);
+            this.header.Location = new System.Drawing.Point(1, 42);
+            this.header.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(358, 99);
+            this.header.Size = new System.Drawing.Size(477, 122);
             this.header.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
+<<<<<<< HEAD:azur_application/login.Designer.cs
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(84, 55);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 25);
+=======
+            this.label1.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(112, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(256, 24);
+>>>>>>> dcdae15c248d135296407f4c627f3ec56dbcc3da:azur_application/Fenetres/login.Designer.cs
             this.label1.TabIndex = 1;
             this.label1.Text = "Connexion vers l\'application";
             // 
@@ -86,11 +96,18 @@ namespace azur_application
             this.label_azur.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_azur.AutoSize = true;
             this.label_azur.Cursor = System.Windows.Forms.Cursors.Default;
+<<<<<<< HEAD:azur_application/login.Designer.cs
             this.label_azur.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_azur.Location = new System.Drawing.Point(143, 18);
             this.label_azur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_azur.Name = "label_azur";
             this.label_azur.Size = new System.Drawing.Size(98, 36);
+=======
+            this.label_azur.Font = new System.Drawing.Font("Lato Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_azur.Location = new System.Drawing.Point(191, 22);
+            this.label_azur.Name = "label_azur";
+            this.label_azur.Size = new System.Drawing.Size(93, 36);
+>>>>>>> dcdae15c248d135296407f4c627f3ec56dbcc3da:azur_application/Fenetres/login.Designer.cs
             this.label_azur.TabIndex = 0;
             this.label_azur.Text = "AZUR";
             // 
@@ -111,8 +128,9 @@ namespace azur_application
             this.TopBorderPanel.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.TopBorderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopBorderPanel.Location = new System.Drawing.Point(0, 0);
+            this.TopBorderPanel.Margin = new System.Windows.Forms.Padding(4);
             this.TopBorderPanel.Name = "TopBorderPanel";
-            this.TopBorderPanel.Size = new System.Drawing.Size(360, 2);
+            this.TopBorderPanel.Size = new System.Drawing.Size(480, 2);
             this.TopBorderPanel.TabIndex = 2;
             this.TopBorderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopBorderPanel_MouseDown);
             this.TopBorderPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopBorderPanel_MouseMove);
@@ -124,9 +142,9 @@ namespace azur_application
             this.LeftPanel.Cursor = System.Windows.Forms.Cursors.SizeWE;
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftPanel.Location = new System.Drawing.Point(0, 2);
-            this.LeftPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.LeftPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LeftPanel.Name = "LeftPanel";
-            this.LeftPanel.Size = new System.Drawing.Size(2, 502);
+            this.LeftPanel.Size = new System.Drawing.Size(3, 618);
             this.LeftPanel.TabIndex = 4;
             this.LeftPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LeftPanel_MouseDown);
             this.LeftPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LeftPanel_MouseMove);
@@ -137,10 +155,10 @@ namespace azur_application
             this.RightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.RightPanel.Cursor = System.Windows.Forms.Cursors.SizeWE;
             this.RightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.RightPanel.Location = new System.Drawing.Point(358, 2);
-            this.RightPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.RightPanel.Location = new System.Drawing.Point(477, 2);
+            this.RightPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RightPanel.Name = "RightPanel";
-            this.RightPanel.Size = new System.Drawing.Size(2, 502);
+            this.RightPanel.Size = new System.Drawing.Size(3, 618);
             this.RightPanel.TabIndex = 5;
             this.RightPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RightPanel_MouseDown);
             this.RightPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RightPanel_MouseMove);
@@ -151,10 +169,10 @@ namespace azur_application
             this.BottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.BottomPanel.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomPanel.Location = new System.Drawing.Point(2, 502);
-            this.BottomPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.BottomPanel.Location = new System.Drawing.Point(3, 618);
+            this.BottomPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BottomPanel.Name = "BottomPanel";
-            this.BottomPanel.Size = new System.Drawing.Size(356, 2);
+            this.BottomPanel.Size = new System.Drawing.Size(474, 2);
             this.BottomPanel.TabIndex = 6;
             this.BottomPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BottomPanel_MouseDown);
             this.BottomPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BottomPanel_MouseMove);
@@ -167,21 +185,91 @@ namespace azur_application
             this.TopPanel.Controls.Add(this._MinButton);
             this.TopPanel.Controls.Add(this._CloseButton);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopPanel.Location = new System.Drawing.Point(2, 2);
-            this.TopPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.TopPanel.Location = new System.Drawing.Point(3, 2);
+            this.TopPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TopPanel.Name = "TopPanel";
-            this.TopPanel.Size = new System.Drawing.Size(356, 32);
+            this.TopPanel.Size = new System.Drawing.Size(474, 39);
             this.TopPanel.TabIndex = 7;
             this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
             this.TopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseMove);
             this.TopPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseUp);
             // 
+<<<<<<< HEAD:azur_application/login.Designer.cs
+=======
+            // _MaxButton
+            // 
+            this._MaxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._MaxButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this._MaxButton.CFormState = CustomWindowsForm.MinMaxButton.CustomFormState.Normal;
+            this._MaxButton.DisplayText = "_";
+            this._MaxButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._MaxButton.ForeColor = System.Drawing.Color.White;
+            this._MaxButton.Location = new System.Drawing.Point(400, 0);
+            this._MaxButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._MaxButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
+            this._MaxButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
+            this._MaxButton.Name = "_MaxButton";
+            this._MaxButton.Size = new System.Drawing.Size(37, 39);
+            this._MaxButton.TabIndex = 2;
+            this._MaxButton.Text = "minMaxButton";
+            this._MaxButton.TextLocation_X = 7;
+            this._MaxButton.TextLocation_Y = 10;
+            this.toolTip1.SetToolTip(this._MaxButton, "Maximise");
+            this._MaxButton.UseVisualStyleBackColor = true;
+            this._MaxButton.Click += new System.EventHandler(this._MaxButton_Click);
+            // 
+            // _MinButton
+            // 
+            this._MinButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._MinButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this._MinButton.DisplayText = "_";
+            this._MinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._MinButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold);
+            this._MinButton.ForeColor = System.Drawing.Color.White;
+            this._MinButton.Location = new System.Drawing.Point(363, 0);
+            this._MinButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._MinButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
+            this._MinButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
+            this._MinButton.Name = "_MinButton";
+            this._MinButton.Size = new System.Drawing.Size(37, 39);
+            this._MinButton.TabIndex = 1;
+            this._MinButton.Text = "_";
+            this._MinButton.TextLocation_X = 5;
+            this._MinButton.TextLocation_Y = -14;
+            this.toolTip1.SetToolTip(this._MinButton, "Minimize");
+            this._MinButton.UseVisualStyleBackColor = true;
+            this._MinButton.Click += new System.EventHandler(this._MinButton_Click);
+            // 
+            // _CloseButton
+            // 
+            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this._CloseButton.DisplayText = "X";
+            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this._CloseButton.ForeColor = System.Drawing.Color.White;
+            this._CloseButton.Location = new System.Drawing.Point(438, 0);
+            this._CloseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(37, 39);
+            this._CloseButton.TabIndex = 0;
+            this._CloseButton.Text = "X";
+            this._CloseButton.TextLocation_X = 7;
+            this._CloseButton.TextLocation_Y = 6;
+            this.toolTip1.SetToolTip(this._CloseButton, "Close");
+            this._CloseButton.UseVisualStyleBackColor = false;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
+            // 
+>>>>>>> dcdae15c248d135296407f4c627f3ec56dbcc3da:azur_application/Fenetres/login.Designer.cs
             // inputIdentifiant
             // 
             this.inputIdentifiant.Depth = 0;
             this.inputIdentifiant.Hint = " Identifiant";
-            this.inputIdentifiant.Location = new System.Drawing.Point(62, 94);
-            this.inputIdentifiant.Margin = new System.Windows.Forms.Padding(2);
+            this.inputIdentifiant.Location = new System.Drawing.Point(83, 116);
+            this.inputIdentifiant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inputIdentifiant.MaxLength = 32767;
             this.inputIdentifiant.MouseState = MaterialSkin.MouseState.HOVER;
             this.inputIdentifiant.Name = "inputIdentifiant";
@@ -189,7 +277,11 @@ namespace azur_application
             this.inputIdentifiant.SelectedText = "";
             this.inputIdentifiant.SelectionLength = 0;
             this.inputIdentifiant.SelectionStart = 0;
+<<<<<<< HEAD:azur_application/login.Designer.cs
             this.inputIdentifiant.Size = new System.Drawing.Size(238, 28);
+=======
+            this.inputIdentifiant.Size = new System.Drawing.Size(317, 28);
+>>>>>>> dcdae15c248d135296407f4c627f3ec56dbcc3da:azur_application/Fenetres/login.Designer.cs
             this.inputIdentifiant.TabIndex = 8;
             this.inputIdentifiant.TabStop = false;
             this.inputIdentifiant.UseSystemPasswordChar = false;
@@ -200,8 +292,8 @@ namespace azur_application
             this.boutonConnexion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.boutonConnexion.Depth = 0;
             this.boutonConnexion.Icon = null;
-            this.boutonConnexion.Location = new System.Drawing.Point(108, 290);
-            this.boutonConnexion.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.boutonConnexion.Location = new System.Drawing.Point(144, 357);
+            this.boutonConnexion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.boutonConnexion.MouseState = MaterialSkin.MouseState.HOVER;
             this.boutonConnexion.Name = "boutonConnexion";
             this.boutonConnexion.Primary = false;
@@ -215,8 +307,8 @@ namespace azur_application
             // 
             this.inputMdp.Depth = 0;
             this.inputMdp.Hint = " Mot de passe";
-            this.inputMdp.Location = new System.Drawing.Point(62, 183);
-            this.inputMdp.Margin = new System.Windows.Forms.Padding(2);
+            this.inputMdp.Location = new System.Drawing.Point(83, 225);
+            this.inputMdp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inputMdp.MaxLength = 32767;
             this.inputMdp.MouseState = MaterialSkin.MouseState.HOVER;
             this.inputMdp.Name = "inputMdp";
@@ -224,7 +316,11 @@ namespace azur_application
             this.inputMdp.SelectedText = "";
             this.inputMdp.SelectionLength = 0;
             this.inputMdp.SelectionStart = 0;
+<<<<<<< HEAD:azur_application/login.Designer.cs
             this.inputMdp.Size = new System.Drawing.Size(238, 28);
+=======
+            this.inputMdp.Size = new System.Drawing.Size(317, 28);
+>>>>>>> dcdae15c248d135296407f4c627f3ec56dbcc3da:azur_application/Fenetres/login.Designer.cs
             this.inputMdp.TabIndex = 11;
             this.inputMdp.TabStop = false;
             this.inputMdp.UseSystemPasswordChar = false;
@@ -233,8 +329,13 @@ namespace azur_application
             // 
             this.checkBoxEnregistrer.AutoSize = true;
             this.checkBoxEnregistrer.Depth = 0;
+<<<<<<< HEAD:azur_application/login.Designer.cs
             this.checkBoxEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.checkBoxEnregistrer.Location = new System.Drawing.Point(63, 229);
+=======
+            this.checkBoxEnregistrer.Font = new System.Drawing.Font("Roboto", 10F);
+            this.checkBoxEnregistrer.Location = new System.Drawing.Point(84, 282);
+>>>>>>> dcdae15c248d135296407f4c627f3ec56dbcc3da:azur_application/Fenetres/login.Designer.cs
             this.checkBoxEnregistrer.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxEnregistrer.MouseLocation = new System.Drawing.Point(-1, -1);
             this.checkBoxEnregistrer.MouseState = MaterialSkin.MouseState.HOVER;
@@ -245,24 +346,9 @@ namespace azur_application
             this.checkBoxEnregistrer.Text = "Se souvenir de moi";
             this.checkBoxEnregistrer.UseVisualStyleBackColor = true;
             // 
-            // body
+            // labelMdp
             // 
-            this.body.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.body.Controls.Add(this.message_erreur);
-            this.body.Controls.Add(this.labelIdentifiant);
-            this.body.Controls.Add(this.labelMdp);
-            this.body.Controls.Add(this.checkBoxEnregistrer);
-            this.body.Controls.Add(this.inputMdp);
-            this.body.Controls.Add(this.boutonConnexion);
-            this.body.Controls.Add(this.inputIdentifiant);
-            this.body.Location = new System.Drawing.Point(2, 131);
-            this.body.Margin = new System.Windows.Forms.Padding(2);
-            this.body.Name = "body";
-            this.body.Size = new System.Drawing.Size(356, 371);
-            this.body.TabIndex = 13;
-            // 
-            // message_erreur
-            // 
+<<<<<<< HEAD:azur_application/login.Designer.cs
             this.message_erreur.AutoSize = true;
             this.message_erreur.Depth = 0;
             this.message_erreur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -272,6 +358,18 @@ namespace azur_application
             this.message_erreur.Name = "message_erreur";
             this.message_erreur.Size = new System.Drawing.Size(0, 24);
             this.message_erreur.TabIndex = 15;
+=======
+            this.labelMdp.AutoSize = true;
+            this.labelMdp.Depth = 0;
+            this.labelMdp.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelMdp.Location = new System.Drawing.Point(77, 181);
+            this.labelMdp.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelMdp.Name = "labelMdp";
+            this.labelMdp.Size = new System.Drawing.Size(136, 24);
+            this.labelMdp.TabIndex = 13;
+            this.labelMdp.Text = "Mot de passe :";
+>>>>>>> dcdae15c248d135296407f4c627f3ec56dbcc3da:azur_application/Fenetres/login.Designer.cs
             // 
             // labelIdentifiant
             // 
@@ -279,16 +377,20 @@ namespace azur_application
             this.labelIdentifiant.Depth = 0;
             this.labelIdentifiant.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.labelIdentifiant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelIdentifiant.Location = new System.Drawing.Point(58, 60);
-            this.labelIdentifiant.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelIdentifiant.Location = new System.Drawing.Point(77, 74);
             this.labelIdentifiant.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelIdentifiant.Name = "labelIdentifiant";
+<<<<<<< HEAD:azur_application/login.Designer.cs
             this.labelIdentifiant.Size = new System.Drawing.Size(98, 24);
+=======
+            this.labelIdentifiant.Size = new System.Drawing.Size(105, 24);
+>>>>>>> dcdae15c248d135296407f4c627f3ec56dbcc3da:azur_application/Fenetres/login.Designer.cs
             this.labelIdentifiant.TabIndex = 14;
             this.labelIdentifiant.Text = "Identifiant :";
             // 
-            // labelMdp
+            // message_erreur
             // 
+<<<<<<< HEAD:azur_application/login.Designer.cs
             this.labelMdp.AutoSize = true;
             this.labelMdp.Depth = 0;
             this.labelMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -300,6 +402,34 @@ namespace azur_application
             this.labelMdp.Size = new System.Drawing.Size(133, 24);
             this.labelMdp.TabIndex = 13;
             this.labelMdp.Text = "Mot de passe :";
+=======
+            this.message_erreur.AutoSize = true;
+            this.message_erreur.Depth = 0;
+            this.message_erreur.Font = new System.Drawing.Font("Roboto", 11F);
+            this.message_erreur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.message_erreur.Location = new System.Drawing.Point(79, 21);
+            this.message_erreur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.message_erreur.MouseState = MaterialSkin.MouseState.HOVER;
+            this.message_erreur.Name = "message_erreur";
+            this.message_erreur.Size = new System.Drawing.Size(0, 24);
+            this.message_erreur.TabIndex = 15;
+            // 
+            // body
+            // 
+            this.body.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.body.Controls.Add(this.message_erreur);
+            this.body.Controls.Add(this.labelIdentifiant);
+            this.body.Controls.Add(this.labelMdp);
+            this.body.Controls.Add(this.checkBoxEnregistrer);
+            this.body.Controls.Add(this.inputMdp);
+            this.body.Controls.Add(this.boutonConnexion);
+            this.body.Controls.Add(this.inputIdentifiant);
+            this.body.Location = new System.Drawing.Point(3, 161);
+            this.body.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.body.Name = "body";
+            this.body.Size = new System.Drawing.Size(475, 457);
+            this.body.TabIndex = 13;
+>>>>>>> dcdae15c248d135296407f4c627f3ec56dbcc3da:azur_application/Fenetres/login.Designer.cs
             // 
             // _MaxButton
             // 
@@ -370,9 +500,9 @@ namespace azur_application
             // 
             // Connexion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 504);
+            this.ClientSize = new System.Drawing.Size(480, 620);
             this.ControlBox = false;
             this.Controls.Add(this.body);
             this.Controls.Add(this.TopPanel);
@@ -382,7 +512,7 @@ namespace azur_application
             this.Controls.Add(this.TopBorderPanel);
             this.Controls.Add(this.header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Connexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connexion";
@@ -414,10 +544,10 @@ namespace azur_application
         private MaterialSkin.Controls.MaterialFlatButton boutonConnexion;
         private MaterialSkin.Controls.MaterialSingleLineTextField inputMdp;
         private MaterialSkin.Controls.MaterialCheckBox checkBoxEnregistrer;
-        private System.Windows.Forms.Panel body;
-        private MaterialSkin.Controls.MaterialLabel labelIdentifiant;
         private MaterialSkin.Controls.MaterialLabel labelMdp;
+        private MaterialSkin.Controls.MaterialLabel labelIdentifiant;
         private MaterialSkin.Controls.MaterialLabel message_erreur;
+        private System.Windows.Forms.Panel body;
     }
 }
 
