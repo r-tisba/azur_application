@@ -204,6 +204,7 @@ namespace azur_application.Onglets
             this.Controls.Add(this.dataGridView_equipe);
             this.Name = "ongletEquipe";
             this.Text = "Équipe";
+            this.Load += new System.EventHandler(this.ongletEquipe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_equipe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using CustomWindowsForm;
 using System.Threading;
 using MySql.Data.MySqlClient;
+using azur_application.Modeles;
+using azur_application.Services;
 
 namespace azur_application.Onglets
 {
@@ -25,24 +27,23 @@ namespace azur_application.Onglets
         DataTable dt;
         DataSet ds;
 
+        Equipe equipe = new Equipe();
+
         public ongletEquipe()
         {
             InitializeComponent();
             donneeEquipe();
-            donneeSecteur();
         }
         
         //Affichage des équipe dans un tableau
         public void donneeEquipe()
         {
-            conn.Open();
-            adpt = new MySqlDataAdapter("SELECT idEquipe, idSecteur, nomEquipe, image FROM equipe", conn);
+            
             dt = new DataTable();
-            adpt.Fill(dt);
+            equipe.recupererInfosEquipe();
             dataGridView_equipe.DataSource = dt;
             this.dataGridView_equipe.Sort(this.dataGridView_equipe.Columns["idEquipe"], ListSortDirection.Ascending);
 
-            conn.Close();
         }
 
          //Ajout équipe
@@ -50,24 +51,21 @@ namespace azur_application.Onglets
         private void creer_equipe_Click(object sender, EventArgs e)
         {
             string nom_equipe = input_nom_equipe.Text;
-            string idSecteur = input_idSecteur.Text;
+            string idSecteur_saisi = input_idSecteur.Text;
+            int idSecteur = int.Parse(idSecteur_saisi);
             string image = input_image.Text;
 
-            conn.Open();
-
-            MySqlCommand command = conn.CreateCommand();
-            if(String.IsNullOrEmpty(nom_equipe) || String.IsNullOrEmpty(idSecteur))
+            
+            if(String.IsNullOrEmpty(nom_equipe) || String.IsNullOrEmpty(idSecteur_saisi))
             {
                 if (String.IsNullOrEmpty(nom_equipe))
                 {
                     MessageBox.Show("Vous devez donner un nom à l'équipe", "Erreur nom", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    conn.Close();
 
                 }
-                if (String.IsNullOrEmpty(idSecteur))
+                if (String.IsNullOrEmpty(idSecteur_saisi))
                 {
                     MessageBox.Show("Vous devez donner un idSecteur", "Erreur idSecteur", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    conn.Close();
                 }
 
             }
@@ -77,20 +75,9 @@ namespace azur_application.Onglets
                 {
                     image = "../icon/equipe.png";
                 }
+                equipe.ajout_equipe(nom_equipe, image, idSecteur);
 
-                command.Parameters.AddWithValue("@nom_equipe", nom_equipe);
-                command.Parameters.AddWithValue("@idSecteur", idSecteur);
-                command.Parameters.AddWithValue("@image", image);
                 
-
-                command.CommandText = "INSERT INTO equipe (nomEquipe, idSecteur, image) VALUES(@nom_equipe, @idSecteur, @image)";
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch { }
-
-                conn.Close();
                 donneeEquipe();
                 clearEquipe();
             }
@@ -105,35 +92,21 @@ namespace azur_application.Onglets
 
         private void button_suppr_Click(object sender, EventArgs e)
         {
-            string nom_equipe = input_nom_equipe.Text;
-            string idSecteur = input_idSecteur.Text;
-            string image = input_image.Text;
-            string idEquipe = label_idEquipe.Text;
+            
+            string idEquipe_enregistrer = label_idEquipe.Text;
+            int idEquipe = int.Parse(idEquipe_enregistrer);
 
-            conn.Open();
 
-            MySqlCommand command = conn.CreateCommand();
-            if (String.IsNullOrEmpty(idEquipe))
+
+            if (String.IsNullOrEmpty(idEquipe_enregistrer))
             {
                 
                  MessageBox.Show("Vous devez selectioner une équipe", "Erreur équipe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                 conn.Close();
 
             }
             else
             {
-                command.Parameters.AddWithValue("@idEquipe", idEquipe);
-
-
-
-                command.CommandText = "DELETE FROM equipe WHERE idEquipe=@idEquipe; DELETE FROM equipe_employe WHERE idEquipe=@idEquipe";
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch { }
-
-                conn.Close();
+                equipe.supprimer_equipe(idEquipe);
                 donneeEquipe();
                 clearEquipe();
             }
@@ -152,39 +125,23 @@ namespace azur_application.Onglets
         private void button_modif_Click(object sender, EventArgs e)
         {
             string nom_equipe = input_nom_equipe.Text;
-            string idSecteur = input_idSecteur.Text;
+            string idSecteur_saisi = input_idSecteur.Text;
             string image = input_image.Text;
-            string idEquipe=label_idEquipe.Text;
+            string idEquipe_enregistrer=label_idEquipe.Text;
+            int idEquipe = int.Parse(idEquipe_enregistrer);
+            int idSecteur = int.Parse(idSecteur_saisi);
 
-            conn.Open();
 
-            MySqlCommand command = conn.CreateCommand();
-            if (String.IsNullOrEmpty(idEquipe))
+            if (String.IsNullOrEmpty(idEquipe_enregistrer))
             {
 
                 MessageBox.Show("Vous devez selectioner une équipe", "Erreur équipe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                conn.Close();
 
             }
             else
             {
-            
 
-                command.Parameters.AddWithValue("@nom_equipe", nom_equipe);
-                command.Parameters.AddWithValue("@idSecteur", idSecteur);
-                command.Parameters.AddWithValue("@image", image);
-                command.Parameters.AddWithValue("@idEquipe", idEquipe);
-
-
-
-                command.CommandText = "UPDATE equipe SET nomEquipe=@nom_equipe, idSecteur=@idSecteur, image=@image WHERE idEquipe=@idEquipe";
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch { }
-
-                conn.Close();
+                equipe.modifier_equipe(nom_equipe, idSecteur, image, idEquipe);
                 donneeEquipe();
                 clearEquipe();
             }
@@ -194,20 +151,16 @@ namespace azur_application.Onglets
         {
             
         }
-        public void donneeSecteur()
-        {
-
-            MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@idSecteur", idSecteur);
-
-            command.CommandText = "SELECT idSecteur, nomSecteur FROM secteurs";
-
-
-        }
+        
 
         private void comboBox_secteur_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void ongletEquipe_Load(object sender, EventArgs e)
+        {
+
         }
     }
     

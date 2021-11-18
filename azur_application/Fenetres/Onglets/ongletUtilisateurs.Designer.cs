@@ -257,21 +257,7 @@ namespace azur_application.Onglets
             // 
             // input_idRole
             // 
-            this.input_idRole.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.input_idRole.Depth = 0;
-            this.input_idRole.Hint = "";
-            this.input_idRole.Location = new System.Drawing.Point(824, 105);
-            this.input_idRole.MaxLength = 32767;
-            this.input_idRole.MouseState = MaterialSkin.MouseState.HOVER;
-            this.input_idRole.Name = "input_idRole";
-            this.input_idRole.PasswordChar = '\0';
-            this.input_idRole.SelectedText = "";
-            this.input_idRole.SelectionLength = 0;
-            this.input_idRole.SelectionStart = 0;
-            this.input_idRole.Size = new System.Drawing.Size(187, 28);
-            this.input_idRole.TabIndex = 28;
-            this.input_idRole.TabStop = false;
-            this.input_idRole.UseSystemPasswordChar = false;
+           
             // 
             // label_idRole
             // 
@@ -310,16 +296,7 @@ namespace azur_application.Onglets
             this.label_nom.Size = new System.Drawing.Size(55, 21);
             this.label_nom.TabIndex = 3;
             this.label_nom.Text = "Nom :";
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1002, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 20);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "* : Pas obligatoire";
-            // 
+            
             this.input_nom.Depth = 0;
             this.input_nom.Hint = "";
             this.input_nom.Location = new System.Drawing.Point(98, 22);
@@ -402,7 +379,6 @@ namespace azur_application.Onglets
             this.Controls.Add(this.label_asterisque);
             this.Controls.Add(this.label_erreur);
             this.Controls.Add(this.label_table);
-            this.Controls.Add(this.input_idRole);
             this.Controls.Add(this.label_idRole);
             this.Controls.Add(this.input_poste);
             this.Controls.Add(this.input_mdp);

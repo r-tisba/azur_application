@@ -152,7 +152,7 @@ namespace azur_application.Modeles
             MySqlCommand command = conn.CreateCommand();
 
             command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
-            command.CommandText = "DELETE FROM utilisateurs WHERE idUtilisateur = @idUtilisateur";
+            command.CommandText = "DELETE FROM utilisateurs WHERE idUtilisateur = @idUtilisateur; DELETE FROM equipe_employe WHERE idEmploye = @idUtilisateur";
             command.ExecuteNonQuery();
 
             try
