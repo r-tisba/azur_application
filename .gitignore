@@ -1,2 +1,3 @@
-*.vs
-azur_application/obj/Debug
+.vs
+azur_application/obj/Debug/
+azur_application/bin/Debug/
