@@ -175,9 +175,9 @@ namespace azur_application.Onglets
             this.label_idRole.Location = new System.Drawing.Point(363, 72);
             this.label_idRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_idRole.Name = "label_idRole";
-            this.label_idRole.Size = new System.Drawing.Size(73, 21);
+            this.label_idRole.Size = new System.Drawing.Size(51, 21);
             this.label_idRole.TabIndex = 25;
-            this.label_idRole.Text = "ID Rôle :";
+            this.label_idRole.Text = "Rôle :";
             // 
             // input_prenom
             // 
