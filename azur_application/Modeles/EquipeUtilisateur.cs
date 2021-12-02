@@ -141,7 +141,7 @@ namespace azur_application.Modeles
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
 
-            command = new MySqlCommand("SELECT idEquipe, equipes.nomEquipe, idUtilisateur, utilisateurs.identifiant FROM composition_equipes", conn);
+            command = new MySqlCommand("SELECT idEquipe, equipes.nomEquipe, idUtilisateur, utilisateurs.identifiant FROM composition_equipes LEFT JOIN equipe USING(idEquipe) LEFT JOIN utilisateurs USING(idUtilisateur)", conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(command);
 
             conn.Close();

@@ -135,7 +135,19 @@ namespace azur_application.Modeles
             conn.Close();
             return sda;
         }
+        //Affichage réduit info équipe pour facilité la compréhension dans l'onglet Ajout Utilisateur
 
-        
+        public MySqlDataAdapter recuperationReduiteInfosEquipe()
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT idEquipe, nomEquipe FROM equipes", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(command);
+
+            conn.Close();
+            return sda;
+        }
+
     }
 }
