@@ -16,7 +16,7 @@ namespace azur_application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Connexion());
+            Application.Run(new gestion());
         }
     }
 }

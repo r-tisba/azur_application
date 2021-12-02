@@ -28,7 +28,7 @@ namespace azur_application
 
         private CustomFormBorderStyle cfbs;
         public Connexion()
-        {
+        { 
             InitializeComponent();
             conn.Open();
 
@@ -40,18 +40,6 @@ namespace azur_application
                 MessageBox.Show("Le Verrouill.Maj est ACTIF.");
             }
         }
-
-        /*
-        bool isTopPanelDragged = false;
-        bool isLeftPanelDragged = false;
-        bool isRightPanelDragged = false;
-        bool isBottomPanelDragged = false;
-        bool isTopBorderPanelDragged = false;
-        bool isWindowMaximized = false;
-        Point offset;
-        Size _normalWindowSize;
-        Point _normalWindowLocation = Point.Empty;
-        */
 
         bool exit = true;
 
@@ -146,17 +134,18 @@ namespace azur_application
             string identifiantSaisi = inputIdentifiant.Text;
             string mdpSaisi = inputMdp.Text;
 
+            Color rouge = Color.FromArgb(255, 0, 0);
+            Color vert = Color.FromArgb(0, 128, 0);
 
-            if(String.IsNullOrEmpty(identifiantSaisi))
+
+            if (String.IsNullOrEmpty(identifiantSaisi))
             {
                 message_erreur.Text = "Veuillez saisir un identifiant";
-                Color rouge = Color.FromArgb(255, 0, 0);
                 message_erreur.ForeColor = rouge;
             }
             else if(String.IsNullOrEmpty(mdpSaisi))
             {
                 message_erreur.Text = "Veuillez saisir un mot de passe";
-                Color rouge = Color.FromArgb(255, 0, 0);
                 message_erreur.ForeColor = rouge;
             } 
 
@@ -173,7 +162,6 @@ namespace azur_application
                 catch
                 {
                     message_erreur.Text = "Cet identifiant n'existe pas";
-                    Color rouge = Color.FromArgb(255, 0, 0);
                     message_erreur.ForeColor = rouge;
                 }
                 MySqlDataReader reader = command.ExecuteReader();
@@ -186,7 +174,6 @@ namespace azur_application
                     if (BCrypt.Verify(mdpSaisi, mdp) == false)
                     {
                         message_erreur.Text = "Mot de passe erroné";
-                        Color rouge = Color.FromArgb(255, 0, 0);
                         message_erreur.ForeColor = rouge;
                     }
                     else
@@ -194,18 +181,12 @@ namespace azur_application
                         if (role != "Admin" && role != "SuperAdmin")
                         {
                             message_erreur.Text = "Vous n'êtes pas admin";
-                            Color rouge = Color.FromArgb(255, 0, 0);
                             message_erreur.ForeColor = rouge;
                         }
                         else
                         {
-
                             message_erreur.Text = "Vous êtes connecté";
-                            Color vert = Color.FromArgb(0, 128, 0);
                             message_erreur.ForeColor = vert;
-
-
-
 
                             this.Close();
                             th = new Thread(ouvrirNouvellePage);
