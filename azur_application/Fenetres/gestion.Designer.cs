@@ -66,7 +66,7 @@ namespace azur_application
             this.TopBorderPanel.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.TopBorderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopBorderPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopBorderPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TopBorderPanel.Margin = new System.Windows.Forms.Padding(4);
             this.TopBorderPanel.Name = "TopBorderPanel";
             this.TopBorderPanel.Size = new System.Drawing.Size(1733, 2);
             this.TopBorderPanel.TabIndex = 0;
@@ -80,7 +80,7 @@ namespace azur_application
             this.LeftPanel.Cursor = System.Windows.Forms.Cursors.SizeWE;
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftPanel.Location = new System.Drawing.Point(0, 2);
-            this.LeftPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LeftPanel.Margin = new System.Windows.Forms.Padding(4);
             this.LeftPanel.Name = "LeftPanel";
             this.LeftPanel.Size = new System.Drawing.Size(3, 835);
             this.LeftPanel.TabIndex = 2;
@@ -94,7 +94,7 @@ namespace azur_application
             this.RightPanel.Cursor = System.Windows.Forms.Cursors.SizeWE;
             this.RightPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.RightPanel.Location = new System.Drawing.Point(1730, 2);
-            this.RightPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RightPanel.Margin = new System.Windows.Forms.Padding(4);
             this.RightPanel.Name = "RightPanel";
             this.RightPanel.Size = new System.Drawing.Size(3, 835);
             this.RightPanel.TabIndex = 3;
@@ -108,7 +108,7 @@ namespace azur_application
             this.BottomPanel.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BottomPanel.Location = new System.Drawing.Point(3, 835);
-            this.BottomPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BottomPanel.Margin = new System.Windows.Forms.Padding(4);
             this.BottomPanel.Name = "BottomPanel";
             this.BottomPanel.Size = new System.Drawing.Size(1727, 2);
             this.BottomPanel.TabIndex = 4;
@@ -134,7 +134,7 @@ namespace azur_application
             this._MinButton.Text = "_";
             this._MinButton.TextLocation_X = 5;
             this._MinButton.TextLocation_Y = -14;
-            this.toolTip1.SetToolTip(this._MinButton, "Minimize");
+            this.toolTip1.SetToolTip(this._MinButton, "Minimiser");
             this._MinButton.UseVisualStyleBackColor = true;
             this._MinButton.Click += new System.EventHandler(this._MinButton_Click);
             // 
@@ -156,7 +156,7 @@ namespace azur_application
             this._MaxButton.Text = "_";
             this._MaxButton.TextLocation_X = 7;
             this._MaxButton.TextLocation_Y = 10;
-            this.toolTip1.SetToolTip(this._MaxButton, "Maximise");
+            this.toolTip1.SetToolTip(this._MaxButton, "Plein écran");
             this._MaxButton.UseVisualStyleBackColor = true;
             this._MaxButton.Click += new System.EventHandler(this._MaxButton_Click);
             // 
@@ -169,7 +169,7 @@ namespace azur_application
             this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._CloseButton.ForeColor = System.Drawing.Color.White;
             this._CloseButton.Location = new System.Drawing.Point(1687, 0);
-            this._CloseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._CloseButton.Margin = new System.Windows.Forms.Padding(4);
             this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
             this._CloseButton.Name = "_CloseButton";
@@ -178,7 +178,7 @@ namespace azur_application
             this._CloseButton.Text = "X";
             this._CloseButton.TextLocation_X = 7;
             this._CloseButton.TextLocation_Y = 6;
-            this.toolTip1.SetToolTip(this._CloseButton, "Close");
+            this.toolTip1.SetToolTip(this._CloseButton, "Fermer");
             this._CloseButton.UseVisualStyleBackColor = true;
             this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
@@ -191,7 +191,7 @@ namespace azur_application
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPanel.ForeColor = System.Drawing.SystemColors.Control;
             this.TopPanel.Location = new System.Drawing.Point(3, 2);
-            this.TopPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TopPanel.Margin = new System.Windows.Forms.Padding(4);
             this.TopPanel.Name = "TopPanel";
             this.TopPanel.Size = new System.Drawing.Size(1727, 46);
             this.TopPanel.TabIndex = 7;
@@ -210,7 +210,7 @@ namespace azur_application
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(3, 48);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(267, 787);
             this.panelMenu.TabIndex = 8;
@@ -225,7 +225,7 @@ namespace azur_application
             this.btnParametres.Image = ((System.Drawing.Image)(resources.GetObject("btnParametres.Image")));
             this.btnParametres.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnParametres.Location = new System.Drawing.Point(0, 394);
-            this.btnParametres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnParametres.Margin = new System.Windows.Forms.Padding(4);
             this.btnParametres.Name = "btnParametres";
             this.btnParametres.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnParametres.Size = new System.Drawing.Size(267, 74);
@@ -246,7 +246,7 @@ namespace azur_application
             this.btnStatistiques.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistiques.Image")));
             this.btnStatistiques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStatistiques.Location = new System.Drawing.Point(0, 320);
-            this.btnStatistiques.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatistiques.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatistiques.Name = "btnStatistiques";
             this.btnStatistiques.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnStatistiques.Size = new System.Drawing.Size(267, 74);
@@ -267,7 +267,7 @@ namespace azur_application
             this.btnProjets.Image = ((System.Drawing.Image)(resources.GetObject("btnProjets.Image")));
             this.btnProjets.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProjets.Location = new System.Drawing.Point(0, 246);
-            this.btnProjets.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProjets.Margin = new System.Windows.Forms.Padding(4);
             this.btnProjets.Name = "btnProjets";
             this.btnProjets.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnProjets.Size = new System.Drawing.Size(267, 74);
@@ -288,7 +288,7 @@ namespace azur_application
             this.btnUtilisateurs.Image = ((System.Drawing.Image)(resources.GetObject("btnUtilisateurs.Image")));
             this.btnUtilisateurs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUtilisateurs.Location = new System.Drawing.Point(0, 172);
-            this.btnUtilisateurs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUtilisateurs.Margin = new System.Windows.Forms.Padding(4);
             this.btnUtilisateurs.Name = "btnUtilisateurs";
             this.btnUtilisateurs.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnUtilisateurs.Size = new System.Drawing.Size(267, 74);
@@ -309,7 +309,7 @@ namespace azur_application
             this.btnProfil.Image = ((System.Drawing.Image)(resources.GetObject("btnProfil.Image")));
             this.btnProfil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProfil.Location = new System.Drawing.Point(0, 98);
-            this.btnProfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProfil.Margin = new System.Windows.Forms.Padding(4);
             this.btnProfil.Name = "btnProfil";
             this.btnProfil.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnProfil.Size = new System.Drawing.Size(267, 74);
@@ -327,7 +327,7 @@ namespace azur_application
             this.panelLogo.Controls.Add(this.logo_azur);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(267, 98);
             this.panelLogo.TabIndex = 0;
@@ -348,7 +348,7 @@ namespace azur_application
             // 
             this.logo_azur.Image = ((System.Drawing.Image)(resources.GetObject("logo_azur.Image")));
             this.logo_azur.Location = new System.Drawing.Point(13, 12);
-            this.logo_azur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logo_azur.Margin = new System.Windows.Forms.Padding(4);
             this.logo_azur.Name = "logo_azur";
             this.logo_azur.Size = new System.Drawing.Size(80, 74);
             this.logo_azur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -362,7 +362,7 @@ namespace azur_application
             this.panelTitle.Controls.Add(this.labelTitre);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(270, 48);
-            this.panelTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTitle.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(1460, 98);
             this.panelTitle.TabIndex = 9;
@@ -374,7 +374,7 @@ namespace azur_application
             this.btnCloseChild.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseChild.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseChild.Image")));
             this.btnCloseChild.Location = new System.Drawing.Point(0, 0);
-            this.btnCloseChild.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseChild.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseChild.Name = "btnCloseChild";
             this.btnCloseChild.Size = new System.Drawing.Size(124, 98);
             this.btnCloseChild.TabIndex = 1;
@@ -399,7 +399,7 @@ namespace azur_application
             // 
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(270, 146);
-            this.panelBody.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelBody.Margin = new System.Windows.Forms.Padding(4);
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(1460, 689);
             this.panelBody.TabIndex = 10;
@@ -420,7 +420,7 @@ namespace azur_application
             this.Controls.Add(this.LeftPanel);
             this.Controls.Add(this.TopBorderPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "gestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "gestion";
