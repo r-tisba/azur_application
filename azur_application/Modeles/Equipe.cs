@@ -11,7 +11,6 @@ namespace azur_application.Modeles
     class Equipe
     {
         private int idEquipe;
-        private int idSecteur;
         private string nomEquipe;
         private string image;
 
@@ -20,11 +19,7 @@ namespace azur_application.Modeles
             get { return idEquipe; }
             protected set { idEquipe = value; }
         }
-        public int IdSecteur
-        {
-            get { return idSecteur; }
-            protected set { idSecteur = value; }
-        }
+     
         public string NomEquipe
         {
             get { return nomEquipe; }
@@ -40,17 +35,16 @@ namespace azur_application.Modeles
         MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
         
         //Ajout équipe
-        public bool ajout_equipe(string nomSaisi, string imageSaisi, int idSecteurSaisi)
+        public bool ajout_equipe(string nomSaisi, string imageSaisi)
         {
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@nom_equipe", nomSaisi);
-            command.Parameters.AddWithValue("@idSecteur", idSecteurSaisi);
             command.Parameters.AddWithValue("@image", imageSaisi);
 
 
-            command.CommandText = "INSERT INTO equipes (nomEquipe, idSecteur, image) VALUES(@nom_equipe, @idSecteur, @image)";
+            command.CommandText = "INSERT INTO equipes (nomEquipe, image) VALUES(@nom_equipe, @image)";
             try
             {
                 command.ExecuteNonQuery();
@@ -70,19 +64,18 @@ namespace azur_application.Modeles
 
         //Modifier équipe
 
-        public bool modifier_equipe(string nom_equipe, int idSecteur, string image, int idEquipe)
+        public bool modifier_equipe(string nom_equipe, string image, int idEquipe)
         {
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@nom_equipe", nom_equipe);
-            command.Parameters.AddWithValue("@idSecteur", idSecteur);
             command.Parameters.AddWithValue("@image", image);
             command.Parameters.AddWithValue("@idEquipe", idEquipe);
 
 
 
-            command.CommandText = "UPDATE equipes SET nomEquipe=@nom_equipe, idSecteur=@idSecteur, image=@image WHERE idEquipe=@idEquipe";
+            command.CommandText = "UPDATE equipes SET nomEquipe=@nom_equipe, image=@image WHERE idEquipe=@idEquipe";
            
 
             try
@@ -105,13 +98,14 @@ namespace azur_application.Modeles
         //Supprimer équipe
         public bool supprimer_equipe(int idEquipe)
         {
+            conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idEquipe", idEquipe);
 
 
 
-            command.CommandText = "DELETE FROM equipes WHERE idEquipe=@idEquipe; DELETE FROM equipe_employe WHERE idEquipe=@idEquipe";
+            command.CommandText = "DELETE FROM equipes WHERE idEquipe=@idEquipe; DELETE FROM composition_equipes WHERE idEquipe=@idEquipe";
             try
             {
                 command.ExecuteNonQuery();
@@ -135,11 +129,25 @@ namespace azur_application.Modeles
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
 
-            command = new MySqlCommand("SELECT idEquipe, idSecteur, nomEquipe, image FROM equipes", conn);
+            command = new MySqlCommand("SELECT idEquipe, nomEquipe, image FROM equipes", conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(command);
 
             conn.Close();
             return sda;
         }
+        //Affichage réduit info équipe pour facilité la compréhension dans l'onglet Ajout Utilisateur
+
+        public MySqlDataAdapter recuperationReduiteInfosEquipe()
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT idEquipe, nomEquipe FROM equipes", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(command);
+
+            conn.Close();
+            return sda;
+        }
+
     }
 }

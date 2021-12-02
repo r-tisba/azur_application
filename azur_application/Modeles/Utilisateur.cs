@@ -193,5 +193,17 @@ namespace azur_application.Modeles
             conn.Close();
             return sda;
         }
+        //---------------Récupération réduite info utilisateur pour facilité la lecteur dans Ajout Utilisateur---//
+        public MySqlDataAdapter recuperationReduiteInfosUtilisateur()
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT idUtilisateur, identifiant FROM utilisateurs", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(command);
+
+            conn.Close();
+            return sda;
+        }
     }
 }

@@ -52,7 +52,6 @@ namespace azur_application
             this.message_erreur = new MaterialSkin.Controls.MaterialLabel();
             this.body = new System.Windows.Forms.Panel();
             this.header.SuspendLayout();
-            this.TopPanel.SuspendLayout();
             this.body.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,15 +73,9 @@ namespace azur_application
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(84, 55);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 25);
-
-            this.label1.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(112, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 24);
+            this.label1.Size = new System.Drawing.Size(255, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Connexion vers l\'application";
             // 
@@ -92,15 +85,9 @@ namespace azur_application
             this.label_azur.AutoSize = true;
             this.label_azur.Cursor = System.Windows.Forms.Cursors.Default;
             this.label_azur.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_azur.Location = new System.Drawing.Point(143, 18);
-            this.label_azur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label_azur.Name = "label_azur";
-            this.label_azur.Size = new System.Drawing.Size(98, 36);
-
-            this.label_azur.Font = new System.Drawing.Font("Lato Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_azur.Location = new System.Drawing.Point(191, 22);
             this.label_azur.Name = "label_azur";
-            this.label_azur.Size = new System.Drawing.Size(93, 36);
+            this.label_azur.Size = new System.Drawing.Size(98, 36);
             this.label_azur.TabIndex = 0;
             this.label_azur.Text = "AZUR";
             // 
@@ -121,7 +108,7 @@ namespace azur_application
             this.TopBorderPanel.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.TopBorderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopBorderPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopBorderPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.TopBorderPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TopBorderPanel.Name = "TopBorderPanel";
             this.TopBorderPanel.Size = new System.Drawing.Size(480, 2);
             this.TopBorderPanel.TabIndex = 2;
@@ -174,9 +161,6 @@ namespace azur_application
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-           // this.TopPanel.Controls.Add(this._MaxButton);
-           // this.TopPanel.Controls.Add(this._MinButton);
-//            this.TopPanel.Controls.Add(this._CloseButton);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPanel.Location = new System.Drawing.Point(3, 2);
             this.TopPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -186,74 +170,6 @@ namespace azur_application
             this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
             this.TopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseMove);
             this.TopPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseUp);
-            // 
-
-            // _MaxButton
-            // 
-            this._MaxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._MaxButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this._MaxButton.CFormState = CustomWindowsForm.MinMaxButton.CustomFormState.Normal;
-            this._MaxButton.DisplayText = "_";
-            this._MaxButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._MaxButton.ForeColor = System.Drawing.Color.White;
-            this._MaxButton.Location = new System.Drawing.Point(400, 0);
-            this._MaxButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._MaxButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
-            this._MaxButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
-            this._MaxButton.Name = "_MaxButton";
-            this._MaxButton.Size = new System.Drawing.Size(37, 39);
-            this._MaxButton.TabIndex = 2;
-            this._MaxButton.Text = "minMaxButton";
-            this._MaxButton.TextLocation_X = 7;
-            this._MaxButton.TextLocation_Y = 10;
-//            this.toolTip1.SetToolTip(this._MaxButton, "Maximise");
-            this._MaxButton.UseVisualStyleBackColor = true;
-            this._MaxButton.Click += new System.EventHandler(this._MaxButton_Click);
-            // 
-            // _MinButton
-            // 
-            this._MinButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._MinButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this._MinButton.DisplayText = "_";
-            this._MinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._MinButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold);
-            this._MinButton.ForeColor = System.Drawing.Color.White;
-            this._MinButton.Location = new System.Drawing.Point(363, 0);
-            this._MinButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._MinButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
-            this._MinButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
-            this._MinButton.Name = "_MinButton";
-            this._MinButton.Size = new System.Drawing.Size(37, 39);
-            this._MinButton.TabIndex = 1;
-            this._MinButton.Text = "_";
-            this._MinButton.TextLocation_X = 5;
-            this._MinButton.TextLocation_Y = -14;
-//            this.toolTip1.SetToolTip(this._MinButton, "Minimize");
-            this._MinButton.UseVisualStyleBackColor = true;
-            this._MinButton.Click += new System.EventHandler(this._MinButton_Click);
-            // 
-            // _CloseButton
-            // 
-            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this._CloseButton.DisplayText = "X";
-            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(438, 0);
-            this._CloseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
-            this._CloseButton.Name = "_CloseButton";
-            this._CloseButton.Size = new System.Drawing.Size(37, 39);
-            this._CloseButton.TabIndex = 0;
-            this._CloseButton.Text = "X";
-            this._CloseButton.TextLocation_X = 7;
-            this._CloseButton.TextLocation_Y = 6;
-//            this.toolTip1.SetToolTip(this._CloseButton, "Close");
-            this._CloseButton.UseVisualStyleBackColor = false;
-            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
             // inputIdentifiant
             // 
@@ -268,7 +184,6 @@ namespace azur_application
             this.inputIdentifiant.SelectedText = "";
             this.inputIdentifiant.SelectionLength = 0;
             this.inputIdentifiant.SelectionStart = 0;
-            this.inputIdentifiant.Size = new System.Drawing.Size(238, 28);
             this.inputIdentifiant.Size = new System.Drawing.Size(317, 28);
             this.inputIdentifiant.TabIndex = 8;
             this.inputIdentifiant.TabStop = false;
@@ -304,8 +219,6 @@ namespace azur_application
             this.inputMdp.SelectedText = "";
             this.inputMdp.SelectionLength = 0;
             this.inputMdp.SelectionStart = 0;
-            this.inputMdp.Size = new System.Drawing.Size(238, 28);
-
             this.inputMdp.Size = new System.Drawing.Size(317, 28);
             this.inputMdp.TabIndex = 11;
             this.inputMdp.TabStop = false;
@@ -315,8 +228,6 @@ namespace azur_application
             // 
             this.checkBoxEnregistrer.AutoSize = true;
             this.checkBoxEnregistrer.Depth = 0;
-            this.checkBoxEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBoxEnregistrer.Location = new System.Drawing.Point(63, 229);
             this.checkBoxEnregistrer.Font = new System.Drawing.Font("Roboto", 10F);
             this.checkBoxEnregistrer.Location = new System.Drawing.Point(84, 282);
             this.checkBoxEnregistrer.Margin = new System.Windows.Forms.Padding(0);
@@ -331,56 +242,96 @@ namespace azur_application
             // 
             // labelMdp
             // 
-            this.message_erreur.AutoSize = true;
-            this.message_erreur.Depth = 0;
-            this.message_erreur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.message_erreur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.message_erreur.Location = new System.Drawing.Point(59, 17);
-            this.message_erreur.MouseState = MaterialSkin.MouseState.HOVER;
-            this.message_erreur.Name = "message_erreur";
-            this.message_erreur.Size = new System.Drawing.Size(0, 24);
-            this.message_erreur.TabIndex = 15;
-
             this.labelMdp.AutoSize = true;
             this.labelMdp.Depth = 0;
             this.labelMdp.Font = new System.Drawing.Font("Roboto", 11F);
             this.labelMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelMdp.Location = new System.Drawing.Point(77, 181);
+            this.labelMdp.Location = new System.Drawing.Point(59, 146);
             this.labelMdp.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelMdp.Name = "labelMdp";
             this.labelMdp.Size = new System.Drawing.Size(136, 24);
             this.labelMdp.TabIndex = 13;
             this.labelMdp.Text = "Mot de passe :";
             // 
+            // _MaxButton
+            // 
+            this._MaxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._MaxButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this._MaxButton.CFormState = CustomWindowsForm.MinMaxButton.CustomFormState.Normal;
+            this._MaxButton.DisplayText = "_";
+            this._MaxButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._MaxButton.ForeColor = System.Drawing.Color.White;
+            this._MaxButton.Location = new System.Drawing.Point(301, 0);
+            this._MaxButton.Margin = new System.Windows.Forms.Padding(2);
+            this._MaxButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
+            this._MaxButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
+            this._MaxButton.Name = "_MaxButton";
+            this._MaxButton.Size = new System.Drawing.Size(28, 32);
+            this._MaxButton.TabIndex = 2;
+            this._MaxButton.Text = "minMaxButton";
+            this._MaxButton.TextLocation_X = 7;
+            this._MaxButton.TextLocation_Y = 10;
+            this._MaxButton.UseVisualStyleBackColor = true;
+            this._MaxButton.Click += new System.EventHandler(this._MaxButton_Click);
+            // 
+            // _MinButton
+            // 
+            this._MinButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._MinButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this._MinButton.DisplayText = "_";
+            this._MinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._MinButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold);
+            this._MinButton.ForeColor = System.Drawing.Color.White;
+            this._MinButton.Location = new System.Drawing.Point(273, 0);
+            this._MinButton.Margin = new System.Windows.Forms.Padding(2);
+            this._MinButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
+            this._MinButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
+            this._MinButton.Name = "_MinButton";
+            this._MinButton.Size = new System.Drawing.Size(28, 32);
+            this._MinButton.TabIndex = 1;
+            this._MinButton.Text = "_";
+            this._MinButton.TextLocation_X = 5;
+            this._MinButton.TextLocation_Y = -14;
+            this._MinButton.UseVisualStyleBackColor = true;
+            this._MinButton.Click += new System.EventHandler(this._MinButton_Click);
+            // 
+            // _CloseButton
+            // 
+            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this._CloseButton.DisplayText = "X";
+            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this._CloseButton.ForeColor = System.Drawing.Color.White;
+            this._CloseButton.Location = new System.Drawing.Point(329, 0);
+            this._CloseButton.Margin = new System.Windows.Forms.Padding(2);
+            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(28, 32);
+            this._CloseButton.TabIndex = 0;
+            this._CloseButton.Text = "X";
+            this._CloseButton.TextLocation_X = 7;
+            this._CloseButton.TextLocation_Y = 6;
+            this._CloseButton.UseVisualStyleBackColor = false;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
+            // 
             // labelIdentifiant
             // 
             this.labelIdentifiant.AutoSize = true;
             this.labelIdentifiant.Depth = 0;
-            this.labelIdentifiant.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.labelIdentifiant.Font = new System.Drawing.Font("Roboto", 11F);
             this.labelIdentifiant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelIdentifiant.Location = new System.Drawing.Point(77, 74);
             this.labelIdentifiant.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelIdentifiant.Name = "labelIdentifiant";
-            this.labelIdentifiant.Size = new System.Drawing.Size(98, 24);
-
             this.labelIdentifiant.Size = new System.Drawing.Size(105, 24);
             this.labelIdentifiant.TabIndex = 14;
             this.labelIdentifiant.Text = "Identifiant :";
             // 
             // message_erreur
             // 
-            this.labelMdp.AutoSize = true;
-            this.labelMdp.Depth = 0;
-            this.labelMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.labelMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelMdp.Location = new System.Drawing.Point(58, 147);
-            this.labelMdp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelMdp.MouseState = MaterialSkin.MouseState.HOVER;
-            this.labelMdp.Name = "labelMdp";
-            this.labelMdp.Size = new System.Drawing.Size(133, 24);
-            this.labelMdp.TabIndex = 13;
-            this.labelMdp.Text = "Mot de passe :";
-
             this.message_erreur.AutoSize = true;
             this.message_erreur.Depth = 0;
             this.message_erreur.Font = new System.Drawing.Font("Roboto", 11F);
@@ -408,73 +359,6 @@ namespace azur_application
             this.body.Size = new System.Drawing.Size(475, 457);
             this.body.TabIndex = 13;
             // 
-            // _MaxButton
-            // 
-            this._MaxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._MaxButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this._MaxButton.CFormState = CustomWindowsForm.MinMaxButton.CustomFormState.Normal;
-            this._MaxButton.DisplayText = "_";
-            this._MaxButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._MaxButton.ForeColor = System.Drawing.Color.White;
-            this._MaxButton.Location = new System.Drawing.Point(301, 0);
-            this._MaxButton.Margin = new System.Windows.Forms.Padding(2);
-            this._MaxButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
-            this._MaxButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
-            this._MaxButton.Name = "_MaxButton";
-            this._MaxButton.Size = new System.Drawing.Size(28, 32);
-            this._MaxButton.TabIndex = 2;
-            this._MaxButton.Text = "minMaxButton";
-            this._MaxButton.TextLocation_X = 7;
-            this._MaxButton.TextLocation_Y = 10;
-//            this.toolTip1.SetToolTip(this._MaxButton, "Maximise");
-            this._MaxButton.UseVisualStyleBackColor = true;
-            this._MaxButton.Click += new System.EventHandler(this._MaxButton_Click);
-            // 
-            // _MinButton
-            // 
-            this._MinButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._MinButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this._MinButton.DisplayText = "_";
-            this._MinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._MinButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold);
-            this._MinButton.ForeColor = System.Drawing.Color.White;
-            this._MinButton.Location = new System.Drawing.Point(273, 0);
-            this._MinButton.Margin = new System.Windows.Forms.Padding(2);
-            this._MinButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
-            this._MinButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
-            this._MinButton.Name = "_MinButton";
-            this._MinButton.Size = new System.Drawing.Size(28, 32);
-            this._MinButton.TabIndex = 1;
-            this._MinButton.Text = "_";
-            this._MinButton.TextLocation_X = 5;
-            this._MinButton.TextLocation_Y = -14;
-//            this.toolTip1.SetToolTip(this._MinButton, "Minimize");
-            this._MinButton.UseVisualStyleBackColor = true;
-            this._MinButton.Click += new System.EventHandler(this._MinButton_Click);
-            // 
-            // _CloseButton
-            // 
-            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this._CloseButton.DisplayText = "X";
-            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(329, 0);
-            this._CloseButton.Margin = new System.Windows.Forms.Padding(2);
-            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(180)))));
-            this._CloseButton.Name = "_CloseButton";
-            this._CloseButton.Size = new System.Drawing.Size(28, 32);
-            this._CloseButton.TabIndex = 0;
-            this._CloseButton.Text = "X";
-            this._CloseButton.TextLocation_X = 7;
-            this._CloseButton.TextLocation_Y = 6;
-//            this.toolTip1.SetToolTip(this._CloseButton, "Close");
-            this._CloseButton.UseVisualStyleBackColor = false;
-            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
-            // 
             // Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -496,7 +380,6 @@ namespace azur_application
             this.Load += new System.EventHandler(this.Connexion_Load);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
-            this.TopPanel.ResumeLayout(false);
             this.body.ResumeLayout(false);
             this.body.PerformLayout();
             this.ResumeLayout(false);

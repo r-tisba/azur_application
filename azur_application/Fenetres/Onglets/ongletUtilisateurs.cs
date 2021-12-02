@@ -18,7 +18,7 @@ namespace azur_application.Onglets
     using BCrypt.Net;
     public partial class ongletUtilisateurs : Form
     {
-        MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
+        MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=theodore; pwd=azerty");
         DataTable dt;
 
         int idUtilisateur;
@@ -58,11 +58,14 @@ namespace azur_application.Onglets
         // ------------------------------------ DOUBLECLICK sur DataGrid pour préremplir inputs ------------------------------------
         private void dataGrid_utilisateurs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            idUtilisateur = Convert.ToInt32(dataGrid_utilisateurs.Rows[e.RowIndex].Cells[0].Value.ToString());
-            input_nom.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[1].Value.ToString();
-            input_prenom.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[2].Value.ToString();
-            input_poste.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[4].Value.ToString();
-            input_role.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[5].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                idUtilisateur = Convert.ToInt32(dataGrid_utilisateurs.Rows[e.RowIndex].Cells[0].Value.ToString());
+                input_nom.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[1].Value.ToString();
+                input_prenom.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[2].Value.ToString();
+                input_poste.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[4].Value.ToString();
+                input_role.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[5].Value.ToString();
+            }
         }
 
         // ------------------------------------ AJOUT ------------------------------------
@@ -203,6 +206,9 @@ namespace azur_application.Onglets
             input_role.Text = "";
         }
 
-       
+        private void input_role_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -47,23 +47,15 @@ namespace azur_application.Onglets
         private void creer_equipe_Click(object sender, EventArgs e)
         {
             string nom_equipe = input_nom_equipe.Text;
-            string idSecteur_saisi = input_idSecteur.Text;
-            int idSecteur = int.Parse(idSecteur_saisi);
             string image = input_image.Text;
 
             
-            if(String.IsNullOrEmpty(nom_equipe) || String.IsNullOrEmpty(idSecteur_saisi))
+            if(String.IsNullOrEmpty(nom_equipe))
             {
-                if (String.IsNullOrEmpty(nom_equipe))
-                {
-                    MessageBox.Show("Vous devez donner un nom à l'équipe", "Erreur nom", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                if (String.IsNullOrEmpty(idSecteur_saisi))
-                {
-                    MessageBox.Show("Vous devez donner un idSecteur", "Erreur idSecteur", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-
+            
+                MessageBox.Show("Vous devez donner un nom à l'équipe", "Erreur nom", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                              
+               
             }
             else
             {
@@ -71,7 +63,7 @@ namespace azur_application.Onglets
                 {
                     image = "../icon/equipe.png";
                 }
-                equipe.ajout_equipe(nom_equipe, image, idSecteur);
+                equipe.ajout_equipe(nom_equipe, image);
 
                 
                 donneeEquipe();
@@ -82,7 +74,6 @@ namespace azur_application.Onglets
         public void clearEquipe()
         {
             input_nom_equipe.Text = "";
-            input_idSecteur.Text = "";
             input_image.Text = "";
         }
 
@@ -114,9 +105,8 @@ namespace azur_application.Onglets
             if (e.RowIndex >= 0)
             {
                 label_idEquipe.Text= dataGridView_equipe.Rows[e.RowIndex].Cells[0].Value.ToString();
-                input_idSecteur.Text = dataGridView_equipe.Rows[e.RowIndex].Cells[1].Value.ToString();
-                input_nom_equipe.Text= dataGridView_equipe.Rows[e.RowIndex].Cells[2].Value.ToString();
-                input_image.Text = dataGridView_equipe.Rows[e.RowIndex].Cells[3].Value.ToString();
+                input_nom_equipe.Text= dataGridView_equipe.Rows[e.RowIndex].Cells[1].Value.ToString();
+                input_image.Text = dataGridView_equipe.Rows[e.RowIndex].Cells[2].Value.ToString();
             }
             
 
@@ -125,11 +115,9 @@ namespace azur_application.Onglets
         private void button_modif_Click(object sender, EventArgs e)
         {
             string nom_equipe = input_nom_equipe.Text;
-            string idSecteur_saisi = input_idSecteur.Text;
             string image = input_image.Text;
             string idEquipe_enregistrer=label_idEquipe.Text;
             int idEquipe = int.Parse(idEquipe_enregistrer);
-            int idSecteur = int.Parse(idSecteur_saisi);
 
 
             if (String.IsNullOrEmpty(idEquipe_enregistrer))
@@ -141,25 +129,21 @@ namespace azur_application.Onglets
             else
             {
 
-                equipe.modifier_equipe(nom_equipe, idSecteur, image, idEquipe);
+                equipe.modifier_equipe(nom_equipe, image, idEquipe);
                 donneeEquipe();
                 clearEquipe();
             }
         }
 
-        private void comboBox_secteur_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+        
         
 
-        private void comboBox_secteur_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void ongletEquipe_Load(object sender, EventArgs e)
         {
+            
+
 
         }
     }
