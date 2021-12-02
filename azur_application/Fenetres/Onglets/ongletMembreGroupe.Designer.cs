@@ -41,17 +41,18 @@ namespace azur_application.Onglets
             this.label2 = new System.Windows.Forms.Label();
             this.label_idEmploye = new System.Windows.Forms.Label();
             this.labelIdEquipe = new System.Windows.Forms.Label();
+            this.comboBox_utilisateur = new System.Windows.Forms.ComboBox();
+            this.comboBox_equipe = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_utilisateur_equipe)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView_utilisateur_equipe
             // 
             this.dataGridView_utilisateur_equipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_utilisateur_equipe.Location = new System.Drawing.Point(477, 313);
-            this.dataGridView_utilisateur_equipe.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView_utilisateur_equipe.Location = new System.Drawing.Point(223, 257);
             this.dataGridView_utilisateur_equipe.Name = "dataGridView_utilisateur_equipe";
             this.dataGridView_utilisateur_equipe.RowHeadersWidth = 51;
-            this.dataGridView_utilisateur_equipe.Size = new System.Drawing.Size(604, 380);
+            this.dataGridView_utilisateur_equipe.Size = new System.Drawing.Size(453, 309);
             this.dataGridView_utilisateur_equipe.TabIndex = 22;
             this.dataGridView_utilisateur_equipe.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_utilisateur_equipe_CellDoubleClick);
             // 
@@ -60,10 +61,9 @@ namespace azur_application.Onglets
             this.ajout_utilisateur.BackColor = System.Drawing.Color.Lime;
             this.ajout_utilisateur.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ajout_utilisateur.ForeColor = System.Drawing.Color.FloralWhite;
-            this.ajout_utilisateur.Location = new System.Drawing.Point(1141, 127);
-            this.ajout_utilisateur.Margin = new System.Windows.Forms.Padding(4);
+            this.ajout_utilisateur.Location = new System.Drawing.Point(721, 106);
             this.ajout_utilisateur.Name = "ajout_utilisateur";
-            this.ajout_utilisateur.Size = new System.Drawing.Size(236, 60);
+            this.ajout_utilisateur.Size = new System.Drawing.Size(177, 49);
             this.ajout_utilisateur.TabIndex = 21;
             this.ajout_utilisateur.Text = "Ajouter Utilisateur";
             this.ajout_utilisateur.UseVisualStyleBackColor = false;
@@ -71,26 +71,23 @@ namespace azur_application.Onglets
             // 
             // input_idEquipe
             // 
-            this.input_idEquipe.Location = new System.Drawing.Point(916, 137);
-            this.input_idEquipe.Margin = new System.Windows.Forms.Padding(4);
+            this.input_idEquipe.Location = new System.Drawing.Point(552, 114);
             this.input_idEquipe.Name = "input_idEquipe";
-            this.input_idEquipe.Size = new System.Drawing.Size(132, 22);
+            this.input_idEquipe.Size = new System.Drawing.Size(100, 20);
             this.input_idEquipe.TabIndex = 20;
             // 
             // input_idUtilisateur
             // 
-            this.input_idUtilisateur.Location = new System.Drawing.Point(511, 137);
-            this.input_idUtilisateur.Margin = new System.Windows.Forms.Padding(4);
+            this.input_idUtilisateur.Location = new System.Drawing.Point(248, 114);
             this.input_idUtilisateur.Name = "input_idUtilisateur";
-            this.input_idUtilisateur.Size = new System.Drawing.Size(132, 22);
+            this.input_idUtilisateur.Size = new System.Drawing.Size(100, 20);
             this.input_idUtilisateur.TabIndex = 19;
             // 
             // label_idEquipe
             // 
             this.label_idEquipe.AutoSize = true;
             this.label_idEquipe.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_idEquipe.Location = new System.Drawing.Point(683, 127);
-            this.label_idEquipe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_idEquipe.Location = new System.Drawing.Point(377, 106);
             this.label_idEquipe.Name = "label_idEquipe";
             this.label_idEquipe.Size = new System.Drawing.Size(129, 28);
             this.label_idEquipe.TabIndex = 18;
@@ -100,8 +97,7 @@ namespace azur_application.Onglets
             // 
             this.idUtilisateur.AutoSize = true;
             this.idUtilisateur.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idUtilisateur.Location = new System.Drawing.Point(277, 127);
-            this.idUtilisateur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.idUtilisateur.Location = new System.Drawing.Point(73, 106);
             this.idUtilisateur.Name = "idUtilisateur";
             this.idUtilisateur.Size = new System.Drawing.Size(169, 28);
             this.idUtilisateur.TabIndex = 17;
@@ -111,8 +107,7 @@ namespace azur_application.Onglets
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(273, 55);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(70, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(565, 44);
             this.label1.TabIndex = 16;
@@ -122,10 +117,9 @@ namespace azur_application.Onglets
             // 
             this.button_modifier.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button_modifier.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_modifier.Location = new System.Drawing.Point(1089, 358);
-            this.button_modifier.Margin = new System.Windows.Forms.Padding(4);
+            this.button_modifier.Location = new System.Drawing.Point(682, 294);
             this.button_modifier.Name = "button_modifier";
-            this.button_modifier.Size = new System.Drawing.Size(203, 58);
+            this.button_modifier.Size = new System.Drawing.Size(152, 47);
             this.button_modifier.TabIndex = 23;
             this.button_modifier.Text = "Modifier";
             this.button_modifier.UseVisualStyleBackColor = false;
@@ -136,10 +130,9 @@ namespace azur_application.Onglets
             this.button_supprimer.BackColor = System.Drawing.Color.Crimson;
             this.button_supprimer.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_supprimer.ForeColor = System.Drawing.Color.Transparent;
-            this.button_supprimer.Location = new System.Drawing.Point(1089, 508);
-            this.button_supprimer.Margin = new System.Windows.Forms.Padding(4);
+            this.button_supprimer.Location = new System.Drawing.Point(682, 416);
             this.button_supprimer.Name = "button_supprimer";
-            this.button_supprimer.Size = new System.Drawing.Size(201, 62);
+            this.button_supprimer.Size = new System.Drawing.Size(151, 50);
             this.button_supprimer.TabIndex = 24;
             this.button_supprimer.Text = "Supprimer";
             this.button_supprimer.UseVisualStyleBackColor = false;
@@ -148,8 +141,7 @@ namespace azur_application.Onglets
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(468, 222);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(216, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(426, 38);
             this.label2.TabIndex = 25;
@@ -158,24 +150,44 @@ namespace azur_application.Onglets
             // label_idEmploye
             // 
             this.label_idEmploye.AutoSize = true;
-            this.label_idEmploye.Location = new System.Drawing.Point(303, 201);
+            this.label_idEmploye.Location = new System.Drawing.Point(92, 166);
+            this.label_idEmploye.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_idEmploye.Name = "label_idEmploye";
-            this.label_idEmploye.Size = new System.Drawing.Size(0, 17);
+            this.label_idEmploye.Size = new System.Drawing.Size(0, 15);
             this.label_idEmploye.TabIndex = 26;
             // 
             // labelIdEquipe
             // 
             this.labelIdEquipe.AutoSize = true;
-            this.labelIdEquipe.Location = new System.Drawing.Point(303, 233);
+            this.labelIdEquipe.Location = new System.Drawing.Point(92, 192);
+            this.labelIdEquipe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelIdEquipe.Name = "labelIdEquipe";
-            this.labelIdEquipe.Size = new System.Drawing.Size(0, 17);
+            this.labelIdEquipe.Size = new System.Drawing.Size(0, 15);
             this.labelIdEquipe.TabIndex = 27;
+            // 
+            // comboBox_utilisateur
+            // 
+            this.comboBox_utilisateur.FormattingEnabled = true;
+            this.comboBox_utilisateur.Location = new System.Drawing.Point(248, 151);
+            this.comboBox_utilisateur.Name = "comboBox_utilisateur";
+            this.comboBox_utilisateur.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_utilisateur.TabIndex = 28;
+            // 
+            // comboBox_equipe
+            // 
+            this.comboBox_equipe.FormattingEnabled = true;
+            this.comboBox_equipe.Location = new System.Drawing.Point(531, 151);
+            this.comboBox_equipe.Name = "comboBox_equipe";
+            this.comboBox_equipe.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_equipe.TabIndex = 29;
             // 
             // ongletMembreGroupe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1709, 719);
+            this.ClientSize = new System.Drawing.Size(1282, 584);
+            this.Controls.Add(this.comboBox_equipe);
+            this.Controls.Add(this.comboBox_utilisateur);
             this.Controls.Add(this.labelIdEquipe);
             this.Controls.Add(this.label_idEmploye);
             this.Controls.Add(this.label2);
@@ -188,7 +200,6 @@ namespace azur_application.Onglets
             this.Controls.Add(this.label_idEquipe);
             this.Controls.Add(this.idUtilisateur);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ongletMembreGroupe";
             this.Text = "Utilisateur et Équipe";
             this.Load += new System.EventHandler(this.ongletMembreGroupe_Load);
@@ -212,5 +223,7 @@ namespace azur_application.Onglets
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_idEmploye;
         private System.Windows.Forms.Label labelIdEquipe;
+        private System.Windows.Forms.ComboBox comboBox_utilisateur;
+        private System.Windows.Forms.ComboBox comboBox_equipe;
     }
 }

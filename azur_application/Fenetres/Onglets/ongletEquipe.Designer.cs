@@ -32,7 +32,6 @@ namespace azur_application.Onglets
             this.dataGridView_equipe = new System.Windows.Forms.DataGridView();
             this.label_creer_equipe = new System.Windows.Forms.Label();
             this.nom_equipe = new System.Windows.Forms.Label();
-            this.idSecteur = new System.Windows.Forms.Label();
             this.image = new System.Windows.Forms.Label();
             this.input_nom_equipe = new System.Windows.Forms.TextBox();
             this.input_image = new System.Windows.Forms.TextBox();
@@ -41,8 +40,6 @@ namespace azur_application.Onglets
             this.button_suppr = new System.Windows.Forms.Button();
             this.button_modif = new System.Windows.Forms.Button();
             this.label_idEquipe = new System.Windows.Forms.Label();
-            this.comboBox_secteur = new System.Windows.Forms.ComboBox();
-            this.input_idSecteur = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_equipe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,21 +74,11 @@ namespace azur_application.Onglets
             this.nom_equipe.TabIndex = 3;
             this.nom_equipe.Text = "Nom Équipe :";
             // 
-            // idSecteur
-            // 
-            this.idSecteur.AutoSize = true;
-            this.idSecteur.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idSecteur.Location = new System.Drawing.Point(180, 132);
-            this.idSecteur.Name = "idSecteur";
-            this.idSecteur.Size = new System.Drawing.Size(139, 28);
-            this.idSecteur.TabIndex = 4;
-            this.idSecteur.Text = "idSecteur :";
-            // 
             // image
             // 
             this.image.AutoSize = true;
             this.image.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.image.Location = new System.Drawing.Point(490, 121);
+            this.image.Location = new System.Drawing.Point(180, 152);
             this.image.Name = "image";
             this.image.Size = new System.Drawing.Size(98, 28);
             this.image.TabIndex = 5;
@@ -101,14 +88,14 @@ namespace azur_application.Onglets
             // 
             this.input_nom_equipe.Location = new System.Drawing.Point(352, 102);
             this.input_nom_equipe.Name = "input_nom_equipe";
-            this.input_nom_equipe.Size = new System.Drawing.Size(100, 22);
+            this.input_nom_equipe.Size = new System.Drawing.Size(100, 20);
             this.input_nom_equipe.TabIndex = 6;
             // 
             // input_image
             // 
-            this.input_image.Location = new System.Drawing.Point(594, 128);
+            this.input_image.Location = new System.Drawing.Point(284, 159);
             this.input_image.Name = "input_image";
-            this.input_image.Size = new System.Drawing.Size(100, 22);
+            this.input_image.Size = new System.Drawing.Size(100, 20);
             this.input_image.TabIndex = 8;
             // 
             // creer_equipe
@@ -116,7 +103,7 @@ namespace azur_application.Onglets
             this.creer_equipe.BackColor = System.Drawing.Color.Lime;
             this.creer_equipe.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.creer_equipe.ForeColor = System.Drawing.Color.White;
-            this.creer_equipe.Location = new System.Drawing.Point(737, 115);
+            this.creer_equipe.Location = new System.Drawing.Point(488, 134);
             this.creer_equipe.Name = "creer_equipe";
             this.creer_equipe.Size = new System.Drawing.Size(200, 45);
             this.creer_equipe.TabIndex = 13;
@@ -165,40 +152,20 @@ namespace azur_application.Onglets
             this.label_idEquipe.AutoSize = true;
             this.label_idEquipe.Location = new System.Drawing.Point(13, 5);
             this.label_idEquipe.Name = "label_idEquipe";
-            this.label_idEquipe.Size = new System.Drawing.Size(0, 17);
+            this.label_idEquipe.Size = new System.Drawing.Size(0, 15);
             this.label_idEquipe.TabIndex = 17;
-            // 
-            // comboBox_secteur
-            // 
-            this.comboBox_secteur.FormattingEnabled = true;
-            this.comboBox_secteur.Location = new System.Drawing.Point(185, 178);
-            this.comboBox_secteur.Name = "comboBox_secteur";
-            this.comboBox_secteur.Size = new System.Drawing.Size(121, 24);
-            this.comboBox_secteur.TabIndex = 18;
-            this.comboBox_secteur.SelectedIndexChanged += new System.EventHandler(this.comboBox_secteur_SelectedIndexChanged);
-            this.comboBox_secteur.Click += new System.EventHandler(this.comboBox_secteur_Click);
-            // 
-            // input_idSecteur
-            // 
-            this.input_idSecteur.Location = new System.Drawing.Point(352, 138);
-            this.input_idSecteur.Name = "input_idSecteur";
-            this.input_idSecteur.Size = new System.Drawing.Size(100, 22);
-            this.input_idSecteur.TabIndex = 7;
             // 
             // ongletEquipe
             // 
             this.ClientSize = new System.Drawing.Size(1287, 542);
-            this.Controls.Add(this.comboBox_secteur);
             this.Controls.Add(this.label_idEquipe);
             this.Controls.Add(this.button_modif);
             this.Controls.Add(this.button_suppr);
             this.Controls.Add(this.label_tableau_equipe);
             this.Controls.Add(this.creer_equipe);
             this.Controls.Add(this.input_image);
-            this.Controls.Add(this.input_idSecteur);
             this.Controls.Add(this.input_nom_equipe);
             this.Controls.Add(this.image);
-            this.Controls.Add(this.idSecteur);
             this.Controls.Add(this.nom_equipe);
             this.Controls.Add(this.label_creer_equipe);
             this.Controls.Add(this.dataGridView_equipe);
@@ -217,7 +184,6 @@ namespace azur_application.Onglets
         private System.Windows.Forms.DataGridView dataGridView_equipe;
         private System.Windows.Forms.Label label_creer_equipe;
         private System.Windows.Forms.Label nom_equipe;
-        private System.Windows.Forms.Label idSecteur;
         private System.Windows.Forms.Label image;
         private System.Windows.Forms.TextBox input_nom_equipe;
         private System.Windows.Forms.TextBox input_image;
@@ -226,7 +192,5 @@ namespace azur_application.Onglets
         private System.Windows.Forms.Button button_suppr;
         private System.Windows.Forms.Button button_modif;
         private System.Windows.Forms.Label label_idEquipe;
-        private System.Windows.Forms.ComboBox comboBox_secteur;
-        private System.Windows.Forms.TextBox input_idSecteur;
     }
 }

@@ -80,7 +80,7 @@ namespace azur_application.Onglets
             this.dataGrid_utilisateurs.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -89,7 +89,7 @@ namespace azur_application.Onglets
             this.dataGrid_utilisateurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -137,46 +137,22 @@ namespace azur_application.Onglets
             // 
             // label_table
             // 
-            this.label_mdp.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_mdp.AutoSize = true;
-            this.label_mdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_mdp.Location = new System.Drawing.Point(352, 58);
-            this.label_mdp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_mdp.Name = "label_mdp";
-            this.label_mdp.Size = new System.Drawing.Size(120, 20);
-            this.label_mdp.TabIndex = 19;
-            this.label_mdp.Text = "Mot de passe :";
             this.label_table.AutoSize = true;
-            this.label_table.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_table.Location = new System.Drawing.Point(12, 229);
+            this.label_table.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_table.Location = new System.Drawing.Point(19, 231);
             this.label_table.Name = "label_table";
-            this.label_table.Size = new System.Drawing.Size(254, 36);
+            this.label_table.Size = new System.Drawing.Size(256, 36);
             this.label_table.TabIndex = 29;
             this.label_table.Text = "Table utilisateurs :";
             // 
             // label_erreur
             // 
-            this.input_nom.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.input_nom.Depth = 0;
-            this.input_nom.Hint = "";
-            this.input_nom.Location = new System.Drawing.Point(92, 58);
-            this.input_nom.MaxLength = 32767;
-            this.input_nom.MouseState = MaterialSkin.MouseState.HOVER;
-            this.input_nom.Name = "input_nom";
-            this.input_nom.PasswordChar = '\0';
-            this.input_nom.SelectedText = "";
-            this.input_nom.SelectionLength = 0;
-            this.input_nom.SelectionStart = 0;
-            this.input_nom.Size = new System.Drawing.Size(187, 28);
-            this.input_nom.TabIndex = 21;
-            this.input_nom.TabStop = false;
-            this.input_nom.UseSystemPasswordChar = false;
             this.label_erreur.AutoSize = true;
-            this.label_erreur.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_erreur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_erreur.ForeColor = System.Drawing.Color.Red;
             this.label_erreur.Location = new System.Drawing.Point(14, 9);
             this.label_erreur.Name = "label_erreur";
-            this.label_erreur.Size = new System.Drawing.Size(0, 24);
+            this.label_erreur.Size = new System.Drawing.Size(0, 25);
             this.label_erreur.TabIndex = 31;
             // 
             // label_asterisque
@@ -184,30 +160,30 @@ namespace azur_application.Onglets
             this.label_asterisque.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_asterisque.AutoSize = true;
-            this.label_asterisque.Font = new System.Drawing.Font("Lato Light", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_asterisque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_asterisque.Location = new System.Drawing.Point(916, 12);
             this.label_asterisque.Name = "label_asterisque";
-            this.label_asterisque.Size = new System.Drawing.Size(183, 21);
+            this.label_asterisque.Size = new System.Drawing.Size(188, 20);
             this.label_asterisque.TabIndex = 34;
             this.label_asterisque.Text = "* Uniquement pour ajout";
             // 
             // label_idRole
             // 
-            this.label_idRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_idRole.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_idRole.AutoSize = true;
-            this.label_idRole.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_idRole.Location = new System.Drawing.Point(363, 72);
+            this.label_idRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_idRole.Location = new System.Drawing.Point(445, 120);
             this.label_idRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_idRole.Name = "label_idRole";
-            this.label_idRole.Size = new System.Drawing.Size(73, 21);
+            this.label_idRole.Size = new System.Drawing.Size(81, 20);
             this.label_idRole.TabIndex = 25;
-            this.label_idRole.Text = "ID Rôle :";
+            this.label_idRole.Text = "ID Rôle* :";
             // 
             // input_prenom
             // 
             this.input_prenom.Depth = 0;
             this.input_prenom.Hint = "";
-            this.input_prenom.Location = new System.Drawing.Point(98, 72);
+            this.input_prenom.Location = new System.Drawing.Point(99, 72);
             this.input_prenom.MaxLength = 32767;
             this.input_prenom.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_prenom.Name = "input_prenom";
@@ -220,29 +196,11 @@ namespace azur_application.Onglets
             this.input_prenom.TabStop = false;
             this.input_prenom.UseSystemPasswordChar = false;
             // 
-            // input_mdp
-            // 
-            this.input_mdp.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.input_mdp.Depth = 0;
-            this.input_mdp.Hint = "";
-            this.input_mdp.Location = new System.Drawing.Point(458, 58);
-            this.input_mdp.MaxLength = 32767;
-            this.input_mdp.MouseState = MaterialSkin.MouseState.HOVER;
-            this.input_mdp.Name = "input_mdp";
-            this.input_mdp.PasswordChar = '\0';
-            this.input_mdp.SelectedText = "";
-            this.input_mdp.SelectionLength = 0;
-            this.input_mdp.SelectionStart = 0;
-            this.input_mdp.Size = new System.Drawing.Size(187, 28);
-            this.input_mdp.TabIndex = 23;
-            this.input_mdp.TabStop = false;
-            this.input_mdp.UseSystemPasswordChar = false;
-            // 
             // input_poste
             // 
             this.input_poste.Depth = 0;
             this.input_poste.Hint = "";
-            this.input_poste.Location = new System.Drawing.Point(98, 120);
+            this.input_poste.Location = new System.Drawing.Point(99, 120);
             this.input_poste.MaxLength = 32767;
             this.input_poste.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_poste.Name = "input_poste";
@@ -255,51 +213,42 @@ namespace azur_application.Onglets
             this.input_poste.TabStop = false;
             this.input_poste.UseSystemPasswordChar = false;
             // 
-            // input_idRole
+            // input_role
             // 
-           
+            this.input_role.Location = new System.Drawing.Point(533, 120);
+            this.input_role.Name = "input_role";
+            this.input_role.Size = new System.Drawing.Size(121, 28);
+            this.input_role.TabIndex = 24;
+            this.input_role.SelectedIndexChanged += new System.EventHandler(this.input_role_SelectedIndexChanged);
             // 
-            // label_idRole
-            // 
-            this.label_idRole.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_idRole.AutoSize = true;
-            this.label_idRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_idRole.Location = new System.Drawing.Point(755, 105);
-            this.label_idRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_idRole.Name = "label_idRole";
-            this.label_idRole.Size = new System.Drawing.Size(81, 20);
-            this.label_idRole.TabIndex = 25;
-            this.label_idRole.Text = "ID Rôle* :";
+            // label_prenom
             // 
             this.label_prenom.AutoSize = true;
-            this.label_prenom.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_prenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_prenom.Location = new System.Drawing.Point(15, 72);
             this.label_prenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_prenom.Name = "label_prenom";
-            this.label_prenom.Size = new System.Drawing.Size(76, 21);
+            this.label_prenom.Size = new System.Drawing.Size(77, 20);
             this.label_prenom.TabIndex = 7;
             this.label_prenom.Text = "Prénom :";
             // 
-            this.label_table.AutoSize = true;
-            this.label_table.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_table.Location = new System.Drawing.Point(19, 181);
-            this.label_table.Name = "label_table";
-            this.label_table.Size = new System.Drawing.Size(256, 36);
-            this.label_table.TabIndex = 29;
-            this.label_table.Text = "Table utilisateurs :";
+            // label_nom
             // 
             this.label_nom.AutoSize = true;
-            this.label_nom.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_nom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_nom.Location = new System.Drawing.Point(36, 22);
             this.label_nom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_nom.Name = "label_nom";
-            this.label_nom.Size = new System.Drawing.Size(55, 21);
+            this.label_nom.Size = new System.Drawing.Size(54, 20);
             this.label_nom.TabIndex = 3;
             this.label_nom.Text = "Nom :";
-            
+            // 
+            // input_nom
+            // 
+            this.input_nom.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.input_nom.Depth = 0;
             this.input_nom.Hint = "";
-            this.input_nom.Location = new System.Drawing.Point(98, 22);
+            this.input_nom.Location = new System.Drawing.Point(97, 22);
             this.input_nom.MaxLength = 32767;
             this.input_nom.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_nom.Name = "input_nom";
@@ -316,22 +265,22 @@ namespace azur_application.Onglets
             // 
             this.label_mdp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_mdp.AutoSize = true;
-            this.label_mdp.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_mdp.Location = new System.Drawing.Point(311, 22);
+            this.label_mdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_mdp.Location = new System.Drawing.Point(371, 56);
             this.label_mdp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_mdp.Name = "label_mdp";
-            this.label_mdp.Size = new System.Drawing.Size(125, 21);
+            this.label_mdp.Size = new System.Drawing.Size(126, 20);
             this.label_mdp.TabIndex = 19;
             this.label_mdp.Text = "Mot de passe* :";
             // 
             // label_poste
             // 
             this.label_poste.AutoSize = true;
-            this.label_poste.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_poste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_poste.Location = new System.Drawing.Point(31, 120);
             this.label_poste.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_poste.Name = "label_poste";
-            this.label_poste.Size = new System.Drawing.Size(60, 21);
+            this.label_poste.Size = new System.Drawing.Size(62, 20);
             this.label_poste.TabIndex = 9;
             this.label_poste.Text = "Poste :";
             // 
@@ -340,7 +289,7 @@ namespace azur_application.Onglets
             this.input_mdp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.input_mdp.Depth = 0;
             this.input_mdp.Hint = "";
-            this.input_mdp.Location = new System.Drawing.Point(443, 22);
+            this.input_mdp.Location = new System.Drawing.Point(503, 56);
             this.input_mdp.MaxLength = 32767;
             this.input_mdp.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_mdp.Name = "input_mdp";
@@ -355,36 +304,30 @@ namespace azur_application.Onglets
             // 
             // panel_input1
             // 
-            this.panel_input1.Controls.Add(this.input_mdp);
             this.panel_input1.Controls.Add(this.label_poste);
-            this.panel_input1.Controls.Add(this.label_mdp);
-            this.panel_input1.Controls.Add(this.input_nom);
             this.panel_input1.Controls.Add(this.label_nom);
             this.panel_input1.Controls.Add(this.label_prenom);
             this.panel_input1.Controls.Add(this.input_role);
+            this.panel_input1.Controls.Add(this.input_mdp);
             this.panel_input1.Controls.Add(this.input_poste);
-            this.panel_input1.Controls.Add(this.input_prenom);
+            this.panel_input1.Controls.Add(this.label_mdp);
             this.panel_input1.Controls.Add(this.label_idRole);
-            this.panel_input1.Location = new System.Drawing.Point(18, 41);
+            this.panel_input1.Controls.Add(this.input_prenom);
+            this.panel_input1.Controls.Add(this.input_nom);
+            this.panel_input1.Location = new System.Drawing.Point(25, 39);
             this.panel_input1.Name = "panel_input1";
             this.panel_input1.Size = new System.Drawing.Size(671, 172);
             this.panel_input1.TabIndex = 35;
             // 
             // ongletUtilisateurs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 495);
             this.Controls.Add(this.panel_input1);
             this.Controls.Add(this.label_asterisque);
             this.Controls.Add(this.label_erreur);
             this.Controls.Add(this.label_table);
-            this.Controls.Add(this.label_idRole);
-            this.Controls.Add(this.input_poste);
-            this.Controls.Add(this.input_mdp);
-            this.Controls.Add(this.input_prenom);
-            this.Controls.Add(this.input_nom);
-            this.Controls.Add(this.label_mdp);
             this.Controls.Add(this.btn_supprimer);
             this.Controls.Add(this.btn_modifier);
             this.Controls.Add(this.dataGrid_utilisateurs);

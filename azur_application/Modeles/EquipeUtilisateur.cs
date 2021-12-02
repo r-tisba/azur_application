@@ -10,7 +10,7 @@ namespace azur_application.Modeles
 {
     class EquipeUtilisateur
     {
-        private int idEmploye;
+        private int idUtilisateur;
         private int idEquipe;
 
         public int IdEquipe
@@ -18,10 +18,10 @@ namespace azur_application.Modeles
             get { return idEquipe; }
             protected set { idEquipe = value; }
         }
-        public int IdEmploye
+        public int IdUtilisateur
         {
-            get { return idEmploye; }
-            protected set { idEmploye = value; }
+            get { return idUtilisateur; }
+            protected set { idUtilisateur = value; }
         }
 
         //partie MySQL
@@ -36,7 +36,7 @@ namespace azur_application.Modeles
             command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
             command.Parameters.AddWithValue("@idEquipe", idEquipe);
 
-            command.CommandText = "INSERT INTO composition_equipes (idEmploye, idEquipe) VALUES(@idUtilisateur, @idEquipe)";
+            command.CommandText = "INSERT INTO composition_equipes (idUtilisateur, idEquipe) VALUES(@idUtilisateur, @idEquipe)";
             try
             {
                 command.ExecuteNonQuery();
@@ -52,18 +52,17 @@ namespace azur_application.Modeles
         }
 
         //Modifier équipe utilisateur
-        public bool modifier_utilisateur_equipe(int idEquipe, int idUtilisateur, int idEmploye, int labelIdEquipe)
+        public bool modifier_utilisateur_equipe(int idEquipe, int idUtilisateur, int labelIdEquipe)
         {
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
             command.Parameters.AddWithValue("@idEquipe", idEquipe);
-            command.Parameters.AddWithValue("@idEmploye", idEmploye);
+            command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
             command.Parameters.AddWithValue("@labelIdEquipe", labelIdEquipe);
 
 
-            command.CommandText = "UPDATE composition_equipes SET idEquipe=@idEquipe, idEmploye=@idUtilisateur WHERE idEmploye=@idEmploye AND WHERE=@labelIdEquipe";
+            command.CommandText = "UPDATE composition_equipes SET idEquipe=@idEquipe, idUtilisateur=@idUtilisateur WHERE idUtilisateur=@idUtilisateur AND WHERE=@labelIdEquipe";
 
 
             try
@@ -79,15 +78,15 @@ namespace azur_application.Modeles
 
             }
         }
-        public bool supprimer_utilisateur_equipe(int idEmploye, int labelIdEquipe)
+        public bool supprimer_utilisateur_equipe(int idUtilisateur, int labelIdEquipe)
         {
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@idEmploye", idEmploye);
+            command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
             command.Parameters.AddWithValue("@labelIdEquipe", labelIdEquipe);
 
-            command.CommandText = "DELETE FROM composition_equipes WHERE idEmploye=@idEmploye AND idEquipe=@labelIdEquipe";
+            command.CommandText = "DELETE FROM composition_equipes WHERE idUtilisateur=@idUtilisateur AND idEquipe=@labelIdEquipe";
 
 
             try
@@ -102,6 +101,51 @@ namespace azur_application.Modeles
                 return false;
 
             }
+        }
+        public MySqlDataAdapter donneeCompo()
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT idEquipe, idUtilisateur, utilisateurs.identifiant, equipes.nomEquipe FROM composition_equipes LEFT JOIN utilisateurs USING(idUtilisateur) LEFT JOIN equipes USING(idEquipe)", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(command);
+
+            conn.Close();
+            return sda;
+        }
+
+        public MySqlDataAdapter liste_utilisateurs()
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT identifiant FROM utilisateurs", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(command);
+
+            conn.Close();
+            return sda;
+        }
+        public MySqlDataAdapter liste_equipes()
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT nomEquipe FROM equipes", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(command);
+
+            conn.Close();
+            return sda;
+        }
+        public MySqlDataAdapter liste_composition_equipe()
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT idEquipe, equipes.nomEquipe, idUtilisateur, utilisateurs.identifiant FROM composition_equipes", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(command);
+
+            conn.Close();
+            return sda;
         }
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CustomWindowsForm;
+using System.Threading;
 using MySql.Data.MySqlClient;
 using azur_application.Modeles;
 using azur_application.Services;
@@ -17,7 +19,6 @@ namespace azur_application.Onglets
     public partial class ongletMembreGroupe : Form
     {
         MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
-        MySqlDataAdapter adpt;
         DataTable dt;
 
         EquipeUtilisateur equipe_utilisateur = new EquipeUtilisateur();
@@ -29,19 +30,23 @@ namespace azur_application.Onglets
 
         private void ongletMembreGroupe_Load(object sender, EventArgs e)
         {
-
+            DataTable dt = new DataTable();
+            equipe_utilisateur.liste_composition_equipe().Fill(dt);
+            comboBox_equipe.ValueMember = "nomEquipe";
+            comboBox_equipe.DataSource = dt;
+            DataTable t = new DataTable();
+            equipe_utilisateur.liste_composition_equipe().Fill(t);
+            comboBox_utilisateur.ValueMember = "identifiant";
+            comboBox_utilisateur.DataSource = t;
         }
         //Affichage des des utilisateur et de leur groupe
         public void donneeUtilisateurEquipe()
         {
-            conn.Open();
-            adpt = new MySqlDataAdapter("SELECT idEquipe, idEmploye, utilisateurs.identifiant, equipe.nomEquipe FROM composition_equipes LEFT JOIN utilisateurs USING(idEmploye) LEFT JOIN equipe USING(idEquipe) ", conn);
             dt = new DataTable();
-            adpt.Fill(dt);
+            equipe_utilisateur.donneeCompo().Fill(dt);
             dataGridView_utilisateur_equipe.DataSource = dt;
-            this.dataGridView_utilisateur_equipe.Sort(this.dataGridView_utilisateur_equipe.Columns["idEquipe"], ListSortDirection.Ascending);
+            //this.dataGridView_utilisateur_equipe.Sort(this.dataGridView_utilisateur_equipe.Columns["idEquipe"], ListSortDirection.Ascending);
 
-            conn.Close();
         }
 
         //Ajout d'un utilisateur dans un groupe
@@ -62,7 +67,6 @@ namespace azur_application.Onglets
                 if (String.IsNullOrEmpty(idUtilisateur_saisi))
                 {
                     MessageBox.Show("Vous devez donner un idUtilisateur", "Erreur idUtilisateur", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                 }
                 if (String.IsNullOrEmpty(idEquipe_saisi))
                 {
@@ -140,7 +144,7 @@ namespace azur_application.Onglets
             }
             else
             {
-                equipe_utilisateur.modifier_utilisateur_equipe(idEquipe, idUtilisateur, idEmploye, label_IdEquipe);
+                equipe_utilisateur.modifier_utilisateur_equipe(idEquipe, idUtilisateur, label_IdEquipe);
 
                 
                 donneeUtilisateurEquipe();
