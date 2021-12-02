@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using CustomWindowsForm;
 using MySql.Data.MySqlClient;
-using azur_application.Modeles;
+using System.Web;
 using azur_application.Services;
 
 namespace azur_application
@@ -21,9 +21,14 @@ namespace azur_application
         Thread th;
         MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
 
+        private Button currentButton;
+        private Random random;
+        private int tempIndex;
+        private Form activeForm;
+
         private CustomFormBorderStyle cfbs;
         public Connexion()
-        {
+        { 
             InitializeComponent();
             conn.Open();
 
@@ -32,20 +37,17 @@ namespace azur_application
             // Avertit si CapsLock est activé dans l'input de mdp
             if (Control.IsKeyLocked(Keys.CapsLock))
             {
-                MessageBox.Show("Verr.Maj est activé");
+                MessageBox.Show("Le Verrouill.Maj est ACTIF.");
             }
         }
-        // ------------------------------------ DEPLACEMENT & RESIZE DE LA FENETRE ------------------------------------
+
+        bool exit = true;
+
+        // ------------------------------ DEPLACEMENT & RESIZE DE LA FENETRE ------------------------------
         private void Connexion_Load(object sender, EventArgs e)
         {
             cfbs = new CustomFormBorderStyle(this, _MaxButton, _MinButton, _CloseButton);
         }
-
-        private void gestion_Load(object sender, EventArgs e)
-        {
-            cfbs = new CustomFormBorderStyle(this, _MaxButton, _MinButton, _CloseButton);
-        }
-
         private void TopBorderPanel_MouseMove(object sender, MouseEventArgs e)
         {
             cfbs.TopBorderPanel_MouseMove(sender, e);
@@ -111,7 +113,7 @@ namespace azur_application
             cfbs.BottomPanel_MouseDown(sender, e);
         }
 
-        // ------------------------------------ BOUTONS MIN, MAX, CLOSE ------------------------------------
+        // ------------------------------ BOUTONS MIN, MAX, CLOSE ------------------------------
         private void _MinButton_Click(object sender, EventArgs e)
         {
             cfbs._MinButton_Click(sender, e);
@@ -126,6 +128,7 @@ namespace azur_application
         }
 
         // ------------------------------ BOUTON CONNEXION, VERIFICATION CONFORMITE ------------------------------
+
         private void boutonConnexion_Click(object sender, EventArgs e)
         {
             string identifiantSaisi = inputIdentifiant.Text;
@@ -133,6 +136,7 @@ namespace azur_application
 
             Color rouge = Color.FromArgb(255, 0, 0);
             Color vert = Color.FromArgb(0, 128, 0);
+
 
             if (String.IsNullOrEmpty(identifiantSaisi))
             {
@@ -144,26 +148,37 @@ namespace azur_application
                 message_erreur.Text = "Veuillez saisir un mot de passe";
                 message_erreur.ForeColor = rouge;
             } 
+
             else
             {
-                Utilisateur user = new Utilisateur();
+                MySqlCommand command = conn.CreateCommand();
 
-                if (user.recupererInfosConnexion(identifiantSaisi) == false)
+                command.Parameters.AddWithValue("@identifiantSaisi", identifiantSaisi);
+                command.CommandText = "SELECT mdp, role FROM utilisateurs WHERE identifiant = @identifiantSaisi";
+                try
+                {
+                    conn.Open();
+                }
+                catch
                 {
                     message_erreur.Text = "Cet identifiant n'existe pas";
                     message_erreur.ForeColor = rouge;
                 }
-                else
-                { 
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    string mdp = reader.GetString(0);
+                    string role = reader.GetString(1);
+
                     // Renvoi booléen
-                    if (BCrypt.Verify(mdpSaisi, user.Mdp) == false)
+                    if (BCrypt.Verify(mdpSaisi, mdp) == false)
                     {
                         message_erreur.Text = "Mot de passe erroné";
                         message_erreur.ForeColor = rouge;
                     }
                     else
                     {
-                        if (user.Role != "Admin" && user.Role != "SuperAdmin")
+                        if (role != "Admin" && role != "SuperAdmin")
                         {
                             message_erreur.Text = "Vous n'êtes pas admin";
                             message_erreur.ForeColor = rouge;
@@ -183,12 +198,14 @@ namespace azur_application
                             gestion gest = new gestion();
                             gest.ShowDialog();
                             */
+
                         }
                     }
                 }
                 conn.Close();
             }
         }
+
         private void ouvrirNouvellePage()
         {
             Application.Run(new gestion());

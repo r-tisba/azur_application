@@ -80,22 +80,18 @@ namespace azur_application.Onglets
 
             if (String.IsNullOrEmpty(nomSaisi) || String.IsNullOrEmpty(prenomSaisi) || String.IsNullOrEmpty(mdpSaisi) || String.IsNullOrEmpty(posteSaisi))
             {
-                if (String.IsNullOrEmpty(posteSaisi))
-                {
-                    label_erreur.Text = "Le champ 'Poste' est obligatoire";
-                }
-                if (String.IsNullOrEmpty(mdpSaisi))
-                {
-                    label_erreur.Text = "Le champ 'Mot de passe' est obligatoire";
-                }
-                if (String.IsNullOrEmpty(prenomSaisi))
-                {
-                    label_erreur.Text = "Le champ 'Prénom' est obligatoire";
-                }
-                if (String.IsNullOrEmpty(nomSaisi))
-                {
-                    label_erreur.Text = "Le champ 'Nom' est obligatoire";
-                }
+                if (String.IsNullOrEmpty(posteSaisi)) { label_erreur.Text = "Le champ 'Poste' est obligatoire"; }
+                if (String.IsNullOrEmpty(mdpSaisi)) { label_erreur.Text = "Le champ 'Mot de passe' est obligatoire"; }
+                if (String.IsNullOrEmpty(prenomSaisi)) { label_erreur.Text = "Le champ 'Prénom' est obligatoire"; }
+                if (String.IsNullOrEmpty(nomSaisi)) { label_erreur.Text = "Le champ 'Nom' est obligatoire"; }
+                conn.Close();
+            }
+            else if(mdpSaisi.Length < 8 || !mdpSaisi.Any(char.IsDigit) || !mdpSaisi.Any(char.IsUpper))
+            {
+                // Verif conformité du mot de passe
+                if (mdpSaisi.Length < 8) { label_erreur.Text = "Le mot de passe doit contenir au minimum 8 caracatères"; }
+                if(!mdpSaisi.Any(char.IsDigit)) { label_erreur.Text = "Le mot de passe doit contenir au moins un chiffre"; }
+                if(!mdpSaisi.Any(char.IsUpper)) { label_erreur.Text = "Le mot de passe doit contenir au moins une majuscule"; }
                 conn.Close();
             }
             else
@@ -151,7 +147,6 @@ namespace azur_application.Onglets
             }
             else
             {
-                // Oui cette condition est stupide mais ça marche (vide != null)
                 if (String.IsNullOrEmpty(roleSaisi))
                 {
                     roleSaisi = "Utilisateur";
@@ -176,7 +171,6 @@ namespace azur_application.Onglets
         // ------------------------------------ SUPPRIMER ------------------------------------
         private void btn_supprimer_Click(object sender, EventArgs e)
         {
-
             Utilisateur user = new Utilisateur();
 
             if (user.supprimerUtilisateur(idUtilisateur) == true)
