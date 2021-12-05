@@ -30,7 +30,7 @@ namespace azur_application.Onglets
             InitializeComponent();
             donneeEquipe();
         }
-        
+        int idEquipe = 0;
         //Affichage des équipe dans un tableau
         public void donneeEquipe()
         {
@@ -75,20 +75,18 @@ namespace azur_application.Onglets
         {
             input_nom_equipe.Text = "";
             input_image.Text = "";
+            idEquipe = 0;
         }
 
         private void button_suppr_Click(object sender, EventArgs e)
         {
-            
-            string idEquipe_enregistrer = label_idEquipe.Text;
-            int idEquipe = int.Parse(idEquipe_enregistrer);
 
 
 
-            if (String.IsNullOrEmpty(idEquipe_enregistrer))
+            if (idEquipe == 0)
             {
-                
-                 MessageBox.Show("Vous devez selectioner une équipe", "Erreur équipe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                MessageBox.Show("Vous devez selectioner une équipe", "Erreur équipe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
             else
@@ -104,7 +102,7 @@ namespace azur_application.Onglets
         {
             if (e.RowIndex >= 0)
             {
-                label_idEquipe.Text= dataGridView_equipe.Rows[e.RowIndex].Cells[0].Value.ToString();
+                idEquipe = int.Parse(dataGridView_equipe.Rows[e.RowIndex].Cells[0].Value.ToString());
                 input_nom_equipe.Text= dataGridView_equipe.Rows[e.RowIndex].Cells[1].Value.ToString();
                 input_image.Text = dataGridView_equipe.Rows[e.RowIndex].Cells[2].Value.ToString();
             }
@@ -116,14 +114,13 @@ namespace azur_application.Onglets
         {
             string nom_equipe = input_nom_equipe.Text;
             string image = input_image.Text;
-            string idEquipe_enregistrer=label_idEquipe.Text;
-            int idEquipe = int.Parse(idEquipe_enregistrer);
+            
 
 
-            if (String.IsNullOrEmpty(idEquipe_enregistrer))
+            if (idEquipe==0 || String.IsNullOrEmpty(nom_equipe))
             {
 
-                MessageBox.Show("Vous devez selectioner une équipe", "Erreur équipe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Vous devez selectioner une équipe et ne pas rendre vide le champ Nom Équipe", "Erreur équipe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
             else

@@ -39,7 +39,6 @@ namespace azur_application.Onglets
             this.label_tableau_equipe = new System.Windows.Forms.Label();
             this.button_suppr = new System.Windows.Forms.Button();
             this.button_modif = new System.Windows.Forms.Button();
-            this.label_idEquipe = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_equipe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +58,7 @@ namespace azur_application.Onglets
             this.label_creer_equipe.Font = new System.Drawing.Font("Arial Narrow", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_creer_equipe.Location = new System.Drawing.Point(25, 25);
             this.label_creer_equipe.Name = "label_creer_equipe";
-            this.label_creer_equipe.Size = new System.Drawing.Size(268, 52);
+            this.label_creer_equipe.Size = new System.Drawing.Size(216, 42);
             this.label_creer_equipe.TabIndex = 1;
             this.label_creer_equipe.Text = "Créer Équipe :";
             // 
@@ -70,7 +69,7 @@ namespace azur_application.Onglets
             this.nom_equipe.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nom_equipe.Location = new System.Drawing.Point(180, 94);
             this.nom_equipe.Name = "nom_equipe";
-            this.nom_equipe.Size = new System.Drawing.Size(166, 28);
+            this.nom_equipe.Size = new System.Drawing.Size(132, 22);
             this.nom_equipe.TabIndex = 3;
             this.nom_equipe.Text = "Nom Équipe :";
             // 
@@ -80,7 +79,7 @@ namespace azur_application.Onglets
             this.image.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.image.Location = new System.Drawing.Point(180, 152);
             this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(98, 28);
+            this.image.Size = new System.Drawing.Size(78, 22);
             this.image.TabIndex = 5;
             this.image.Text = "Image :";
             // 
@@ -117,7 +116,7 @@ namespace azur_application.Onglets
             this.label_tableau_equipe.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_tableau_equipe.Location = new System.Drawing.Point(401, 216);
             this.label_tableau_equipe.Name = "label_tableau_equipe";
-            this.label_tableau_equipe.Size = new System.Drawing.Size(287, 38);
+            this.label_tableau_equipe.Size = new System.Drawing.Size(233, 32);
             this.label_tableau_equipe.TabIndex = 14;
             this.label_tableau_equipe.Text = "Tableau Équipe :";
             // 
@@ -147,18 +146,9 @@ namespace azur_application.Onglets
             this.button_modif.UseVisualStyleBackColor = false;
             this.button_modif.Click += new System.EventHandler(this.button_modif_Click);
             // 
-            // label_idEquipe
-            // 
-            this.label_idEquipe.AutoSize = true;
-            this.label_idEquipe.Location = new System.Drawing.Point(13, 5);
-            this.label_idEquipe.Name = "label_idEquipe";
-            this.label_idEquipe.Size = new System.Drawing.Size(0, 15);
-            this.label_idEquipe.TabIndex = 17;
-            // 
             // ongletEquipe
             // 
             this.ClientSize = new System.Drawing.Size(1287, 542);
-            this.Controls.Add(this.label_idEquipe);
             this.Controls.Add(this.button_modif);
             this.Controls.Add(this.button_suppr);
             this.Controls.Add(this.label_tableau_equipe);
@@ -191,6 +181,5 @@ namespace azur_application.Onglets
         private System.Windows.Forms.Label label_tableau_equipe;
         private System.Windows.Forms.Button button_suppr;
         private System.Windows.Forms.Button button_modif;
-        private System.Windows.Forms.Label label_idEquipe;
     }
 }

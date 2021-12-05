@@ -147,12 +147,6 @@
     <Compile Include="Fenetres\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fenetres\Onglets\ongletAjoutUtilisateurEquipe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Fenetres\Onglets\ongletAjoutUtilisateurEquipe.Designer.cs">
-      <DependentUpon>ongletAjoutUtilisateurEquipe.cs</DependentUpon>
-    </Compile>
     <Compile Include="MinMaxButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -199,9 +193,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fenetres\login.resx">
       <DependentUpon>login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Fenetres\Onglets\ongletAjoutUtilisateurEquipe.resx">
-      <DependentUpon>ongletAjoutUtilisateurEquipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fenetres\Onglets\ongletMembreGroupe.resx">
       <DependentUpon>ongletMembreGroupe.cs</DependentUpon>

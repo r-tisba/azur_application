@@ -35,6 +35,7 @@ namespace azur_application.Modeles
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
             command.Parameters.AddWithValue("@idEquipe", idEquipe);
+            
 
             command.CommandText = "INSERT INTO composition_equipes (idUtilisateur, idEquipe) VALUES(@idUtilisateur, @idEquipe)";
             try
@@ -146,6 +147,32 @@ namespace azur_application.Modeles
 
             conn.Close();
             return sda;
+        }
+        public bool verif_compos(int idEquipe, int idUtilisateur)
+        {
+            conn.Open();
+
+            MySqlCommand command = conn.CreateCommand();
+            command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
+            command.Parameters.AddWithValue("@idEquipe", idEquipe);
+            command.CommandText = "SELECT idEquipe, idUtilisateur FROM composition_equipes WHERE idEquipe=@idEquipe AND idUtilisateur=@idUtilisateur";
+            MySqlDataReader reader = command.ExecuteReader();
+            
+            if (reader.HasRows)
+            {
+                reader.Close();
+                conn.Close();
+                return false;
+                
+            }
+            else
+            {
+                reader.Close();
+                conn.Close();
+                return true;
+                
+            }
+            
         }
     }
 }
