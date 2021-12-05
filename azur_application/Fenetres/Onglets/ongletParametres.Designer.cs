@@ -1,5 +1,5 @@
 ﻿
-namespace azur_application.Onglets
+namespace azur_application.Fenetres.Onglets
 {
     partial class ongletParametres
     {

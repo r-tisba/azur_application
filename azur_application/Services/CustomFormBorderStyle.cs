@@ -28,11 +28,11 @@ namespace azur_application.Services
 
         Control TopPanel;
         MinMaxButton _MaxButton;
-        
+
         public CustomFormBorderStyle(Form form, MinMaxButton maxButton, ButtonZ minButton, ButtonZ closeButton)
         {
             this.form = form;
-            
+
             foreach (Control ctrl in form.Controls)
             {
                 if (ctrl.Name == "TopPanel")
@@ -99,7 +99,7 @@ namespace azur_application.Services
                 }
             }
         }
-        
+
         public void TopPanel_MouseUp(object sender, MouseEventArgs e)
         {
             isTopPanelDragged = false;
@@ -138,7 +138,7 @@ namespace azur_application.Services
                 _MaxButton_Click(sender, e);
             }
         }
-        
+
         public void LeftPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.X < form.Location.X)

@@ -78,6 +78,7 @@ namespace azur_application.Modeles
                 Mdp = reader.GetString(0);
                 Role = reader.GetString(1);
             }
+            conn.Close();
             if(string.IsNullOrEmpty(mdp) || string.IsNullOrEmpty(role))
             {
                 return false;
@@ -87,7 +88,6 @@ namespace azur_application.Modeles
                 return true;
             }
 
-            conn.Close();
         }
 
         // ------------------------------------ AJOUTER ------------------------------------
@@ -152,7 +152,7 @@ namespace azur_application.Modeles
             MySqlCommand command = conn.CreateCommand();
 
             command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
-            command.CommandText = "DELETE FROM utilisateurs WHERE idUtilisateur = @idUtilisateur";
+            command.CommandText = "DELETE FROM utilisateurs WHERE idUtilisateur = @idUtilisateur; DELETE FROM equipe_employe WHERE idEmploye = @idUtilisateur";
             command.ExecuteNonQuery();
 
             try
@@ -188,6 +188,18 @@ namespace azur_application.Modeles
             MySqlCommand command = conn.CreateCommand();
 
             command = new MySqlCommand("SELECT idUtilisateur, nom, prenom, identifiant, poste, role FROM utilisateurs", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(command);
+
+            conn.Close();
+            return sda;
+        }
+        //---------------Récupération réduite info utilisateur pour facilité la lecteur dans Ajout Utilisateur---//
+        public MySqlDataAdapter recuperationReduiteInfosUtilisateur()
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT idUtilisateur, identifiant FROM utilisateurs", conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(command);
 
             conn.Close();

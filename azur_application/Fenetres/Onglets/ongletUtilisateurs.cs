@@ -60,7 +60,7 @@ namespace azur_application.Onglets
         // ------------------------------------ DOUBLECLICK sur DataGrid pour préremplir inputs ------------------------------------
         private void dataGrid_utilisateurs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 idUtilisateur = Convert.ToInt32(dataGrid_utilisateurs.Rows[e.RowIndex].Cells[0].Value.ToString());
                 input_nom.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -83,7 +83,7 @@ namespace azur_application.Onglets
             string roleSaisi = input_role.Text;
 
             MySqlCommand command = conn.CreateCommand();
-            
+
             if (String.IsNullOrEmpty(nomSaisi) || String.IsNullOrEmpty(prenomSaisi) || String.IsNullOrEmpty(mdpSaisi) || String.IsNullOrEmpty(posteSaisi))
             {
                 if (String.IsNullOrEmpty(posteSaisi)) { label_erreur.Text = "Le champ 'Poste' est obligatoire"; }
@@ -92,12 +92,12 @@ namespace azur_application.Onglets
                 if (String.IsNullOrEmpty(nomSaisi)) { label_erreur.Text = "Le champ 'Nom' est obligatoire"; }
                 conn.Close();
             }
-            else if(mdpSaisi.Length < 8 || !mdpSaisi.Any(char.IsDigit) || !mdpSaisi.Any(char.IsUpper))
+            else if (mdpSaisi.Length < 8 || !mdpSaisi.Any(char.IsDigit) || !mdpSaisi.Any(char.IsUpper))
             {
                 // Verif conformité du mot de passe
                 if (mdpSaisi.Length < 8) { label_erreur.Text = "Le mot de passe doit contenir au minimum 8 caracatères"; }
-                if(!mdpSaisi.Any(char.IsDigit)) { label_erreur.Text = "Le mot de passe doit contenir au moins un chiffre"; }
-                if(!mdpSaisi.Any(char.IsUpper)) { label_erreur.Text = "Le mot de passe doit contenir au moins une majuscule"; }
+                if (!mdpSaisi.Any(char.IsDigit)) { label_erreur.Text = "Le mot de passe doit contenir au moins un chiffre"; }
+                if (!mdpSaisi.Any(char.IsUpper)) { label_erreur.Text = "Le mot de passe doit contenir au moins une majuscule"; }
                 conn.Close();
             }
             else
@@ -114,7 +114,7 @@ namespace azur_application.Onglets
                 {
                     displayData();
                     clear();
-                } 
+                }
                 else
                 {
                     label_erreur.Text = "Erreur lors de l'ajout";
@@ -183,7 +183,7 @@ namespace azur_application.Onglets
             {
                 displayData();
                 clear();
-            } 
+            }
             else
             {
                 label_erreur.Text = "Erreur lors de la supression";

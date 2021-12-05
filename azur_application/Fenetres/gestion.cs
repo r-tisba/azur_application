@@ -12,6 +12,7 @@ using System.Threading;
 using MySql.Data.MySqlClient;
 using Syncfusion.Windows.Forms.Tools;
 using azur_application.Services;
+using azur_application.Onglets;
 
 namespace azur_application
 {
@@ -216,7 +217,7 @@ namespace azur_application
 
         private void btnParametres_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Onglets.ongletParametres(), sender);
+            OpenChildForm(new Fenetres.Onglets.ongletParametres(), sender);
         }
 
         private void btnCloseChild_Click(object sender, EventArgs e)
@@ -226,6 +227,23 @@ namespace azur_application
                 activeForm.Close();
             }
             Reset();
+        }
+        private void button_gestion_membre_equipe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Onglets.ongletMembreGroupe(), sender);
+        }
+        private void btnGestEquipe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Onglets.ongletEquipe(), sender);
+        }
+
+        private void button_ajout_membre_equipe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Fenetres.Onglets.ongletAjoutUtilisateurEquipe(), sender);
+        }
+        private void button_gestion_equipes_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Onglets.ongletEquipe(), sender);
         }
         // ------------------------------------ RESET ------------------------------------
         private void Reset()
