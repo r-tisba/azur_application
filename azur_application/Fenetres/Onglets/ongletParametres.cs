@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace azur_application.Onglets
+namespace azur_application.Fenetres.Onglets
 {
     public partial class ongletParametres : Form
     {

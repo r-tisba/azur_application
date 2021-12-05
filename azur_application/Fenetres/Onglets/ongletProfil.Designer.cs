@@ -1,5 +1,4 @@
-﻿
-namespace azur_application.Onglets
+﻿namespace azur_application.Onglets
 {
     partial class ongletProfil
     {
@@ -37,7 +36,7 @@ namespace azur_application.Onglets
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "ongletProfil";
-            this.Text = "Votre profil";
+            this.Text = "Profil";
             this.ResumeLayout(false);
 
         }
