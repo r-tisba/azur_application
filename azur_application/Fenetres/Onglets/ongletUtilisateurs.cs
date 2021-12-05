@@ -60,11 +60,15 @@ namespace azur_application.Onglets
         // ------------------------------------ DOUBLECLICK sur DataGrid pour préremplir inputs ------------------------------------
         private void dataGrid_utilisateurs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            idUtilisateur = Convert.ToInt32(dataGrid_utilisateurs.Rows[e.RowIndex].Cells[0].Value.ToString());
-            input_nom.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[1].Value.ToString();
-            input_prenom.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[2].Value.ToString();
-            input_poste.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[4].Value.ToString();
-            input_role.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[5].Value.ToString();
+            if(e.RowIndex >= 0)
+            {
+                idUtilisateur = Convert.ToInt32(dataGrid_utilisateurs.Rows[e.RowIndex].Cells[0].Value.ToString());
+                input_nom.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[1].Value.ToString();
+                input_prenom.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[2].Value.ToString();
+                input_poste.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[4].Value.ToString();
+                input_role.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[5].Value.ToString();
+            }
+
         }
 
         // ------------------------------------ AJOUT ------------------------------------
@@ -79,7 +83,7 @@ namespace azur_application.Onglets
             string roleSaisi = input_role.Text;
 
             MySqlCommand command = conn.CreateCommand();
-
+            
             if (String.IsNullOrEmpty(nomSaisi) || String.IsNullOrEmpty(prenomSaisi) || String.IsNullOrEmpty(mdpSaisi) || String.IsNullOrEmpty(posteSaisi))
             {
                 if (String.IsNullOrEmpty(posteSaisi)) { label_erreur.Text = "Le champ 'Poste' est obligatoire"; }
