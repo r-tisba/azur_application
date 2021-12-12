@@ -2,6 +2,8 @@
 .vs/
 azur_application/obj/Debug/
 azur_application/bin/Debug/
+/obj/Debug/
+obj/Debug/
 
 azur_application/bin/Debug/azur_application.exe
 azur_application/bin/Debug/azur_application.pdb
