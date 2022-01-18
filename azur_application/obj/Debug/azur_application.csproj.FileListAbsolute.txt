@@ -52,8 +52,6 @@ C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.On
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.csproj.AssemblyReference.cache
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletStatistiques.resources
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletProjets.resources
-C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Fenetres.Onglets.ongletAjoutUtilisateurEquipe.resources
-C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletMembreGroupe.resources
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletEquipe.resources
 C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\Microsoft.AspNetCore.Http.Abstractions.dll
 C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\Microsoft.AspNetCore.Http.dll
@@ -82,3 +80,4 @@ C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\System.Text.Encodin
 C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletProfil.resources
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Fenetres.Onglets.ongletParametres.resources
+C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Fenetres.Onglets.ongletAffectations.resources

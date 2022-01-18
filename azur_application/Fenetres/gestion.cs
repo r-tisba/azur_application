@@ -228,10 +228,6 @@ namespace azur_application
             }
             Reset();
         }
-        private void button_gestion_membre_equipe_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Onglets.ongletMembreGroupe(), sender);
-        }
         private void btnGestEquipe_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Onglets.ongletEquipe(), sender);
@@ -239,7 +235,7 @@ namespace azur_application
 
         private void button_ajout_membre_equipe_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Fenetres.Onglets.ongletAjoutUtilisateurEquipe(), sender);
+            OpenChildForm(new Fenetres.Onglets.ongletAffectations(), sender);
         }
         private void button_gestion_equipes_Click(object sender, EventArgs e)
         {

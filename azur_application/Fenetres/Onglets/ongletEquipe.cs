@@ -9,148 +9,195 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CustomWindowsForm;
 using System.Threading;
+using System.IO;
 using MySql.Data.MySqlClient;
 using azur_application.Modeles;
 using azur_application.Services;
 
 namespace azur_application.Onglets
 {
-    
     public partial class ongletEquipe : Form
     {
-
         MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
-        
         DataTable dt;
-
         Equipe equipe = new Equipe();
+        Color rouge = Color.FromArgb(255, 0, 0);
 
+        int idEquipe;
         public ongletEquipe()
         {
             InitializeComponent();
-            donneeEquipe();
+            displayDataEquipe();
         }
-        
-        //Affichage des équipe dans un tableau
-        public void donneeEquipe()
+        private void ongletEquipe_Load(object sender, EventArgs e)
         {
-            
-            dt = new DataTable();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            label_tableEquipe.ForeColor = ThemeColor.ActiveColor;
+        }
+
+        // ------------------------------------ AFFICHAGE DATAGRID ------------------------------------
+        public void displayDataEquipe()
+        {
+            DataTable dt = new DataTable();
             equipe.recupererInfosEquipe().Fill(dt);
-            dataGridView_equipe.DataSource = dt;
-            this.dataGridView_equipe.Sort(this.dataGridView_equipe.Columns["idEquipe"], ListSortDirection.Ascending);
-
+            dataGrid_equipe.DataSource = dt;
+            // Par défaut : Tri croissant par idEquipe
+            this.dataGrid_equipe.Sort(this.dataGrid_equipe.Columns["Nom"], ListSortDirection.Ascending);
         }
 
-         //Ajout équipe
-
-        private void creer_equipe_Click(object sender, EventArgs e)
-        {
-            string nom_equipe = input_nom_equipe.Text;
-            string image = input_image.Text;
-
-            
-            if(String.IsNullOrEmpty(nom_equipe))
-            {
-            
-                MessageBox.Show("Vous devez donner un nom à l'équipe", "Erreur nom", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                              
-               
-            }
-            else
-            {
-                if (String.IsNullOrEmpty(image))
-                {
-                    image = "../icon/equipe.png";
-                }
-                equipe.ajout_equipe(nom_equipe, image);
-
-                
-                donneeEquipe();
-                clearEquipe();
-            }
-            
-        }
-        public void clearEquipe()
-        {
-            input_nom_equipe.Text = "";
-            input_image.Text = "";
-        }
-
-        private void button_suppr_Click(object sender, EventArgs e)
-        {
-            
-            string idEquipe_enregistrer = label_idEquipe.Text;
-            int idEquipe = int.Parse(idEquipe_enregistrer);
-
-
-
-            if (String.IsNullOrEmpty(idEquipe_enregistrer))
-            {
-                
-                 MessageBox.Show("Vous devez selectioner une équipe", "Erreur équipe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
-            else
-            {
-                equipe.supprimer_equipe(idEquipe);
-                donneeEquipe();
-                clearEquipe();
-            }
-
-        }
-
-        private void dataGridView_equipe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        // ------------------------------------ DOUBLECLICK sur DataGrid pour préremplir inputs ------------------------------------
+        private void dataGrid_equipe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                label_idEquipe.Text= dataGridView_equipe.Rows[e.RowIndex].Cells[0].Value.ToString();
-                input_nom_equipe.Text= dataGridView_equipe.Rows[e.RowIndex].Cells[1].Value.ToString();
-                input_image.Text = dataGridView_equipe.Rows[e.RowIndex].Cells[2].Value.ToString();
-            }
-            
+                idEquipe = equipe.recupererIdEquipeViaNomEquipe(dataGrid_equipe.Rows[e.RowIndex].Cells[0].Value.ToString());
+                input_nomEquipe.Text = dataGrid_equipe.Rows[e.RowIndex].Cells[0].Value.ToString();
 
+                // ------------------ Afficher image ------------------
+                input_image.Text = dataGrid_equipe.Rows[e.RowIndex].Cells[1].Value.ToString();
+                if(String.IsNullOrEmpty(dataGrid_equipe.Rows[e.RowIndex].Cells[1].Value.ToString()))
+                {
+                    clearImage();
+                }
+                else
+                {
+                    string pathImage = input_image.Text.Replace("..", @"C:\wamp64\www\ap\azur_web");
+                    pictureBox_image.Image = new Bitmap(pathImage);
+                }
+            }
         }
 
-        private void button_modif_Click(object sender, EventArgs e)
+        // ------------------------------------ SELECTIONNER IMAGE ------------------------------------
+        private void btn_image_Click(object sender, EventArgs e)
         {
-            string nom_equipe = input_nom_equipe.Text;
-            string image = input_image.Text;
-            string idEquipe_enregistrer=label_idEquipe.Text;
-            int idEquipe = int.Parse(idEquipe_enregistrer);
-
-
-            if (String.IsNullOrEmpty(idEquipe_enregistrer))
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Formats d'image(*.jpg; *.jpeg; *.png;)|*.jpg; *.jpeg; *.png;";
+            if (open.ShowDialog() == DialogResult.OK)
             {
+                input_image.Text = open.FileName;
+                pictureBox_image.Image = new Bitmap(open.FileName);
+            }
+        }
 
-                MessageBox.Show("Vous devez selectioner une équipe", "Erreur équipe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        // ------------------------------------ CREER EQUIPE ------------------------------------
+        private void btn_creer_Click(object sender, EventArgs e)
+        {
+            string nomEquipeSaisi = input_nomEquipe.Text;
+            string imageSaisi = input_image.Text;
+            string nomImageSaisi = Path.GetFileName(input_image.Text);
 
+            if (String.IsNullOrEmpty(nomEquipeSaisi))
+            {
+                label_erreur.Text = "Le champ 'Nom Équipe' est obligatoire";
+                conn.Close();
             }
             else
             {
-
-                equipe.modifier_equipe(nom_equipe, image, idEquipe);
-                donneeEquipe();
-                clearEquipe();
+                Equipe equipe = new Equipe();
+                if (equipe.ajouterEquipe(nomEquipeSaisi, nomImageSaisi) == true)
+                {
+                    if(String.IsNullOrEmpty(imageSaisi))
+                    {
+                        displayDataEquipe();
+                        clear();
+                        clearImage();
+                    }
+                    else
+                    {
+                        File.Copy(input_image.Text, Path.Combine(@"C:\wamp64\www\ap\azur_web\images\design\", Path.GetFileName(input_image.Text)), true);
+                        displayDataEquipe();
+                        clear();
+                        clearImage();
+                    }
+                }
+                else
+                {
+                    label_erreur.Text = "Erreur lors de la création";
+                    label_erreur.ForeColor = rouge;
+                    displayDataEquipe();
+                }
             }
         }
 
-        
-        
-
-        
-
-        private void ongletEquipe_Load(object sender, EventArgs e)
+        private void btn_modifier_Click(object sender, EventArgs e)
         {
-            
+            MySqlCommand command = conn.CreateCommand();
+            Equipe equipe = new Equipe();
 
+            string nomEquipeSaisi = input_nomEquipe.Text;
+            string imageSaisi = input_image.Text;
+            string nomImageSaisi = Path.GetFileName(input_image.Text);
 
+            if (String.IsNullOrEmpty(nomEquipeSaisi))
+            {
+                label_erreur.Text = "Le champ 'Nom Équipe' est obligatoire";
+                conn.Close();
+            }
+            else
+            {
+                if (equipe.modifierEquipe(idEquipe, nomEquipeSaisi, nomImageSaisi) == true)
+                {
+                    if (String.IsNullOrEmpty(imageSaisi))
+                    {
+                        displayDataEquipe();
+                        clear();
+                        clearImage();
+                    }
+                    else
+                    {
+                        File.Copy(input_image.Text, Path.Combine(@"C:\wamp64\www\ap\azur_web\images\design\", Path.GetFileName(input_image.Text)), true);
+                        displayDataEquipe();
+                        clear();
+                        clearImage();
+                    }
+
+                }
+                else
+                {
+                    label_erreur.Text = "Erreur lors de la modification";
+                    label_erreur.ForeColor = rouge;
+                }
+            }
+        }
+
+        private void btn_supprimer_Click(object sender, EventArgs e)
+        {
+            string nomEquipeSaisi = input_nomEquipe.Text;
+
+            if (String.IsNullOrEmpty(nomEquipeSaisi))
+            {
+                label_erreur.Text = "Vous devez selectioner une équipe";
+            }
+            else
+            {
+                int idEquipe = equipe.recupererIdEquipeViaNomEquipe(nomEquipeSaisi);
+                if(equipe.supprimerEquipe(idEquipe))
+                {
+                    displayDataEquipe();
+                    clear();
+                    clearImage();
+                }
+                else
+                {
+                    label_erreur.Text = "Erreur lors de la suppression";
+                    label_erreur.ForeColor = rouge;
+                }
+            }
+        }
+
+        public void clear()
+        {
+            label_erreur.Text = "";
+            input_nomEquipe.Text = "";
+            input_image.Text = "";
+        }
+        public void clearImage()
+        {
+            pictureBox_image.Image = null;
         }
     }
-    
-       
-
-
-    
 }
         

@@ -54,7 +54,7 @@ namespace azur_application.Onglets
             user.recupererInfosUtilisateur().Fill(dt);
             dataGrid_utilisateurs.DataSource = dt;
             // Par défaut : Tri croissant par idUtilisateur
-            this.dataGrid_utilisateurs.Sort(this.dataGrid_utilisateurs.Columns["idUtilisateur"], ListSortDirection.Ascending);
+            this.dataGrid_utilisateurs.Sort(this.dataGrid_utilisateurs.Columns["ID"], ListSortDirection.Ascending);
         }
 
         // ------------------------------------ DOUBLECLICK sur DataGrid pour préremplir inputs ------------------------------------
@@ -68,7 +68,6 @@ namespace azur_application.Onglets
                 input_poste.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[4].Value.ToString();
                 input_role.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[5].Value.ToString();
             }
-
         }
 
         // ------------------------------------ AJOUT ------------------------------------

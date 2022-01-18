@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Threading;
 using CustomWindowsForm;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace azur_application.Modeles
 {
@@ -172,13 +174,13 @@ namespace azur_application.Modeles
         public MySqlDataAdapter recupererNomsRoles()
         {
             conn.Open();
-            MySqlCommand command = conn.CreateCommand();
 
+            MySqlCommand command = conn.CreateCommand();
             command = new MySqlCommand("SELECT nomRole FROM roles", conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(command);
 
-                conn.Close();
-                return sda;
+            conn.Close();
+            return sda;
         }
 
         // ------------------------------------ SELECT INFOS UTILISATEURS ------------------------------------
@@ -187,23 +189,41 @@ namespace azur_application.Modeles
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
 
-            command = new MySqlCommand("SELECT idUtilisateur, nom, prenom, identifiant, poste, role FROM utilisateurs", conn);
+            command = new MySqlCommand("SELECT idUtilisateur AS ID, nom AS NOM, prenom AS PRENOM, identifiant AS IDENTIFIANT, poste AS POSTE, role AS ROLE FROM utilisateurs", conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(command);
 
             conn.Close();
             return sda;
         }
-        //---------------Récupération réduite info utilisateur pour facilité la lecteur dans Ajout Utilisateur---//
+        // --------------- Récupération réduite info utilisateur pour facilité la lecteur dans Ajout Utilisateur ---------------
         public MySqlDataAdapter recuperationReduiteInfosUtilisateur()
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
 
-            command = new MySqlCommand("SELECT idUtilisateur, identifiant FROM utilisateurs", conn);
+            command = new MySqlCommand("SELECT idUtilisateur AS ID, identifiant AS IDENTIFIANT FROM utilisateurs", conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(command);
 
             conn.Close();
             return sda;
+        }
+
+        public int recupererIdUtilisateurViaIdentifiant(string identifiant)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT idUtilisateur FROM utilisateurs WHERE identifiant = @identifiant", conn);
+            command.Parameters.AddWithValue("@identifiant", identifiant);
+            MySqlDataReader reader = command.ExecuteReader();
+            
+            while (reader.Read())
+            {
+                idUtilisateur = (int)reader["idUtilisateur"];
+            }
+            reader.Close();
+            conn.Close();
+            return idUtilisateur;
         }
     }
 }

@@ -101,6 +101,7 @@
       <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.5.0.1\lib\net461\System.IO.Pipelines.dll</HintPath>
@@ -147,11 +148,11 @@
     <Compile Include="Fenetres\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fenetres\Onglets\ongletAjoutUtilisateurEquipe.cs">
+    <Compile Include="Fenetres\Onglets\ongletAffectations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fenetres\Onglets\ongletAjoutUtilisateurEquipe.Designer.cs">
-      <DependentUpon>ongletAjoutUtilisateurEquipe.cs</DependentUpon>
+    <Compile Include="Fenetres\Onglets\ongletAffectations.Designer.cs">
+      <DependentUpon>ongletAffectations.cs</DependentUpon>
     </Compile>
     <Compile Include="Fenetres\Onglets\ongletParametres.cs">
       <SubType>Form</SubType>
@@ -170,12 +171,6 @@
     </Compile>
     <Compile Include="Modeles\EquipeUtilisateur.cs" />
     <Compile Include="Modeles\Equipe.cs" />
-    <Compile Include="Fenetres\Onglets\ongletMembreGroupe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Fenetres\Onglets\ongletMembreGroupe.Designer.cs">
-      <DependentUpon>ongletMembreGroupe.cs</DependentUpon>
-    </Compile>
     <Compile Include="Fenetres\Onglets\ongletEquipe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,11 +207,8 @@
     <EmbeddedResource Include="Fenetres\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fenetres\Onglets\ongletAjoutUtilisateurEquipe.resx">
-      <DependentUpon>ongletAjoutUtilisateurEquipe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Fenetres\Onglets\ongletMembreGroupe.resx">
-      <DependentUpon>ongletMembreGroupe.cs</DependentUpon>
+    <EmbeddedResource Include="Fenetres\Onglets\ongletAffectations.resx">
+      <DependentUpon>ongletAffectations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fenetres\Onglets\ongletEquipe.resx">
       <DependentUpon>ongletEquipe.cs</DependentUpon>

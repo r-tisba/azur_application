@@ -41,14 +41,13 @@ namespace azur_application
             this._CloseButton = new CustomWindowsForm.ButtonZ();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnProfil = new System.Windows.Forms.Button();
-            this.button_gestion_equipes = new System.Windows.Forms.Button();
-            this.button_ajout_membre_equipe = new System.Windows.Forms.Button();
-            this.button_gestion_membre_equipe = new System.Windows.Forms.Button();
             this.btnParametres = new System.Windows.Forms.Button();
             this.btnStatistiques = new System.Windows.Forms.Button();
             this.btnProjets = new System.Windows.Forms.Button();
+            this.button_gestion_equipes = new System.Windows.Forms.Button();
+            this.button_ajout_membre_equipe = new System.Windows.Forms.Button();
             this.btnUtilisateurs = new System.Windows.Forms.Button();
+            this.btnProfil = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label_azur = new System.Windows.Forms.Label();
             this.logo_azur = new System.Windows.Forms.PictureBox();
@@ -204,7 +203,6 @@ namespace azur_application
             this.panelMenu.Controls.Add(this.btnProjets);
             this.panelMenu.Controls.Add(this.button_gestion_equipes);
             this.panelMenu.Controls.Add(this.button_ajout_membre_equipe);
-            this.panelMenu.Controls.Add(this.button_gestion_membre_equipe);
             this.panelMenu.Controls.Add(this.btnUtilisateurs);
             this.panelMenu.Controls.Add(this.btnProfil);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -213,89 +211,6 @@ namespace azur_application
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 639);
             this.panelMenu.TabIndex = 8;
-            // 
-            // btnProfil
-            // 
-            this.btnProfil.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProfil.FlatAppearance.BorderSize = 0;
-            this.btnProfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnProfil.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnProfil.Image = ((System.Drawing.Image)(resources.GetObject("btnProfil.Image")));
-            this.btnProfil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfil.Location = new System.Drawing.Point(0, 80);
-            this.btnProfil.Name = "btnProfil";
-            this.btnProfil.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnProfil.Size = new System.Drawing.Size(200, 60);
-            this.btnProfil.TabIndex = 1;
-            this.btnProfil.Text = "   Profil";
-            this.btnProfil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProfil.UseVisualStyleBackColor = true;
-            this.btnProfil.Click += new System.EventHandler(this.btnProfil_Click);
-            // 
-            // button_gestion_equipes
-            // 
-            this.button_gestion_equipes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_gestion_equipes.FlatAppearance.BorderSize = 0;
-            this.button_gestion_equipes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_gestion_equipes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button_gestion_equipes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button_gestion_equipes.Image = ((System.Drawing.Image)(resources.GetObject("button_gestion_equipes.Image")));
-            this.button_gestion_equipes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_gestion_equipes.Location = new System.Drawing.Point(0, 314);
-            this.button_gestion_equipes.Margin = new System.Windows.Forms.Padding(2);
-            this.button_gestion_equipes.Name = "button_gestion_equipes";
-            this.button_gestion_equipes.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.button_gestion_equipes.Size = new System.Drawing.Size(200, 57);
-            this.button_gestion_equipes.TabIndex = 3;
-            this.button_gestion_equipes.Text = "Gestion Équipes";
-            this.button_gestion_equipes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_gestion_equipes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_gestion_equipes.UseVisualStyleBackColor = true;
-            this.button_gestion_equipes.Click += new System.EventHandler(this.button_gestion_equipes_Click);
-            // 
-            // button_ajout_membre_equipe
-            // 
-            this.button_ajout_membre_equipe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_ajout_membre_equipe.FlatAppearance.BorderSize = 0;
-            this.button_ajout_membre_equipe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ajout_membre_equipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button_ajout_membre_equipe.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button_ajout_membre_equipe.Image = ((System.Drawing.Image)(resources.GetObject("button_ajout_membre_equipe.Image")));
-            this.button_ajout_membre_equipe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_ajout_membre_equipe.Location = new System.Drawing.Point(0, 257);
-            this.button_ajout_membre_equipe.Margin = new System.Windows.Forms.Padding(2);
-            this.button_ajout_membre_equipe.Name = "button_ajout_membre_equipe";
-            this.button_ajout_membre_equipe.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.button_ajout_membre_equipe.Size = new System.Drawing.Size(200, 57);
-            this.button_ajout_membre_equipe.TabIndex = 4;
-            this.button_ajout_membre_equipe.Text = "Ajout Membre Équipe";
-            this.button_ajout_membre_equipe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_ajout_membre_equipe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_ajout_membre_equipe.UseVisualStyleBackColor = true;
-            this.button_ajout_membre_equipe.Click += new System.EventHandler(this.button_ajout_membre_equipe_Click);
-            // 
-            // button_gestion_membre_equipe
-            // 
-            this.button_gestion_membre_equipe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_gestion_membre_equipe.FlatAppearance.BorderSize = 0;
-            this.button_gestion_membre_equipe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_gestion_membre_equipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button_gestion_membre_equipe.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button_gestion_membre_equipe.Image = ((System.Drawing.Image)(resources.GetObject("button_gestion_membre_equipe.Image")));
-            this.button_gestion_membre_equipe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_gestion_membre_equipe.Location = new System.Drawing.Point(0, 200);
-            this.button_gestion_membre_equipe.Margin = new System.Windows.Forms.Padding(2);
-            this.button_gestion_membre_equipe.Name = "button_gestion_membre_equipe";
-            this.button_gestion_membre_equipe.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.button_gestion_membre_equipe.Size = new System.Drawing.Size(200, 57);
-            this.button_gestion_membre_equipe.TabIndex = 5;
-            this.button_gestion_membre_equipe.Text = "  Gestion Membre Équipe";
-            this.button_gestion_membre_equipe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_gestion_membre_equipe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_gestion_membre_equipe.UseVisualStyleBackColor = true;
-            this.button_gestion_membre_equipe.Click += new System.EventHandler(this.button_gestion_membre_equipe_Click);
             // 
             // btnParametres
             // 
@@ -306,11 +221,11 @@ namespace azur_application
             this.btnParametres.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnParametres.Image = ((System.Drawing.Image)(resources.GetObject("btnParametres.Image")));
             this.btnParametres.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnParametres.Location = new System.Drawing.Point(0, 491);
+            this.btnParametres.Location = new System.Drawing.Point(0, 434);
             this.btnParametres.Name = "btnParametres";
             this.btnParametres.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnParametres.Size = new System.Drawing.Size(200, 60);
-            this.btnParametres.TabIndex = 8;
+            this.btnParametres.TabIndex = 7;
             this.btnParametres.Text = "   Paramètres";
             this.btnParametres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnParametres.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -326,11 +241,11 @@ namespace azur_application
             this.btnStatistiques.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnStatistiques.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistiques.Image")));
             this.btnStatistiques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistiques.Location = new System.Drawing.Point(0, 431);
+            this.btnStatistiques.Location = new System.Drawing.Point(0, 374);
             this.btnStatistiques.Name = "btnStatistiques";
             this.btnStatistiques.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnStatistiques.Size = new System.Drawing.Size(200, 60);
-            this.btnStatistiques.TabIndex = 7;
+            this.btnStatistiques.TabIndex = 6;
             this.btnStatistiques.Text = "   Statistiques";
             this.btnStatistiques.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStatistiques.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -346,16 +261,58 @@ namespace azur_application
             this.btnProjets.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnProjets.Image = ((System.Drawing.Image)(resources.GetObject("btnProjets.Image")));
             this.btnProjets.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProjets.Location = new System.Drawing.Point(0, 371);
+            this.btnProjets.Location = new System.Drawing.Point(0, 314);
             this.btnProjets.Name = "btnProjets";
             this.btnProjets.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnProjets.Size = new System.Drawing.Size(200, 60);
-            this.btnProjets.TabIndex = 6;
+            this.btnProjets.TabIndex = 5;
             this.btnProjets.Text = "   Projets en cours";
             this.btnProjets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProjets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProjets.UseVisualStyleBackColor = true;
             this.btnProjets.Click += new System.EventHandler(this.btnProjets_Click);
+            // 
+            // button_gestion_equipes
+            // 
+            this.button_gestion_equipes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_gestion_equipes.FlatAppearance.BorderSize = 0;
+            this.button_gestion_equipes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_gestion_equipes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button_gestion_equipes.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button_gestion_equipes.Image = ((System.Drawing.Image)(resources.GetObject("button_gestion_equipes.Image")));
+            this.button_gestion_equipes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_gestion_equipes.Location = new System.Drawing.Point(0, 257);
+            this.button_gestion_equipes.Margin = new System.Windows.Forms.Padding(2);
+            this.button_gestion_equipes.Name = "button_gestion_equipes";
+            this.button_gestion_equipes.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.button_gestion_equipes.Size = new System.Drawing.Size(200, 57);
+            this.button_gestion_equipes.TabIndex = 4;
+            this.button_gestion_equipes.Text = "   Gestion équipes";
+            this.button_gestion_equipes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_gestion_equipes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_gestion_equipes.UseVisualStyleBackColor = true;
+            this.button_gestion_equipes.Click += new System.EventHandler(this.button_gestion_equipes_Click);
+            // 
+            // button_ajout_membre_equipe
+            // 
+            this.button_ajout_membre_equipe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_ajout_membre_equipe.FlatAppearance.BorderSize = 0;
+            this.button_ajout_membre_equipe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ajout_membre_equipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button_ajout_membre_equipe.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button_ajout_membre_equipe.Image = ((System.Drawing.Image)(resources.GetObject("button_ajout_membre_equipe.Image")));
+            this.button_ajout_membre_equipe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_ajout_membre_equipe.Location = new System.Drawing.Point(0, 200);
+            this.button_ajout_membre_equipe.Margin = new System.Windows.Forms.Padding(2);
+            this.button_ajout_membre_equipe.Name = "button_ajout_membre_equipe";
+            this.button_ajout_membre_equipe.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.button_ajout_membre_equipe.Size = new System.Drawing.Size(200, 57);
+            this.button_ajout_membre_equipe.TabIndex = 3;
+            this.button_ajout_membre_equipe.Text = "   Gérer affectations";
+            this.button_ajout_membre_equipe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_ajout_membre_equipe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_ajout_membre_equipe.UseVisualStyleBackColor = true;
+            this.button_ajout_membre_equipe.Click += new System.EventHandler(this.button_ajout_membre_equipe_Click);
             // 
             // btnUtilisateurs
             // 
@@ -376,6 +333,26 @@ namespace azur_application
             this.btnUtilisateurs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUtilisateurs.UseVisualStyleBackColor = true;
             this.btnUtilisateurs.Click += new System.EventHandler(this.btnUtilisateurs_Click);
+            // 
+            // btnProfil
+            // 
+            this.btnProfil.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProfil.FlatAppearance.BorderSize = 0;
+            this.btnProfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnProfil.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnProfil.Image = ((System.Drawing.Image)(resources.GetObject("btnProfil.Image")));
+            this.btnProfil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfil.Location = new System.Drawing.Point(0, 80);
+            this.btnProfil.Name = "btnProfil";
+            this.btnProfil.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnProfil.Size = new System.Drawing.Size(200, 60);
+            this.btnProfil.TabIndex = 1;
+            this.btnProfil.Text = "   Profil";
+            this.btnProfil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProfil.UseVisualStyleBackColor = true;
+            this.btnProfil.Click += new System.EventHandler(this.btnProfil_Click);
             // 
             // panelLogo
             // 
@@ -438,12 +415,12 @@ namespace azur_application
             // 
             this.labelTitre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTitre.AutoSize = true;
-            this.labelTitre.Font = new System.Drawing.Font("Lato Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitre.Font = new System.Drawing.Font("Lato Light", 20F);
             this.labelTitre.ForeColor = System.Drawing.Color.White;
-            this.labelTitre.Location = new System.Drawing.Point(478, 23);
+            this.labelTitre.Location = new System.Drawing.Point(483, 23);
             this.labelTitre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitre.Name = "labelTitre";
-            this.labelTitre.Size = new System.Drawing.Size(110, 29);
+            this.labelTitre.Size = new System.Drawing.Size(126, 33);
             this.labelTitre.TabIndex = 0;
             this.labelTitre.Text = "ACCUEIL";
             this.labelTitre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -510,7 +487,6 @@ namespace azur_application
         private System.Windows.Forms.Label labelTitre;
         private System.Windows.Forms.Panel panelBody;
         private System.Windows.Forms.Button btnCloseChild;
-        private System.Windows.Forms.Button button_gestion_membre_equipe;
         private System.Windows.Forms.Button button_ajout_membre_equipe;
         private System.Windows.Forms.Button button_gestion_equipes;
         private System.Windows.Forms.Button btnProfil;

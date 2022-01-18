@@ -24,11 +24,10 @@ namespace azur_application.Modeles
             protected set { idUtilisateur = value; }
         }
 
-        //partie MySQL
         MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
 
-        //Ajout employée à un équipe
-        public bool association_utilisateur_equipe(int idEquipe, int idUtilisateur)
+        // Ajout employée à un équipe
+        public bool associationUtilisateurEquipe(int idEquipe, int idUtilisateur)
         {
             conn.Open();
 
@@ -47,11 +46,10 @@ namespace azur_application.Modeles
             {
                 conn.Close();
                 return false;
-
             }
         }
 
-        //Modifier équipe utilisateur
+        // Modifier équipe utilisateur
         public bool modifier_utilisateur_equipe(int idEquipe, int idUtilisateur, int labelIdEquipe)
         {
             conn.Open();
@@ -62,7 +60,7 @@ namespace azur_application.Modeles
             command.Parameters.AddWithValue("@labelIdEquipe", labelIdEquipe);
 
 
-            command.CommandText = "UPDATE composition_equipes SET idEquipe=@idEquipe, idUtilisateur=@idUtilisateur WHERE idUtilisateur=@idUtilisateur AND WHERE=@labelIdEquipe";
+            command.CommandText = "UPDATE composition_equipes SET idEquipe = @idEquipe, idUtilisateur = @idUtilisateur WHERE idUtilisateur = @idUtilisateur AND WHERE = @labelIdEquipe";
 
 
             try
@@ -78,17 +76,15 @@ namespace azur_application.Modeles
 
             }
         }
-        public bool supprimer_utilisateur_equipe(int idUtilisateur, int labelIdEquipe)
+        public bool supprimerAssociation(int idUtilisateur, int idEquipe)
         {
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
-            command.Parameters.AddWithValue("@labelIdEquipe", labelIdEquipe);
+            command.Parameters.AddWithValue("@idEquipe", idEquipe);
 
-            command.CommandText = "DELETE FROM composition_equipes WHERE idUtilisateur=@idUtilisateur AND idEquipe=@labelIdEquipe";
-
-
+            command.CommandText = "DELETE FROM composition_equipes WHERE idUtilisateur = @idUtilisateur AND idEquipe = @idEquipe";
             try
             {
                 command.ExecuteNonQuery();
@@ -102,7 +98,7 @@ namespace azur_application.Modeles
 
             }
         }
-        public MySqlDataAdapter donneeCompo()
+        public MySqlDataAdapter donneeCompoBrutes()
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -114,7 +110,19 @@ namespace azur_application.Modeles
             return sda;
         }
 
-        public MySqlDataAdapter liste_utilisateurs()
+        public MySqlDataAdapter donneeCompoClaires()
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT u.identifiant AS IDENTIFIANT, e.nomEquipe AS EQUIPE FROM composition_equipes LEFT JOIN utilisateurs u USING(idUtilisateur) LEFT JOIN equipes e USING(idEquipe)", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(command);
+
+            conn.Close();
+            return sda;
+        }
+
+        public MySqlDataAdapter listeUtilisateurs()
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -125,7 +133,7 @@ namespace azur_application.Modeles
             conn.Close();
             return sda;
         }
-        public MySqlDataAdapter liste_equipes()
+        public MySqlDataAdapter listeEquipes()
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -136,7 +144,7 @@ namespace azur_application.Modeles
             conn.Close();
             return sda;
         }
-        public MySqlDataAdapter liste_composition_equipe()
+        public MySqlDataAdapter listeCompositionEquipe()
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -147,5 +155,33 @@ namespace azur_application.Modeles
             conn.Close();
             return sda;
         }
+
+        // Renvoi true si l'association idUtilisateur - idEquipe existe
+        public bool verifierAssociation(int idUtilisateur, int idEquipe)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT * FROM composition_equipes WHERE idUtilisateur = @idUtilisateur AND idEquipe = @idEquipe", conn);
+            command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
+            command.Parameters.AddWithValue("@idEquipe", idEquipe);
+            var reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                // L'association existe déjà
+                conn.Close();
+                return true;
+            }
+            else
+            {
+                // L'association n'existe pas
+                conn.Close();
+                return false;
+            }
+
+        }
+
+
     }
 }
