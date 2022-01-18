@@ -22,7 +22,7 @@ namespace azur_application.Fenetres.Onglets
         DataTable dt;
         Utilisateur utilisateur = new Utilisateur();
         Equipe equipe = new Equipe();
-        EquipeUtilisateur equipeUtilisateur = new EquipeUtilisateur();
+        Affectation affectation = new Affectation();
         public ongletAffectations()
         {
             InitializeComponent();
@@ -63,7 +63,7 @@ namespace azur_application.Fenetres.Onglets
         private void displayDataComposition()
         {
             DataTable dt = new DataTable();
-            equipeUtilisateur.donneeCompoClaires().Fill(dt);
+            affectation.donneeCompoClaires().Fill(dt);
             dataGrid_compositionEquipes.DataSource = dt;
             // Par défaut : Tri croissant par identifiant
             this.dataGrid_compositionEquipes.Sort(this.dataGrid_compositionEquipes.Columns["IDENTIFIANT"], ListSortDirection.Ascending);
@@ -96,7 +96,7 @@ namespace azur_application.Fenetres.Onglets
             int idUtilisateur = utilisateur.recupererIdUtilisateurViaIdentifiant(identifiantSaisi);
             int idEquipe = equipe.recupererIdEquipeViaNomEquipe(nomEquipeSaisi);
 
-            if(equipeUtilisateur.verifierAssociation(idUtilisateur, idEquipe) == false)
+            if(affectation.verifierAssociation(idUtilisateur, idEquipe) == false)
             {
                 if (String.IsNullOrEmpty(identifiantSaisi) || String.IsNullOrEmpty(nomEquipeSaisi))
                 {
@@ -106,7 +106,7 @@ namespace azur_application.Fenetres.Onglets
                 }
                 else
                 {
-                    EquipeUtilisateur equipeUtilisateur = new EquipeUtilisateur();
+                    Affectation equipeUtilisateur = new Affectation();
                     if (equipeUtilisateur.associationUtilisateurEquipe(idEquipe, idUtilisateur) == true)
                     {
                         displayDataComposition();
@@ -139,7 +139,7 @@ namespace azur_application.Fenetres.Onglets
             }
             else
             {
-                EquipeUtilisateur equipeUtilisateur = new EquipeUtilisateur();
+                Affectation equipeUtilisateur = new Affectation();
 
                 int idUtilisateur = utilisateur.recupererIdUtilisateurViaIdentifiant(identifiantSaisi);
                 int idEquipe = equipe.recupererIdEquipeViaNomEquipe(nomEquipeSaisi);

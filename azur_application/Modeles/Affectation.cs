@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace azur_application.Modeles
 {
-    class EquipeUtilisateur
+    class Affectation
     {
         private int idUtilisateur;
         private int idEquipe;

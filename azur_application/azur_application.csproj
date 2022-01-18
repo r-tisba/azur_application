@@ -169,7 +169,8 @@
     <Compile Include="MinMaxButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Modeles\EquipeUtilisateur.cs" />
+    <Compile Include="Modeles\Affectation.cs" />
+    <Compile Include="Modeles\Projet.cs" />
     <Compile Include="Modeles\Equipe.cs" />
     <Compile Include="Fenetres\Onglets\ongletEquipe.cs">
       <SubType>Form</SubType>
