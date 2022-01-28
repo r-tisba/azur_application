@@ -133,7 +133,6 @@ namespace azur_application.Modeles
             command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
             command.CommandText = "UPDATE utilisateurs SET nom = @nomSaisi, prenom = @prenomSaisi, poste = @posteSaisi, " +
                                   "role = @roleSaisi WHERE idUtilisateur = @idUtilisateur";
-
             try
             {
                 command.ExecuteNonQuery();
@@ -154,7 +153,7 @@ namespace azur_application.Modeles
             MySqlCommand command = conn.CreateCommand();
 
             command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
-            command.CommandText = "DELETE FROM utilisateurs WHERE idUtilisateur = @idUtilisateur; DELETE FROM equipe_employe WHERE idEmploye = @idUtilisateur";
+            command.CommandText = "DELETE FROM utilisateurs WHERE idUtilisateur = @idUtilisateur; DELETE FROM composition_equipes WHERE idUtilisateur = @idUtilisateur";
             command.ExecuteNonQuery();
 
             try

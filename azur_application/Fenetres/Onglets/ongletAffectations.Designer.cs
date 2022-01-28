@@ -186,6 +186,7 @@ namespace azur_application.Fenetres.Onglets
             this.dataGrid_compositionEquipes.Location = new System.Drawing.Point(435, 40);
             this.dataGrid_compositionEquipes.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_compositionEquipes.Name = "dataGrid_compositionEquipes";
+            this.dataGrid_compositionEquipes.ReadOnly = true;
             this.dataGrid_compositionEquipes.RowHeadersWidth = 51;
             this.dataGrid_compositionEquipes.Size = new System.Drawing.Size(340, 482);
             this.dataGrid_compositionEquipes.TabIndex = 5;
@@ -212,6 +213,7 @@ namespace azur_application.Fenetres.Onglets
             this.dataGrid_utilisateurs.Location = new System.Drawing.Point(87, 40);
             this.dataGrid_utilisateurs.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_utilisateurs.Name = "dataGrid_utilisateurs";
+            this.dataGrid_utilisateurs.ReadOnly = true;
             this.dataGrid_utilisateurs.RowHeadersWidth = 51;
             this.dataGrid_utilisateurs.Size = new System.Drawing.Size(340, 482);
             this.dataGrid_utilisateurs.TabIndex = 4;

@@ -81,3 +81,4 @@ C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\System.Threading.Ta
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletProfil.resources
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Fenetres.Onglets.ongletParametres.resources
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Fenetres.Onglets.ongletAffectations.resources
+C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Fenetres.Onglets.ongletEtapes.resources

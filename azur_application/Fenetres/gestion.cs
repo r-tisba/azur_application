@@ -40,6 +40,17 @@ namespace azur_application
             cfbs = new CustomFormBorderStyle(this, _MaxButton, _MinButton, _CloseButton);
         }
 
+        public string labelTitreText
+        {
+            get { return labelTitre.Text; }
+            set { labelTitre.Text = value; }
+        }
+        public Color labelTitreColor
+        {
+            get { return labelTitre.ForeColor; }
+            set { labelTitre.ForeColor = value; }
+        }
+
         private void TopBorderPanel_MouseMove(object sender, MouseEventArgs e)
         {
             cfbs.TopBorderPanel_MouseMove(sender, e);
@@ -220,6 +231,20 @@ namespace azur_application
             OpenChildForm(new Fenetres.Onglets.ongletParametres(), sender);
         }
 
+        private void btnGestEquipe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Onglets.ongletEquipe(), sender);
+        }
+
+        private void btnAffectations_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Fenetres.Onglets.ongletAffectations(), sender);
+        }
+        private void btnEquipes_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Onglets.ongletEquipe(), sender);
+        }
+
         private void btnCloseChild_Click(object sender, EventArgs e)
         {
             if (activeForm != null)
@@ -227,19 +252,6 @@ namespace azur_application
                 activeForm.Close();
             }
             Reset();
-        }
-        private void btnGestEquipe_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Onglets.ongletEquipe(), sender);
-        }
-
-        private void button_ajout_membre_equipe_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Fenetres.Onglets.ongletAffectations(), sender);
-        }
-        private void button_gestion_equipes_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Onglets.ongletEquipe(), sender);
         }
         // ------------------------------------ RESET ------------------------------------
         private void Reset()

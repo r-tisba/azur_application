@@ -24,24 +24,24 @@ namespace azur_application.Modeles
         MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
 
         // ------------------------------------ AJOUTER ------------------------------------
-        public bool ajouterEquipe(string nomEquipeSaisi, string nomImageSaisi)
+        public bool ajouterProjet(string nomProjetSaisi, string intituleSaisi, DateTime dateDebutSaisi, DateTime dateFinSaisi, string etatSaisi, string equipeSaisi, string contexteSaisi)
         {
             conn.Open();
 
-            string pathImageSaisi;
-            if (String.IsNullOrEmpty(nomImageSaisi))
-            {
-                pathImageSaisi = "";
-            }
-            else
-            {
-                pathImageSaisi = "../images/design/" + nomImageSaisi;
-            }
+            Equipe equipe = new Equipe();
+            int idEquipe = equipe.recupererIdEquipeViaNomEquipe(equipeSaisi);
 
             MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@nom_equipe", nomEquipeSaisi);
-            command.Parameters.AddWithValue("@pathImageSaisi", pathImageSaisi);
-            command.CommandText = "INSERT INTO equipes(nomEquipe, image) VALUES(@nom_equipe, @pathImageSaisi)";
+            command.Parameters.AddWithValue("@nomProjet", nomProjetSaisi);
+            command.Parameters.AddWithValue("@intitule", intituleSaisi);
+            command.Parameters.AddWithValue("@dateDebut", dateDebutSaisi);
+            command.Parameters.AddWithValue("@dateFin", dateFinSaisi);
+            if (etatSaisi == "En cours") { command.Parameters.AddWithValue("@etat", 0); }
+            else { command.Parameters.AddWithValue("@etat", 1); }
+            command.Parameters.AddWithValue("@idEquipe", idEquipe);
+            command.Parameters.AddWithValue("@contexte", contexteSaisi);
+
+            command.CommandText = "INSERT INTO projets(nomProjet, intitule, dateDebut, dateFin, etatProjet, idEquipe, contexte) VALUES(@nomProjet, @intitule, @dateDebut, @dateFin, @etat, @idEquipe, @contexte)";
             try
             {
                 command.ExecuteNonQuery();
@@ -56,25 +56,38 @@ namespace azur_application.Modeles
         }
 
         // ------------------------------------ MODIFIER ------------------------------------
-        public bool modifierEquipe(int idEquipe, string nomEquipe, string nomImageSaisi)
+        public bool modifierProjet(int idProjet, string nomProjetSaisi, string intituleSaisi, string dateDebutSaisi, string dateFinSaisi, string etatSaisi, string equipeSaisi, string contexteSaisi)
         {
             conn.Open();
 
-            string pathImageSaisi;
-            if (String.IsNullOrEmpty(nomImageSaisi))
-            {
-                pathImageSaisi = "";
-            }
-            else
-            {
-                pathImageSaisi = "../images/design/" + nomImageSaisi;
-            }
+            Equipe equipe = new Equipe();
+            int idEquipe = equipe.recupererIdEquipeViaNomEquipe(equipeSaisi);
 
             MySqlCommand command = conn.CreateCommand();
+            command.Parameters.AddWithValue("@idProjet", idProjet);
+            command.Parameters.AddWithValue("@nomProjet", nomProjetSaisi);
+            command.Parameters.AddWithValue("@intitule", intituleSaisi);
+            command.Parameters.AddWithValue("@dateDebut", dateDebutSaisi);
+            command.Parameters.AddWithValue("@dateFin", dateFinSaisi);
+            if(etatSaisi == "En cours") { command.Parameters.AddWithValue("@etat", 0);  }
+            else { command.Parameters.AddWithValue("@etat", 1); }
             command.Parameters.AddWithValue("@idEquipe", idEquipe);
-            command.Parameters.AddWithValue("@nomEquipe", nomEquipe);
-            command.Parameters.AddWithValue("@pathImageSaisi", pathImageSaisi);
-            command.CommandText = "UPDATE equipes SET nomEquipe = @nomEquipe, image = @pathImageSaisi WHERE idEquipe = @idEquipe";
+            command.Parameters.AddWithValue("@contexte", contexteSaisi);
+
+            /*
+            System.Windows.Forms.MessageBox.Show(
+                "idProjet ||| " + idProjet.ToString() + Environment.NewLine +
+                "nomProjetSaisi ||| " + nomProjetSaisi + Environment.NewLine +
+                "intituleSaisi ||| " + intituleSaisi + Environment.NewLine +
+                "dateDebutSaisi ||| " + dateDebutSaisi.ToString() + Environment.NewLine +
+                "dateFinSaisi ||| " + dateFinSaisi.ToString() + Environment.NewLine +
+                "etat ||| " + temp + Environment.NewLine +
+                "idEquipe ||| " + idEquipe + Environment.NewLine +
+                "contexteSaisi ||| " + contexteSaisi
+            );
+            */
+
+            command.CommandText = "UPDATE projets SET nomProjet = @nomProjet, intitule = @intitule, dateDebut = @dateDebut, dateFin = @dateFin, etatProjet = @etat, idEquipe = @idEquipe, contexte = @contexte WHERE idProjet = @idProjet";
             try
             {
                 command.ExecuteNonQuery();
@@ -89,13 +102,13 @@ namespace azur_application.Modeles
         }
 
         // ------------------------------------ SUPPRIMER ------------------------------------
-        public bool supprimerEquipe(int idEquipe)
+        public bool supprimerProjet(int idProjet)
         {
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@idEquipe", idEquipe);
-            command.CommandText = "DELETE FROM equipes WHERE idEquipe=@idEquipe; DELETE FROM composition_equipes WHERE idEquipe=@idEquipe";
+            command.Parameters.AddWithValue("@idProjet", idProjet);
+            command.CommandText = "DELETE FROM projets WHERE idProjet=@idProjet; DELETE FROM etapes WHERE idProjet=@idProjet";
             try
             {
                 command.ExecuteNonQuery();
@@ -125,37 +138,42 @@ namespace azur_application.Modeles
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
 
-            command = new MySqlCommand("SELECT nom AS NOM, intitule AS INTITULE, dateDebut AS DEBUT, dateFin AS FIN, etatProjet AS ETAT, e.nomEquipe AS EQUIPE, contexte AS CONTEXTE FROM projets LEFT JOIN equipes e USING(idEquipe)", conn);
+            command = new MySqlCommand("SELECT nomProjet AS NOM, intitule AS INTITULE, dateDebut AS DEBUT, dateFin AS FIN, etatProjet AS ETAT, e.nomEquipe AS EQUIPE, contexte AS CONTEXTE FROM projets LEFT JOIN equipes e USING(idEquipe)", conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(command);
 
             conn.Close();
             return sda;
         }
 
-        public MySqlDataAdapter recuperationReduiteInfosEquipe()
+        public string recupererNomProjetViaIdProjet(int idProjet)
         {
             conn.Open();
+            string nomProjet = "";
             MySqlCommand command = conn.CreateCommand();
+            command = new MySqlCommand("SELECT nomProjet FROM projets WHERE idProjet = @idProjet", conn);
+            command.Parameters.AddWithValue("@idProjet", idProjet);
+            MySqlDataReader reader = command.ExecuteReader();
 
-            command = new MySqlCommand("SELECT idEquipe, nomEquipe FROM equipes", conn);
-            MySqlDataAdapter sda = new MySqlDataAdapter(command);
-
+            while (reader.Read())
+            {
+                nomProjet = reader["nomProjet"] == DBNull.Value ? "" : (string)reader["nomProjet"];
+            }
+            reader.Close();
             conn.Close();
-            return sda;
+            return nomProjet;
         }
 
         public int recupererIdProjetViaNomProjet(string nomProjet)
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-
-            command = new MySqlCommand("SELECT idProjet FROM projets WHERE nom = @nomProjet", conn);
+            command = new MySqlCommand("SELECT idProjet FROM projets WHERE nomProjet = @nomProjet", conn);
             command.Parameters.AddWithValue("@nomProjet", nomProjet);
             MySqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                idProjet = (int)reader["idProjet"];
+                idProjet = reader["idProjet"] == DBNull.Value ? 0 : (int)reader["idProjet"];
             }
             reader.Close();
             conn.Close();

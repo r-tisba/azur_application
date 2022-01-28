@@ -153,7 +153,6 @@ namespace azur_application.Onglets
                         clear();
                         clearImage();
                     }
-
                 }
                 else
                 {

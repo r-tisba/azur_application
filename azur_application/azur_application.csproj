@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net-Next, Version=4.0.2.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.4.0.2\lib\net472\BCrypt.Net-Next.dll</HintPath>
@@ -154,6 +157,12 @@
     <Compile Include="Fenetres\Onglets\ongletAffectations.Designer.cs">
       <DependentUpon>ongletAffectations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fenetres\Onglets\ongletEtapes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenetres\Onglets\ongletEtapes.Designer.cs">
+      <DependentUpon>ongletEtapes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fenetres\Onglets\ongletParametres.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +179,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Modeles\Affectation.cs" />
+    <Compile Include="Modeles\Etape.cs" />
     <Compile Include="Modeles\Projet.cs" />
     <Compile Include="Modeles\Equipe.cs" />
     <Compile Include="Fenetres\Onglets\ongletEquipe.cs">
@@ -214,6 +224,9 @@
     <EmbeddedResource Include="Fenetres\Onglets\ongletEquipe.resx">
       <DependentUpon>ongletEquipe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fenetres\Onglets\ongletEtapes.resx">
+      <DependentUpon>ongletEtapes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fenetres\Onglets\ongletParametres.resx">
       <DependentUpon>ongletParametres.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +265,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
