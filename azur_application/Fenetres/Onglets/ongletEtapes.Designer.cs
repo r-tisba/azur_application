@@ -29,7 +29,7 @@ namespace azur_application.Fenetres.Onglets
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_titre = new System.Windows.Forms.Label();
             this.label_titreProjet = new System.Windows.Forms.Label();
             this.dataGrid_etapes = new System.Windows.Forms.DataGridView();
@@ -51,6 +51,8 @@ namespace azur_application.Fenetres.Onglets
             this.btn_modifier = new System.Windows.Forms.Button();
             this.btn_ajouter = new System.Windows.Forms.Button();
             this.label_erreur = new System.Windows.Forms.Label();
+            this.btn_clear = new System.Windows.Forms.Button();
+            this.barre_progression = new CircularProgressBar.CircularProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_etapes)).BeginInit();
             this.panel_inputs.SuspendLayout();
             this.SuspendLayout();
@@ -83,14 +85,14 @@ namespace azur_application.Fenetres.Onglets
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGrid_etapes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid_etapes.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_etapes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Lato", 9.749999F);
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_etapes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.dataGrid_etapes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_etapes.Location = new System.Drawing.Point(12, 284);
             this.dataGrid_etapes.Name = "dataGrid_etapes";
@@ -134,21 +136,24 @@ namespace azur_application.Fenetres.Onglets
             // 
             // input_heure_fin
             // 
-            this.input_heure_fin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.input_heure_fin.CustomFormat = "HH:mm";
+            this.input_heure_fin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.input_heure_fin.Location = new System.Drawing.Point(185, 97);
             this.input_heure_fin.Name = "input_heure_fin";
             this.input_heure_fin.ShowUpDown = true;
             this.input_heure_fin.Size = new System.Drawing.Size(99, 23);
-            this.input_heure_fin.TabIndex = 41;
+            this.input_heure_fin.TabIndex = 7;
             // 
             // input_heure_debut
             // 
-            this.input_heure_debut.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.input_heure_debut.CustomFormat = "HH:mm";
+            this.input_heure_debut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.input_heure_debut.Location = new System.Drawing.Point(185, 68);
             this.input_heure_debut.Name = "input_heure_debut";
+            this.input_heure_debut.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.input_heure_debut.ShowUpDown = true;
             this.input_heure_debut.Size = new System.Drawing.Size(99, 23);
-            this.input_heure_debut.TabIndex = 40;
+            this.input_heure_debut.TabIndex = 4;
             // 
             // input_date_fin
             // 
@@ -156,7 +161,7 @@ namespace azur_application.Fenetres.Onglets
             this.input_date_fin.Location = new System.Drawing.Point(81, 97);
             this.input_date_fin.Name = "input_date_fin";
             this.input_date_fin.Size = new System.Drawing.Size(98, 23);
-            this.input_date_fin.TabIndex = 39;
+            this.input_date_fin.TabIndex = 6;
             // 
             // input_date_debut
             // 
@@ -165,7 +170,7 @@ namespace azur_application.Fenetres.Onglets
             this.input_date_debut.Name = "input_date_debut";
             this.input_date_debut.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.input_date_debut.Size = new System.Drawing.Size(98, 23);
-            this.input_date_debut.TabIndex = 38;
+            this.input_date_debut.TabIndex = 3;
             // 
             // input_etat
             // 
@@ -178,7 +183,7 @@ namespace azur_application.Fenetres.Onglets
             this.input_etat.Margin = new System.Windows.Forms.Padding(4);
             this.input_etat.Name = "input_etat";
             this.input_etat.Size = new System.Drawing.Size(146, 24);
-            this.input_etat.TabIndex = 18;
+            this.input_etat.TabIndex = 11;
             // 
             // label_etat
             // 
@@ -187,7 +192,7 @@ namespace azur_application.Fenetres.Onglets
             this.label_etat.Location = new System.Drawing.Point(340, 102);
             this.label_etat.Name = "label_etat";
             this.label_etat.Size = new System.Drawing.Size(41, 17);
-            this.label_etat.TabIndex = 17;
+            this.label_etat.TabIndex = 10;
             this.label_etat.Text = "État :";
             // 
             // label_fin
@@ -197,7 +202,7 @@ namespace azur_application.Fenetres.Onglets
             this.label_fin.Location = new System.Drawing.Point(40, 102);
             this.label_fin.Name = "label_fin";
             this.label_fin.Size = new System.Drawing.Size(35, 17);
-            this.label_fin.TabIndex = 14;
+            this.label_fin.TabIndex = 5;
             this.label_fin.Text = "Fin :";
             // 
             // label_debut
@@ -207,7 +212,7 @@ namespace azur_application.Fenetres.Onglets
             this.label_debut.Location = new System.Drawing.Point(20, 73);
             this.label_debut.Name = "label_debut";
             this.label_debut.Size = new System.Drawing.Size(55, 17);
-            this.label_debut.TabIndex = 13;
+            this.label_debut.TabIndex = 2;
             this.label_debut.Text = "Début :";
             // 
             // input_nom
@@ -223,7 +228,7 @@ namespace azur_application.Fenetres.Onglets
             this.input_nom.SelectionLength = 0;
             this.input_nom.SelectionStart = 0;
             this.input_nom.Size = new System.Drawing.Size(453, 23);
-            this.input_nom.TabIndex = 8;
+            this.input_nom.TabIndex = 1;
             this.input_nom.TabStop = false;
             this.input_nom.UseSystemPasswordChar = false;
             // 
@@ -240,7 +245,7 @@ namespace azur_application.Fenetres.Onglets
             this.input_projet.Margin = new System.Windows.Forms.Padding(4);
             this.input_projet.Name = "input_projet";
             this.input_projet.Size = new System.Drawing.Size(146, 24);
-            this.input_projet.TabIndex = 12;
+            this.input_projet.TabIndex = 9;
             // 
             // label_projet
             // 
@@ -249,7 +254,7 @@ namespace azur_application.Fenetres.Onglets
             this.label_projet.Location = new System.Drawing.Point(329, 73);
             this.label_projet.Name = "label_projet";
             this.label_projet.Size = new System.Drawing.Size(52, 17);
-            this.label_projet.TabIndex = 11;
+            this.label_projet.TabIndex = 8;
             this.label_projet.Text = "Projet :";
             // 
             // label_nom
@@ -259,7 +264,7 @@ namespace azur_application.Fenetres.Onglets
             this.label_nom.Location = new System.Drawing.Point(28, 32);
             this.label_nom.Name = "label_nom";
             this.label_nom.Size = new System.Drawing.Size(47, 17);
-            this.label_nom.TabIndex = 9;
+            this.label_nom.TabIndex = 0;
             this.label_nom.Text = "Nom :";
             // 
             // btn_supprimer
@@ -272,7 +277,7 @@ namespace azur_application.Fenetres.Onglets
             this.btn_supprimer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_supprimer.Name = "btn_supprimer";
             this.btn_supprimer.Size = new System.Drawing.Size(132, 52);
-            this.btn_supprimer.TabIndex = 47;
+            this.btn_supprimer.TabIndex = 14;
             this.btn_supprimer.Text = "Supprimer";
             this.btn_supprimer.UseVisualStyleBackColor = false;
             this.btn_supprimer.Click += new System.EventHandler(this.btn_supprimer_Click);
@@ -287,7 +292,7 @@ namespace azur_application.Fenetres.Onglets
             this.btn_modifier.Margin = new System.Windows.Forms.Padding(4);
             this.btn_modifier.Name = "btn_modifier";
             this.btn_modifier.Size = new System.Drawing.Size(132, 52);
-            this.btn_modifier.TabIndex = 46;
+            this.btn_modifier.TabIndex = 13;
             this.btn_modifier.Text = "Modifier";
             this.btn_modifier.UseVisualStyleBackColor = false;
             this.btn_modifier.Click += new System.EventHandler(this.btn_modifier_Click);
@@ -302,7 +307,7 @@ namespace azur_application.Fenetres.Onglets
             this.btn_ajouter.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ajouter.Name = "btn_ajouter";
             this.btn_ajouter.Size = new System.Drawing.Size(132, 52);
-            this.btn_ajouter.TabIndex = 45;
+            this.btn_ajouter.TabIndex = 12;
             this.btn_ajouter.Text = "Ajouter";
             this.btn_ajouter.UseVisualStyleBackColor = false;
             this.btn_ajouter.Click += new System.EventHandler(this.btn_ajouter_Click);
@@ -317,11 +322,61 @@ namespace azur_application.Fenetres.Onglets
             this.label_erreur.Size = new System.Drawing.Size(0, 19);
             this.label_erreur.TabIndex = 48;
             // 
+            // btn_clear
+            // 
+            this.btn_clear.BackColor = System.Drawing.Color.DarkOrange;
+            this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_clear.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear.ForeColor = System.Drawing.Color.White;
+            this.btn_clear.Location = new System.Drawing.Point(734, 54);
+            this.btn_clear.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(66, 172);
+            this.btn_clear.TabIndex = 15;
+            this.btn_clear.Text = "Vider";
+            this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
+            // barre_progression
+            // 
+            this.barre_progression.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.barre_progression.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.barre_progression.AnimationSpeed = 600;
+            this.barre_progression.BackColor = System.Drawing.Color.Transparent;
+            this.barre_progression.Font = new System.Drawing.Font("Lato", 16F, System.Drawing.FontStyle.Bold);
+            this.barre_progression.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.barre_progression.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.barre_progression.InnerMargin = 2;
+            this.barre_progression.InnerWidth = -1;
+            this.barre_progression.Location = new System.Drawing.Point(984, 45);
+            this.barre_progression.MarqueeAnimationSpeed = 2000;
+            this.barre_progression.Name = "barre_progression";
+            this.barre_progression.OuterColor = System.Drawing.Color.Gray;
+            this.barre_progression.OuterMargin = -15;
+            this.barre_progression.OuterWidth = 15;
+            this.barre_progression.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(81)))), ((int)(((byte)(169)))));
+            this.barre_progression.ProgressWidth = 15;
+            this.barre_progression.SecondaryFont = new System.Drawing.Font("Lato", 13F);
+            this.barre_progression.Size = new System.Drawing.Size(200, 200);
+            this.barre_progression.StartAngle = 270;
+            this.barre_progression.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.barre_progression.SubscriptMargin = new System.Windows.Forms.Padding(-78, 15, 0, 0);
+            this.barre_progression.SubscriptText = "0";
+            this.barre_progression.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.barre_progression.SuperscriptMargin = new System.Windows.Forms.Padding(-65, 52, 0, 0);
+            this.barre_progression.SuperscriptText = "%";
+            this.barre_progression.TabIndex = 52;
+            this.barre_progression.Text = "État du projet";
+            this.barre_progression.TextMargin = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            // 
             // ongletEtapes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1196, 579);
+            this.Controls.Add(this.barre_progression);
+            this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.label_erreur);
             this.Controls.Add(this.btn_supprimer);
             this.Controls.Add(this.btn_modifier);
@@ -368,5 +423,7 @@ namespace azur_application.Fenetres.Onglets
         private System.Windows.Forms.Button btn_modifier;
         private System.Windows.Forms.Button btn_ajouter;
         private System.Windows.Forms.Label label_erreur;
+        private System.Windows.Forms.Button btn_clear;
+        private CircularProgressBar.CircularProgressBar barre_progression;
     }
 }

@@ -96,6 +96,9 @@ namespace azur_application.Onglets
 
                 input_equipe.Text = dataGrid_projets.Rows[e.RowIndex].Cells[5].Value.ToString();
                 input_contexte.Text = dataGrid_projets.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                //MessageBox.Show(projet.recupererEtapesProjet(idProjet).ToString());
+                //MessageBox.Show(projet.recupererEtapesTermineesProjet(idProjet).ToString());
             }
         }
 

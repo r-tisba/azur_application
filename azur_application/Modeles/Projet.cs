@@ -179,5 +179,32 @@ namespace azur_application.Modeles
             conn.Close();
             return idProjet;
         }
+
+        public int recupererEtapesProjet(int idProjet)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT COUNT(*) FROM etapes WHERE idProjet = @idProjet", conn);
+            command.Parameters.AddWithValue("@idProjet", idProjet);
+
+            Int32 nbTotalEtape = Convert.ToInt32(command.ExecuteScalar());
+            conn.Close();
+            return nbTotalEtape;
+        }
+        
+        public int recupererEtapesTermineesProjet(int idProjet)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT COUNT(*) FROM etapes WHERE idProjet = @idProjet AND etatEtape = 1", conn);
+            command.Parameters.AddWithValue("@idProjet", idProjet);
+
+            Int32 nbTotalEtape = Convert.ToInt32(command.ExecuteScalar());
+            conn.Close();
+            return nbTotalEtape;
+        }
+        
     }
 }

@@ -60,12 +60,51 @@ namespace azur_application.Fenetres.Onglets
             ItemObject[1] = "Terminé";
 
             input_etat.Items.AddRange(ItemObject);
+            barre_progression.Value = 0;
+            LoadBarreProgression();
         }
 
         private void LoadTheme()
         {
             label_tableProjet.ForeColor = ThemeColor.ActiveColor;
             label_titreProjet.ForeColor = ThemeColor.ActiveColor;
+        }
+
+        // Barre de progression
+        private void LoadBarreProgression()
+        {
+            int nbEtapes = projet.recupererEtapesProjet(idProjet);
+            int nbEtapesFinies = projet.recupererEtapesTermineesProjet(idProjet);
+
+            if (nbEtapes == 0 || nbEtapesFinies == 0)
+            {
+                barre_progression.Value = 0;
+                barre_progression.SubscriptText = "0";
+                barre_progression.SuperscriptMargin = new System.Windows.Forms.Padding(-65, 52, 0, 0);
+            }
+            else
+            {
+                double barreProgValue = (double)nbEtapesFinies / nbEtapes;
+                barreProgValue = (double)System.Math.Round(barreProgValue, 2);
+                barreProgValue = barreProgValue * 100;
+
+                barre_progression.Minimum = 0;
+                barre_progression.Maximum = 100;
+                if (barreProgValue == 100)
+                {
+                    barre_progression.SuperscriptMargin = new System.Windows.Forms.Padding(-55, 52, 0, 0);
+                }
+                else if (barreProgValue >= 10 && barreProgValue < 100)
+                {
+                    barre_progression.SuperscriptMargin = new System.Windows.Forms.Padding(-60, 52, 0, 0);
+                }
+                else if (barreProgValue < 10)
+                {
+                    barre_progression.SuperscriptMargin = new System.Windows.Forms.Padding(-65, 52, 0, 0);
+                }
+                barre_progression.SubscriptText = barreProgValue.ToString();
+                barre_progression.Value = (int)barreProgValue;
+            }
         }
 
         // ------------------------------------ AFFICHAGE DATAGRID ------------------------------------
@@ -103,6 +142,8 @@ namespace azur_application.Fenetres.Onglets
                 input_etat.Text = dataGrid_etapes.Rows[e.RowIndex].Cells[3].Value.ToString();
 
                 input_projet.Text = dataGrid_etapes.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+                // Barre de progression
             }
         }
 
@@ -138,6 +179,7 @@ namespace azur_application.Fenetres.Onglets
                 if (etape.ajouterEtape(nomProjetSaisi, dateDebutSaisiDt, dateFinSaisiDt, etatSaisi, projetSaisi) == true)
                 {
                     displayDataProjet();
+                    LoadBarreProgression();
                     clear();
                 }
                 else
@@ -177,6 +219,7 @@ namespace azur_application.Fenetres.Onglets
                 if (etape.modifierEtape(idEtape, nomEtapeSaisi, dateDebutSaisi, dateFinSaisi, etatSaisi) == true)
                 {
                     displayDataProjet();
+                    LoadBarreProgression();
                     clear();
                 }
                 else
@@ -201,6 +244,7 @@ namespace azur_application.Fenetres.Onglets
                 if (etape.supprimerEtape(idEtape))
                 {
                     displayDataProjet();
+                    LoadBarreProgression();
                     clear();
                 }
                 else
@@ -209,6 +253,10 @@ namespace azur_application.Fenetres.Onglets
                     label_erreur.ForeColor = rouge;
                 }   
             }
+        }
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            clear();
         }
 
         public void clear()
@@ -222,5 +270,7 @@ namespace azur_application.Fenetres.Onglets
             input_etat.Text = "";
             input_projet.Text = "";
         }
+
+
     }
 }

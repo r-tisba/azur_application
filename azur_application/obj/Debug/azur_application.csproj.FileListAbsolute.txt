@@ -82,3 +82,6 @@ C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.On
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Fenetres.Onglets.ongletParametres.resources
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Fenetres.Onglets.ongletAffectations.resources
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Fenetres.Onglets.ongletEtapes.resources
+C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\CircularProgressBar.dll
+C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\WinFormAnimation.dll
+C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\CircularProgressBar.xml

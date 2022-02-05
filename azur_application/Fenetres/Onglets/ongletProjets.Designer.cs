@@ -199,7 +199,8 @@ namespace azur_application.Onglets
             // 
             // input_heure_fin
             // 
-            this.input_heure_fin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.input_heure_fin.CustomFormat = "HH:mm";
+            this.input_heure_fin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.input_heure_fin.Location = new System.Drawing.Point(492, 50);
             this.input_heure_fin.Name = "input_heure_fin";
             this.input_heure_fin.ShowUpDown = true;
@@ -208,7 +209,8 @@ namespace azur_application.Onglets
             // 
             // input_heure_debut
             // 
-            this.input_heure_debut.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.input_heure_debut.CustomFormat = "HH:mm";
+            this.input_heure_debut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.input_heure_debut.Location = new System.Drawing.Point(492, 15);
             this.input_heure_debut.Name = "input_heure_debut";
             this.input_heure_debut.ShowUpDown = true;

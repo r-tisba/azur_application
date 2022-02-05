@@ -37,6 +37,7 @@ namespace azur_application.Modeles
             if (etatSaisi == "En cours") { command.Parameters.AddWithValue("@etat", 0); }
             else { command.Parameters.AddWithValue("@etat", 1); }
 
+            /*
             System.Windows.Forms.MessageBox.Show(
                 "projetSaisi ||| " + projetSaisi + Environment.NewLine +
                 "idProjet ||| " + idProjet.ToString() + Environment.NewLine +
@@ -45,6 +46,7 @@ namespace azur_application.Modeles
                 "dateFinSaisi ||| " + dateFinSaisi.ToString() + Environment.NewLine +
                 "etat ||| " + etatSaisi + Environment.NewLine
             );
+            */
 
             command.CommandText = "INSERT INTO etapes(idProjet, nomEtape, dateDebut, dateFin, etatEtape) VALUES(@idProjet, @nomEtape, @dateDebut, @dateFin, @etat)";
             try
