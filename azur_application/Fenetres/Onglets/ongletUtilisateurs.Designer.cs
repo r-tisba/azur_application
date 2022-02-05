@@ -29,7 +29,7 @@ namespace azur_application.Onglets
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_ajouter = new System.Windows.Forms.Button();
             this.dataGrid_utilisateurs = new System.Windows.Forms.DataGridView();
             this.btn_modifier = new System.Windows.Forms.Button();
@@ -48,6 +48,8 @@ namespace azur_application.Onglets
             this.label_poste = new System.Windows.Forms.Label();
             this.input_mdp = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.panel_inputs = new System.Windows.Forms.Panel();
+            this.label_rechercher = new System.Windows.Forms.Label();
+            this.input_rechercher = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_utilisateurs)).BeginInit();
             this.panel_inputs.SuspendLayout();
             this.SuspendLayout();
@@ -77,14 +79,14 @@ namespace azur_application.Onglets
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGrid_utilisateurs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid_utilisateurs.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_utilisateurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_utilisateurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGrid_utilisateurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_utilisateurs.Location = new System.Drawing.Point(13, 271);
             this.dataGrid_utilisateurs.Margin = new System.Windows.Forms.Padding(4);
@@ -312,11 +314,31 @@ namespace azur_application.Onglets
             this.panel_inputs.Size = new System.Drawing.Size(671, 172);
             this.panel_inputs.TabIndex = 35;
             // 
+            // label_rechercher
+            // 
+            this.label_rechercher.AutoSize = true;
+            this.label_rechercher.Font = new System.Drawing.Font("Lato", 10F);
+            this.label_rechercher.Location = new System.Drawing.Point(920, 244);
+            this.label_rechercher.Name = "label_rechercher";
+            this.label_rechercher.Size = new System.Drawing.Size(86, 17);
+            this.label_rechercher.TabIndex = 36;
+            this.label_rechercher.Text = "Rechercher :";
+            // 
+            // input_rechercher
+            // 
+            this.input_rechercher.Location = new System.Drawing.Point(1012, 241);
+            this.input_rechercher.Name = "input_rechercher";
+            this.input_rechercher.Size = new System.Drawing.Size(175, 23);
+            this.input_rechercher.TabIndex = 37;
+            this.input_rechercher.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_rechercher_KeyUp);
+            // 
             // ongletUtilisateurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 540);
+            this.Controls.Add(this.input_rechercher);
+            this.Controls.Add(this.label_rechercher);
             this.Controls.Add(this.panel_inputs);
             this.Controls.Add(this.label_asterisque);
             this.Controls.Add(this.label_erreur);
@@ -359,5 +381,7 @@ namespace azur_application.Onglets
         private System.Windows.Forms.Label label_poste;
         private MaterialSkin.Controls.MaterialSingleLineTextField input_mdp;
         private System.Windows.Forms.Panel panel_inputs;
+        private System.Windows.Forms.Label label_rechercher;
+        private System.Windows.Forms.TextBox input_rechercher;
     }
 }

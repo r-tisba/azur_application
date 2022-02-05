@@ -254,6 +254,14 @@ namespace azur_application.Fenetres.Onglets
                 }   
             }
         }
+        // SearchBar
+        private void input_rechercher_KeyUp(object sender, KeyEventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGrid_etapes.DataSource;
+            bs.Filter = "nom" + " like '%" + input_rechercher.Text + "%'";
+            dataGrid_etapes.DataSource = bs;
+        }
         private void btn_clear_Click(object sender, EventArgs e)
         {
             clear();
@@ -269,8 +277,7 @@ namespace azur_application.Fenetres.Onglets
             input_heure_fin.Text = "";
             input_etat.Text = "";
             input_projet.Text = "";
+            input_rechercher.Text = "";
         }
-
-
     }
 }

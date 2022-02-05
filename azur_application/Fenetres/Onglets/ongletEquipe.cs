@@ -121,7 +121,7 @@ namespace azur_application.Onglets
                 }
             }
         }
-
+        // ------------------------------------ MODIFIER EQUIPE ------------------------------------
         private void btn_modifier_Click(object sender, EventArgs e)
         {
             MySqlCommand command = conn.CreateCommand();
@@ -161,7 +161,7 @@ namespace azur_application.Onglets
                 }
             }
         }
-
+        // ------------------------------------ SUPPRIMER EQUIPE ------------------------------------
         private void btn_supprimer_Click(object sender, EventArgs e)
         {
             string nomEquipeSaisi = input_nomEquipe.Text;
@@ -186,12 +186,21 @@ namespace azur_application.Onglets
                 }
             }
         }
+        // SearchBar
+        private void input_rechercher_KeyUp(object sender, KeyEventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGrid_equipe.DataSource;
+            bs.Filter = "nom" + " like '%" + input_rechercher.Text + "%'";
+            dataGrid_equipe.DataSource = bs;
+        }
 
         public void clear()
         {
             label_erreur.Text = "";
             input_nomEquipe.Text = "";
             input_image.Text = "";
+            input_rechercher.Text = "";
         }
         public void clearImage()
         {

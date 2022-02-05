@@ -29,7 +29,7 @@ namespace azur_application.Fenetres.Onglets
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_titre = new System.Windows.Forms.Label();
             this.label_titreProjet = new System.Windows.Forms.Label();
             this.dataGrid_etapes = new System.Windows.Forms.DataGridView();
@@ -53,6 +53,8 @@ namespace azur_application.Fenetres.Onglets
             this.label_erreur = new System.Windows.Forms.Label();
             this.btn_clear = new System.Windows.Forms.Button();
             this.barre_progression = new CircularProgressBar.CircularProgressBar();
+            this.input_rechercher = new System.Windows.Forms.TextBox();
+            this.label_rechercher = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_etapes)).BeginInit();
             this.panel_inputs.SuspendLayout();
             this.SuspendLayout();
@@ -85,14 +87,14 @@ namespace azur_application.Fenetres.Onglets
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGrid_etapes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid_etapes.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Lato", 9.749999F);
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_etapes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_etapes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_etapes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_etapes.Location = new System.Drawing.Point(12, 284);
             this.dataGrid_etapes.Name = "dataGrid_etapes";
@@ -368,6 +370,27 @@ namespace azur_application.Fenetres.Onglets
             this.barre_progression.TabIndex = 52;
             this.barre_progression.Text = "État du projet";
             this.barre_progression.TextMargin = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.barre_progression.Value = 68;
+            // 
+            // input_rechercher
+            // 
+            this.input_rechercher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.input_rechercher.Location = new System.Drawing.Point(1037, 258);
+            this.input_rechercher.Name = "input_rechercher";
+            this.input_rechercher.Size = new System.Drawing.Size(147, 23);
+            this.input_rechercher.TabIndex = 54;
+            this.input_rechercher.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_rechercher_KeyUp);
+            // 
+            // label_rechercher
+            // 
+            this.label_rechercher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_rechercher.AutoSize = true;
+            this.label_rechercher.Font = new System.Drawing.Font("Lato", 10F);
+            this.label_rechercher.Location = new System.Drawing.Point(945, 261);
+            this.label_rechercher.Name = "label_rechercher";
+            this.label_rechercher.Size = new System.Drawing.Size(86, 17);
+            this.label_rechercher.TabIndex = 53;
+            this.label_rechercher.Text = "Rechercher :";
             // 
             // ongletEtapes
             // 
@@ -375,6 +398,8 @@ namespace azur_application.Fenetres.Onglets
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1196, 579);
+            this.Controls.Add(this.input_rechercher);
+            this.Controls.Add(this.label_rechercher);
             this.Controls.Add(this.barre_progression);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.label_erreur);
@@ -425,5 +450,7 @@ namespace azur_application.Fenetres.Onglets
         private System.Windows.Forms.Label label_erreur;
         private System.Windows.Forms.Button btn_clear;
         private CircularProgressBar.CircularProgressBar barre_progression;
+        private System.Windows.Forms.TextBox input_rechercher;
+        private System.Windows.Forms.Label label_rechercher;
     }
 }

@@ -197,6 +197,15 @@ namespace azur_application.Onglets
             }
         }
 
+        // SearchBar
+        private void input_rechercher_KeyUp(object sender, KeyEventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGrid_utilisateurs.DataSource;
+            bs.Filter = "identifiant" + " like '%" + input_rechercher.Text + "%'";
+            dataGrid_utilisateurs.DataSource = bs;
+        }
+
         // ------------------------------------ RESET VALEUR INPUT ------------------------------------
         public void clear()
         {
@@ -206,6 +215,7 @@ namespace azur_application.Onglets
             input_mdp.Text = "";
             input_poste.Text = "";
             input_role.Text = "";
+            input_rechercher.Text = "";
         }
     }
 }

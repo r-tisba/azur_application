@@ -159,12 +159,27 @@ namespace azur_application.Fenetres.Onglets
             }
         }
 
+        // SearchBar
+        private void input_rechercher_KeyUp(object sender, KeyEventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGrid_utilisateurs.DataSource;
+            bs.Filter = "identifiant" + " like '%" + input_rechercher.Text + "%'";
+            dataGrid_utilisateurs.DataSource = bs;
+
+            BindingSource bs2 = new BindingSource();
+            bs2.DataSource = dataGrid_compositionEquipes.DataSource;
+            bs2.Filter = "identifiant" + " like '%" + input_rechercher.Text + "%'";
+            dataGrid_compositionEquipes.DataSource = bs2;
+        }
+
         // ------------------------------------ RESET VALEUR INPUT ------------------------------------
         public void clear()
         {
             label_erreur.Text = "";
             input_equipe.Text = "";
             input_identifiant.Text = "";
+            input_rechercher.Text = "";
         }
     }
 }

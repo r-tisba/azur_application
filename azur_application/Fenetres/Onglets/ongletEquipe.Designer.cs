@@ -42,6 +42,8 @@ namespace azur_application.Onglets
             this.pictureBox_image = new System.Windows.Forms.PictureBox();
             this.btn_image = new System.Windows.Forms.Button();
             this.input_image = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.input_rechercher = new System.Windows.Forms.TextBox();
+            this.label_rechercher = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_equipe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.input_image)).BeginInit();
@@ -99,7 +101,7 @@ namespace azur_application.Onglets
             this.btn_creer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_creer.Font = new System.Drawing.Font("Lato", 12F);
             this.btn_creer.ForeColor = System.Drawing.Color.White;
-            this.btn_creer.Location = new System.Drawing.Point(575, 35);
+            this.btn_creer.Location = new System.Drawing.Point(570, 78);
             this.btn_creer.Name = "btn_creer";
             this.btn_creer.Size = new System.Drawing.Size(147, 45);
             this.btn_creer.TabIndex = 13;
@@ -125,7 +127,7 @@ namespace azur_application.Onglets
             this.btn_supprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_supprimer.Font = new System.Drawing.Font("Lato", 12F);
             this.btn_supprimer.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_supprimer.Location = new System.Drawing.Point(575, 140);
+            this.btn_supprimer.Location = new System.Drawing.Point(570, 183);
             this.btn_supprimer.Name = "btn_supprimer";
             this.btn_supprimer.Size = new System.Drawing.Size(147, 52);
             this.btn_supprimer.TabIndex = 15;
@@ -140,7 +142,7 @@ namespace azur_application.Onglets
             this.btn_modifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modifier.Font = new System.Drawing.Font("Lato", 12F);
             this.btn_modifier.ForeColor = System.Drawing.Color.White;
-            this.btn_modifier.Location = new System.Drawing.Point(575, 86);
+            this.btn_modifier.Location = new System.Drawing.Point(570, 129);
             this.btn_modifier.Name = "btn_modifier";
             this.btn_modifier.Size = new System.Drawing.Size(147, 48);
             this.btn_modifier.TabIndex = 16;
@@ -205,9 +207,29 @@ namespace azur_application.Onglets
             this.input_image.Size = new System.Drawing.Size(200, 23);
             this.input_image.TabIndex = 22;
             // 
+            // input_rechercher
+            // 
+            this.input_rechercher.Location = new System.Drawing.Point(570, 35);
+            this.input_rechercher.Name = "input_rechercher";
+            this.input_rechercher.Size = new System.Drawing.Size(147, 23);
+            this.input_rechercher.TabIndex = 39;
+            this.input_rechercher.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_rechercher_KeyUp);
+            // 
+            // label_rechercher
+            // 
+            this.label_rechercher.AutoSize = true;
+            this.label_rechercher.Font = new System.Drawing.Font("Lato", 10F);
+            this.label_rechercher.Location = new System.Drawing.Point(478, 38);
+            this.label_rechercher.Name = "label_rechercher";
+            this.label_rechercher.Size = new System.Drawing.Size(86, 17);
+            this.label_rechercher.TabIndex = 38;
+            this.label_rechercher.Text = "Rechercher :";
+            // 
             // ongletEquipe
             // 
             this.ClientSize = new System.Drawing.Size(1200, 540);
+            this.Controls.Add(this.input_rechercher);
+            this.Controls.Add(this.label_rechercher);
             this.Controls.Add(this.input_image);
             this.Controls.Add(this.btn_image);
             this.Controls.Add(this.pictureBox_image);
@@ -248,5 +270,7 @@ namespace azur_application.Onglets
         private System.Windows.Forms.PictureBox pictureBox_image;
         private System.Windows.Forms.Button btn_image;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt input_image;
+        private System.Windows.Forms.TextBox input_rechercher;
+        private System.Windows.Forms.Label label_rechercher;
     }
 }

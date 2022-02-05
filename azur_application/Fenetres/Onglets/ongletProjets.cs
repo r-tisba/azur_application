@@ -269,6 +269,15 @@ namespace azur_application.Onglets
             childForm.Show();
         }
 
+        // SearchBar
+        private void input_rechercher_KeyUp(object sender, KeyEventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGrid_projets.DataSource;
+            bs.Filter = "nom" + " like '%" + input_rechercher.Text + "%'";
+            dataGrid_projets.DataSource = bs;
+        }
+
         public void clear()
         {
             label_erreur.Text = "";

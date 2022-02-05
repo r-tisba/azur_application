@@ -29,8 +29,8 @@ namespace azur_application.Fenetres.Onglets
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_identifiant = new System.Windows.Forms.Label();
             this.label_equipe = new System.Windows.Forms.Label();
             this.btn_associer = new System.Windows.Forms.Button();
@@ -44,6 +44,8 @@ namespace azur_application.Fenetres.Onglets
             this.label_tableUtilisateurs = new System.Windows.Forms.Label();
             this.label_tableCompositions = new System.Windows.Forms.Label();
             this.panel_dataGrid = new System.Windows.Forms.Panel();
+            this.input_rechercher = new System.Windows.Forms.TextBox();
+            this.label_rechercher = new System.Windows.Forms.Label();
             this.panel_inputs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_compositionEquipes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_utilisateurs)).BeginInit();
@@ -84,7 +86,7 @@ namespace azur_application.Fenetres.Onglets
             this.btn_associer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_associer.Font = new System.Drawing.Font("Lato", 12F);
             this.btn_associer.ForeColor = System.Drawing.Color.White;
-            this.btn_associer.Location = new System.Drawing.Point(17, 188);
+            this.btn_associer.Location = new System.Drawing.Point(17, 215);
             this.btn_associer.Margin = new System.Windows.Forms.Padding(5);
             this.btn_associer.Name = "btn_associer";
             this.btn_associer.Size = new System.Drawing.Size(142, 52);
@@ -113,7 +115,7 @@ namespace azur_application.Fenetres.Onglets
             this.panel_inputs.Controls.Add(this.input_equipe);
             this.panel_inputs.Controls.Add(this.label_equipe);
             this.panel_inputs.Controls.Add(this.label_identifiant);
-            this.panel_inputs.Location = new System.Drawing.Point(17, 49);
+            this.panel_inputs.Location = new System.Drawing.Point(17, 76);
             this.panel_inputs.Margin = new System.Windows.Forms.Padding(4);
             this.panel_inputs.Name = "panel_inputs";
             this.panel_inputs.Size = new System.Drawing.Size(293, 131);
@@ -126,7 +128,7 @@ namespace azur_application.Fenetres.Onglets
             | System.Windows.Forms.AnchorStyles.Right)));
             this.input_identifiant.Depth = 0;
             this.input_identifiant.Hint = "";
-            this.input_identifiant.Location = new System.Drawing.Point(107, 20);
+            this.input_identifiant.Location = new System.Drawing.Point(107, 26);
             this.input_identifiant.MaxLength = 32767;
             this.input_identifiant.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_identifiant.Name = "input_identifiant";
@@ -145,7 +147,7 @@ namespace azur_application.Fenetres.Onglets
             this.btn_supprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_supprimer.Font = new System.Drawing.Font("Lato", 12F);
             this.btn_supprimer.ForeColor = System.Drawing.Color.White;
-            this.btn_supprimer.Location = new System.Drawing.Point(168, 188);
+            this.btn_supprimer.Location = new System.Drawing.Point(168, 215);
             this.btn_supprimer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_supprimer.Name = "btn_supprimer";
             this.btn_supprimer.Size = new System.Drawing.Size(142, 52);
@@ -174,14 +176,14 @@ namespace azur_application.Fenetres.Onglets
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGrid_compositionEquipes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid_compositionEquipes.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_compositionEquipes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Lato", 9.749999F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_compositionEquipes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGrid_compositionEquipes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_compositionEquipes.Location = new System.Drawing.Point(435, 40);
             this.dataGrid_compositionEquipes.Margin = new System.Windows.Forms.Padding(4);
@@ -201,14 +203,14 @@ namespace azur_application.Fenetres.Onglets
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGrid_utilisateurs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid_utilisateurs.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 9.749999F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_utilisateurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Lato", 9.749999F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_utilisateurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGrid_utilisateurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_utilisateurs.Location = new System.Drawing.Point(87, 40);
             this.dataGrid_utilisateurs.Margin = new System.Windows.Forms.Padding(4);
@@ -256,11 +258,31 @@ namespace azur_application.Fenetres.Onglets
             this.panel_dataGrid.Size = new System.Drawing.Size(779, 532);
             this.panel_dataGrid.TabIndex = 15;
             // 
+            // input_rechercher
+            // 
+            this.input_rechercher.Location = new System.Drawing.Point(123, 46);
+            this.input_rechercher.Name = "input_rechercher";
+            this.input_rechercher.Size = new System.Drawing.Size(187, 23);
+            this.input_rechercher.TabIndex = 39;
+            this.input_rechercher.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_rechercher_KeyUp);
+            // 
+            // label_rechercher
+            // 
+            this.label_rechercher.AutoSize = true;
+            this.label_rechercher.Font = new System.Drawing.Font("Lato", 10F);
+            this.label_rechercher.Location = new System.Drawing.Point(31, 49);
+            this.label_rechercher.Name = "label_rechercher";
+            this.label_rechercher.Size = new System.Drawing.Size(86, 17);
+            this.label_rechercher.TabIndex = 38;
+            this.label_rechercher.Text = "Rechercher :";
+            // 
             // ongletAffectations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 540);
+            this.Controls.Add(this.input_rechercher);
+            this.Controls.Add(this.label_rechercher);
             this.Controls.Add(this.panel_dataGrid);
             this.Controls.Add(this.btn_associer);
             this.Controls.Add(this.btn_supprimer);
@@ -297,5 +319,7 @@ namespace azur_application.Fenetres.Onglets
         private System.Windows.Forms.Label label_tableCompositions;
         private MaterialSkin.Controls.MaterialSingleLineTextField input_identifiant;
         private System.Windows.Forms.Panel panel_dataGrid;
+        private System.Windows.Forms.TextBox input_rechercher;
+        private System.Windows.Forms.Label label_rechercher;
     }
 }
