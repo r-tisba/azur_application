@@ -1,15 +1,14 @@
 .vs
-.vs/
-azur_application/obj/Debug/
-azur_application/bin/Debug/
+/.vs/
+/azur_application/obj/Debug/
+/azur_application/bin/Debug/
 /obj/Debug/
-obj/Debug/
 
 
-azur_application/bin/Debug/azur_application.exe
-azur_application/bin/Debug/azur_application.pdb
-azur_application/obj/Debug/DesignTimeResolveAssemblyReferences.cache
-azur_application/obj/Debug/azur_application.csproj.AssemblyReference.cache
-azur_application/obj/Debug/azur_application.csproj.GenerateResource.cache
-azur_application/obj/Debug/azur_application.exe
-azur_application/obj/Debug/azur_application.pdb
+/azur_application/bin/Debug/azur_application.exe
+/azur_application/bin/Debug/azur_application.pdb
+/azur_application/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+/azur_application/obj/Debug/azur_application.csproj.AssemblyReference.cache
+/azur_application/obj/Debug/azur_application.csproj.GenerateResource.cache
+/azur_application/obj/Debug/azur_application.exe
+/azur_application/obj/Debug/azur_application.pdb
