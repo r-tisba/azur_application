@@ -218,7 +218,7 @@ namespace azur_application
 
         private void btnProjets_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Onglets.ongletProjets(), sender);
+            OpenChildForm(new Onglets.ongletProjets(this), sender);
         }
 
         private void btnStatistiques_Click(object sender, EventArgs e)

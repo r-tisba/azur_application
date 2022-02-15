@@ -22,11 +22,13 @@ namespace azur_application.Onglets
         private Form activeForm;
         Color rouge = Color.FromArgb(255, 0, 0);
         public static int idProjet;
+        public gestion FenetreGestion;
 
-        public ongletProjets()
+        public ongletProjets(gestion FenetreParent)
         {
             InitializeComponent();
             displayDataProjet();
+            this.FenetreGestion = FenetreParent;
         }
         private void ongletProjets_Load(object sender, EventArgs e)
         {
@@ -227,7 +229,7 @@ namespace azur_application.Onglets
             }
             else
             {
-                OpenChildForm(new ongletEtapes(), sender);
+                OpenChildForm(new ongletEtapes(this), sender);
             }
 
             /*
