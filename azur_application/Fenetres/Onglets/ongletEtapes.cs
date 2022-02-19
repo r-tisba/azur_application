@@ -30,7 +30,6 @@ namespace azur_application.Fenetres.Onglets
 
             gestion gestion = new gestion();
 
-
             FenetreParent.FenetreGestion.labelTitre.Text = this.Text;
             gestion.labelTitreText = this.Text;
             gestion.labelTitre.Text = this.Text;
