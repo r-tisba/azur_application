@@ -23,13 +23,14 @@ namespace azur_application.Fenetres.Onglets
         public static int idEtape;
 
         int idProjet = ongletProjets.idProjet;
-        public ongletEtapes()
+        public ongletEtapes(ongletProjets FenetreParent)
         {
             InitializeComponent();
             displayDataProjet();
 
             gestion gestion = new gestion();
 
+            FenetreParent.FenetreGestion.labelTitre.Text = this.Text;
             gestion.labelTitreText = this.Text;
             gestion.labelTitre.Text = this.Text;
         }
