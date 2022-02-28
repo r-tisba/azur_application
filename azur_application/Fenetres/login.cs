@@ -161,7 +161,7 @@ namespace azur_application
                 }
                 catch
                 {
-                    message_erreur.Text = "Cet identifiant n'existe pas";
+                    message_erreur.Text = "Identifiant ou mot de passe incorrect";
                     message_erreur.ForeColor = rouge;
                 }
                 MySqlDataReader reader = command.ExecuteReader();
@@ -173,7 +173,7 @@ namespace azur_application
                     // Renvoi booléen
                     if (BCrypt.Verify(mdpSaisi, mdp) == false)
                     {
-                        message_erreur.Text = "Mot de passe erroné";
+                        message_erreur.Text = "Identifiant ou mot de passe incorrect";
                         message_erreur.ForeColor = rouge;
                     }
                     else

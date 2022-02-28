@@ -29,7 +29,7 @@ namespace azur_application.Onglets
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGrid_equipe = new System.Windows.Forms.DataGridView();
             this.nom_equipe = new System.Windows.Forms.Label();
             this.image = new System.Windows.Forms.Label();
@@ -56,14 +56,14 @@ namespace azur_application.Onglets
             this.dataGrid_equipe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGrid_equipe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid_equipe.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 9.749999F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_equipe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_equipe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_equipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_equipe.Location = new System.Drawing.Point(744, 35);
             this.dataGrid_equipe.Name = "dataGrid_equipe";
@@ -154,7 +154,7 @@ namespace azur_application.Onglets
             // 
             this.input_nomEquipe.Depth = 0;
             this.input_nomEquipe.Hint = "";
-            this.input_nomEquipe.Location = new System.Drawing.Point(113, 57);
+            this.input_nomEquipe.Location = new System.Drawing.Point(113, 63);
             this.input_nomEquipe.MaxLength = 32767;
             this.input_nomEquipe.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_nomEquipe.Name = "input_nomEquipe";
