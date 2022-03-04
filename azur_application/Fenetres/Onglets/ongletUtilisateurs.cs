@@ -22,6 +22,7 @@ namespace azur_application.Onglets
         MySqlDataReader reader;
         MySqlDataAdapter adpt;
         DataTable dt;
+        Color rouge = Color.FromArgb(255, 0, 0);
 
         int idUtilisateur;
         public ongletUtilisateurs()
@@ -36,6 +37,7 @@ namespace azur_application.Onglets
             // Select roles
             Utilisateur user = new Utilisateur();
             DataTable dt = new DataTable();
+            dataGrid_utilisateurs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             user.recupererNomsRoles().Fill(dt);
 
             input_role.ValueMember = "nomRole";
@@ -173,25 +175,49 @@ namespace azur_application.Onglets
             }
         }
 
-        // ------------------------------------ SUPPRIMER ------------------------------------
-        private void btn_supprimer_Click(object sender, EventArgs e)
+        // ------------------------------------ REINITIALISATION ------------------------------------
+        private void btn_reinitialisation_Click(object sender, EventArgs e)
         {
-            Utilisateur user = new Utilisateur();
-
-            if (user.supprimerUtilisateur(idUtilisateur) == true)
+            if (idUtilisateur == 0)
             {
-                displayData();
-                clear();
+                label_erreur.Text = "Veuillez sélectionner un utilisateur";
+                label_erreur.ForeColor = rouge;
             }
             else
             {
-                label_erreur.Text = "Erreur lors de la supression";
-                Color rouge = Color.FromArgb(255, 0, 0);
-                label_erreur.ForeColor = rouge;
-
-                if (idUtilisateur == 0)
+                Utilisateur user = new Utilisateur();
+                if (user.reinitialiserUtilisateur(idUtilisateur) == true)
                 {
-                    label_erreur.Text = "Veuillez sélectionner un utilisateur";
+                    displayData();
+                    clear();
+                }
+                else
+                {
+                    label_erreur.Text = "Erreur lors de la réinitialisation";
+                    label_erreur.ForeColor = rouge;
+                }
+            }
+        }
+
+        // ------------------------------------ SUPPRIMER ------------------------------------
+        private void btn_supprimer_Click(object sender, EventArgs e)
+        {
+            if (idUtilisateur == 0)
+            {
+                label_erreur.Text = "Veuillez sélectionner un utilisateur";
+                label_erreur.ForeColor = rouge;
+            }
+            else
+            {
+                Utilisateur user = new Utilisateur();
+                if (user.supprimerUtilisateur(idUtilisateur) == true)
+                {
+                    displayData();
+                    clear();
+                }
+                else
+                {
+                    label_erreur.Text = "Erreur lors de la supression";
                     label_erreur.ForeColor = rouge;
                 }
             }

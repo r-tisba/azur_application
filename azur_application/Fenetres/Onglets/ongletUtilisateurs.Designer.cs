@@ -29,6 +29,9 @@ namespace azur_application.Onglets
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_ajouter = new System.Windows.Forms.Button();
             this.dataGrid_utilisateurs = new System.Windows.Forms.DataGridView();
@@ -50,6 +53,7 @@ namespace azur_application.Onglets
             this.panel_inputs = new System.Windows.Forms.Panel();
             this.label_rechercher = new System.Windows.Forms.Label();
             this.input_rechercher = new System.Windows.Forms.TextBox();
+            this.btn_reinitialisation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_utilisateurs)).BeginInit();
             this.panel_inputs.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +65,7 @@ namespace azur_application.Onglets
             this.btn_ajouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ajouter.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ajouter.ForeColor = System.Drawing.Color.White;
-            this.btn_ajouter.Location = new System.Drawing.Point(1012, 39);
+            this.btn_ajouter.Location = new System.Drawing.Point(925, 41);
             this.btn_ajouter.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ajouter.Name = "btn_ajouter";
             this.btn_ajouter.Size = new System.Drawing.Size(152, 52);
@@ -74,24 +78,50 @@ namespace azur_application.Onglets
             // 
             this.dataGrid_utilisateurs.AllowUserToAddRows = false;
             this.dataGrid_utilisateurs.AllowUserToDeleteRows = false;
+            this.dataGrid_utilisateurs.AllowUserToResizeColumns = false;
+            this.dataGrid_utilisateurs.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            this.dataGrid_utilisateurs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_utilisateurs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGrid_utilisateurs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid_utilisateurs.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_utilisateurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGrid_utilisateurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_utilisateurs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGrid_utilisateurs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_utilisateurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGrid_utilisateurs.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid_utilisateurs.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGrid_utilisateurs.EnableHeadersVisualStyles = false;
             this.dataGrid_utilisateurs.Location = new System.Drawing.Point(13, 271);
             this.dataGrid_utilisateurs.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_utilisateurs.Name = "dataGrid_utilisateurs";
             this.dataGrid_utilisateurs.ReadOnly = true;
+            this.dataGrid_utilisateurs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_utilisateurs.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGrid_utilisateurs.RowHeadersVisible = false;
             this.dataGrid_utilisateurs.RowHeadersWidth = 51;
             this.dataGrid_utilisateurs.Size = new System.Drawing.Size(1174, 256);
             this.dataGrid_utilisateurs.TabIndex = 15;
@@ -104,7 +134,7 @@ namespace azur_application.Onglets
             this.btn_modifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modifier.Font = new System.Drawing.Font("Lato", 12F);
             this.btn_modifier.ForeColor = System.Drawing.Color.White;
-            this.btn_modifier.Location = new System.Drawing.Point(1012, 99);
+            this.btn_modifier.Location = new System.Drawing.Point(925, 101);
             this.btn_modifier.Margin = new System.Windows.Forms.Padding(4);
             this.btn_modifier.Name = "btn_modifier";
             this.btn_modifier.Size = new System.Drawing.Size(152, 52);
@@ -120,7 +150,7 @@ namespace azur_application.Onglets
             this.btn_supprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_supprimer.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_supprimer.ForeColor = System.Drawing.Color.White;
-            this.btn_supprimer.Location = new System.Drawing.Point(1012, 159);
+            this.btn_supprimer.Location = new System.Drawing.Point(925, 161);
             this.btn_supprimer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_supprimer.Name = "btn_supprimer";
             this.btn_supprimer.Size = new System.Drawing.Size(152, 52);
@@ -155,7 +185,7 @@ namespace azur_application.Onglets
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_asterisque.AutoSize = true;
             this.label_asterisque.Font = new System.Drawing.Font("Lato Light", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_asterisque.Location = new System.Drawing.Point(1008, 12);
+            this.label_asterisque.Location = new System.Drawing.Point(1036, 20);
             this.label_asterisque.Name = "label_asterisque";
             this.label_asterisque.Size = new System.Drawing.Size(151, 17);
             this.label_asterisque.TabIndex = 34;
@@ -210,9 +240,11 @@ namespace azur_application.Onglets
             // input_role
             // 
             this.input_role.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.input_role.BackColor = System.Drawing.SystemColors.Window;
             this.input_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.input_role.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.input_role.Font = new System.Drawing.Font("Lato", 10F);
-            this.input_role.Location = new System.Drawing.Point(443, 70);
+            this.input_role.Location = new System.Drawing.Point(423, 69);
             this.input_role.Name = "input_role";
             this.input_role.Size = new System.Drawing.Size(165, 24);
             this.input_role.TabIndex = 4;
@@ -261,7 +293,7 @@ namespace azur_application.Onglets
             this.label_mdp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_mdp.AutoSize = true;
             this.label_mdp.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_mdp.Location = new System.Drawing.Point(311, 22);
+            this.label_mdp.Location = new System.Drawing.Point(301, 22);
             this.label_mdp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_mdp.Name = "label_mdp";
             this.label_mdp.Size = new System.Drawing.Size(105, 17);
@@ -284,7 +316,7 @@ namespace azur_application.Onglets
             this.input_mdp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.input_mdp.Depth = 0;
             this.input_mdp.Hint = "";
-            this.input_mdp.Location = new System.Drawing.Point(443, 22);
+            this.input_mdp.Location = new System.Drawing.Point(423, 22);
             this.input_mdp.MaxLength = 32767;
             this.input_mdp.MouseState = MaterialSkin.MouseState.HOVER;
             this.input_mdp.Name = "input_mdp";
@@ -316,6 +348,7 @@ namespace azur_application.Onglets
             // 
             // label_rechercher
             // 
+            this.label_rechercher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_rechercher.AutoSize = true;
             this.label_rechercher.Font = new System.Drawing.Font("Lato", 10F);
             this.label_rechercher.Location = new System.Drawing.Point(920, 244);
@@ -326,17 +359,35 @@ namespace azur_application.Onglets
             // 
             // input_rechercher
             // 
+            this.input_rechercher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.input_rechercher.Location = new System.Drawing.Point(1012, 241);
             this.input_rechercher.Name = "input_rechercher";
             this.input_rechercher.Size = new System.Drawing.Size(175, 23);
             this.input_rechercher.TabIndex = 37;
             this.input_rechercher.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_rechercher_KeyUp);
             // 
+            // btn_reinitialisation
+            // 
+            this.btn_reinitialisation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_reinitialisation.BackColor = System.Drawing.Color.DarkOrange;
+            this.btn_reinitialisation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reinitialisation.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reinitialisation.ForeColor = System.Drawing.Color.White;
+            this.btn_reinitialisation.Location = new System.Drawing.Point(1085, 41);
+            this.btn_reinitialisation.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_reinitialisation.Name = "btn_reinitialisation";
+            this.btn_reinitialisation.Size = new System.Drawing.Size(102, 172);
+            this.btn_reinitialisation.TabIndex = 38;
+            this.btn_reinitialisation.Text = "Réinitialiser";
+            this.btn_reinitialisation.UseVisualStyleBackColor = false;
+            this.btn_reinitialisation.Click += new System.EventHandler(this.btn_reinitialisation_Click);
+            // 
             // ongletUtilisateurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 540);
+            this.Controls.Add(this.btn_reinitialisation);
             this.Controls.Add(this.input_rechercher);
             this.Controls.Add(this.label_rechercher);
             this.Controls.Add(this.panel_inputs);
@@ -383,5 +434,6 @@ namespace azur_application.Onglets
         private System.Windows.Forms.Panel panel_inputs;
         private System.Windows.Forms.Label label_rechercher;
         private System.Windows.Forms.TextBox input_rechercher;
+        private System.Windows.Forms.Button btn_reinitialisation;
     }
 }

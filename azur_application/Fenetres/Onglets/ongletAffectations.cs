@@ -35,6 +35,9 @@ namespace azur_application.Fenetres.Onglets
 
             Equipe equipe = new Equipe();
             DataTable dt = new DataTable();
+            dataGrid_utilisateurs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGrid_compositionEquipes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             // Select nomEquipes
             equipe.recupererNomsEquipes().Fill(dt);
 

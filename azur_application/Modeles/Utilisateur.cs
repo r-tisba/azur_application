@@ -146,6 +146,30 @@ namespace azur_application.Modeles
             }
         }
 
+        // ------------------------------------ REINITIALISATION ------------------------------------
+        public bool reinitialiserUtilisateur(int idUtilisateur)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
+            command.Parameters.AddWithValue("@validation", 0);
+            command.CommandText = "UPDATE utilisateurs SET validation = @validation WHERE idUtilisateur = @idUtilisateur";
+            command.ExecuteNonQuery();
+
+            try
+            {
+                command.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                conn.Close();
+                return false;
+            }
+        }
+
         // ------------------------------------ SUPPRIMER ------------------------------------
         public bool supprimerUtilisateur(int idUtilisateur)
         {

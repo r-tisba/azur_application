@@ -37,6 +37,8 @@ namespace azur_application.Onglets
             idProjet = 0;
             Equipe equipe = new Equipe();
             DataTable dt = new DataTable();
+            dataGrid_projets.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             // Select nomEquipes
             equipe.recupererNomsEquipes().Fill(dt);
 

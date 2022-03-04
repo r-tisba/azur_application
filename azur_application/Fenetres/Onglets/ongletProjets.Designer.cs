@@ -29,7 +29,10 @@ namespace azur_application.Onglets
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGrid_projets = new System.Windows.Forms.DataGridView();
             this.label_titreProjet = new System.Windows.Forms.Label();
             this.btn_ajouter = new System.Windows.Forms.Button();
@@ -69,23 +72,49 @@ namespace azur_application.Onglets
             // 
             this.dataGrid_projets.AllowUserToAddRows = false;
             this.dataGrid_projets.AllowUserToDeleteRows = false;
+            this.dataGrid_projets.AllowUserToResizeColumns = false;
+            this.dataGrid_projets.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            this.dataGrid_projets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGrid_projets.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGrid_projets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid_projets.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_projets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGrid_projets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_projets.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGrid_projets.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lato", 10F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_projets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGrid_projets.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Lato", 10F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid_projets.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGrid_projets.EnableHeadersVisualStyles = false;
             this.dataGrid_projets.Location = new System.Drawing.Point(12, 319);
             this.dataGrid_projets.Name = "dataGrid_projets";
             this.dataGrid_projets.ReadOnly = true;
+            this.dataGrid_projets.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Lato", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_projets.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGrid_projets.RowHeadersVisible = false;
             this.dataGrid_projets.RowHeadersWidth = 51;
             this.dataGrid_projets.Size = new System.Drawing.Size(1172, 248);
             this.dataGrid_projets.TabIndex = 0;
@@ -263,6 +292,7 @@ namespace azur_application.Onglets
             | System.Windows.Forms.AnchorStyles.Left)));
             this.input_etat.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.input_etat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.input_etat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.input_etat.Font = new System.Drawing.Font("Lato", 10F);
             this.input_etat.Location = new System.Drawing.Point(696, 17);
             this.input_etat.Margin = new System.Windows.Forms.Padding(4);
@@ -350,6 +380,7 @@ namespace azur_application.Onglets
             | System.Windows.Forms.AnchorStyles.Left)));
             this.input_equipe.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.input_equipe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.input_equipe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.input_equipe.Font = new System.Drawing.Font("Lato", 10F);
             this.input_equipe.Location = new System.Drawing.Point(696, 52);
             this.input_equipe.Margin = new System.Windows.Forms.Padding(4);

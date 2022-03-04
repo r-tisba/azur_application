@@ -32,6 +32,7 @@ namespace azur_application.Onglets
         private void ongletEquipe_Load(object sender, EventArgs e)
         {
             LoadTheme();
+            dataGrid_equipe.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         private void LoadTheme()
         {

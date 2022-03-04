@@ -44,6 +44,7 @@ namespace azur_application.Fenetres.Onglets
 
             Etape etapes = new Etape();
             DataTable dt = new DataTable();
+            dataGrid_etapes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             // Select nomProjets
             etapes.recupererNomsProjets().Fill(dt);
