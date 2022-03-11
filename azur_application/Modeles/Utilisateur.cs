@@ -15,6 +15,7 @@ using System.Configuration;
 
 namespace azur_application.Modeles
 {
+    using BCrypt.Net;
     class Utilisateur
     {
         private int idUtilisateur;
@@ -89,7 +90,6 @@ namespace azur_application.Modeles
             {
                 return true;
             }
-
         }
 
         // ------------------------------------ AJOUTER ------------------------------------
@@ -150,11 +150,13 @@ namespace azur_application.Modeles
         public bool reinitialiserUtilisateur(int idUtilisateur)
         {
             conn.Open();
+            string mdp = BCrypt.HashPassword("MotDePasse123!");
             MySqlCommand command = conn.CreateCommand();
 
             command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
+            command.Parameters.AddWithValue("@mdp", mdp);
             command.Parameters.AddWithValue("@validation", 0);
-            command.CommandText = "UPDATE utilisateurs SET validation = @validation WHERE idUtilisateur = @idUtilisateur";
+            command.CommandText = "UPDATE utilisateurs SET validation = @validation, mdp = @mdp WHERE idUtilisateur = @idUtilisateur";
             command.ExecuteNonQuery();
 
             try

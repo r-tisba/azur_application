@@ -147,6 +147,7 @@ namespace azur_application.Onglets
                 }
             }
         }
+
         // ------------------------------------ MODIFIER PROJET ------------------------------------
         private void btn_modifier_Click(object sender, EventArgs e)
         {
