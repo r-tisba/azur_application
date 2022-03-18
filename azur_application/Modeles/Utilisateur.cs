@@ -62,6 +62,31 @@ namespace azur_application.Modeles
             protected set { role = value; }
         }
 
+        public Utilisateur(int IdUtilisateur = 0)
+        {
+            if (IdUtilisateur != 0)
+            {
+                conn.Open();
+                MySqlCommand query = conn.CreateCommand();
+                query.CommandText = "SELECT * FROM utilisateurs WHERE idUtilisateur = @idUtilisateur";
+                query.Parameters.AddWithValue("@idUtilisateur", IdUtilisateur);
+                MySqlDataReader reader = query.ExecuteReader();
+                while (reader.Read())
+                {
+                    this.IdUtilisateur = reader.GetInt32(0);
+                    this.Email = reader.GetString(1);
+                    this.Mdp = reader.GetString(2);
+                    this.Nom = reader.GetString(3);
+                    this.Prenom = reader.GetString(4);
+                    this.IdRole = reader.GetInt32(5);
+                    this.AcceptRGPD = reader.GetBoolean(6);
+                    this.DateAcceptRGPD = reader.GetDateTime(7);
+                    this.DateOfBirth = reader.GetString(8);
+                }
+                conn.Close();
+            }
+        }
+
         // CLASSE MODELE APPELE DANS TOUT LES AUTRES MODELES
         MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
 
@@ -249,6 +274,21 @@ namespace azur_application.Modeles
             reader.Close();
             conn.Close();
             return idUtilisateur;
+        }
+
+
+        // ------------------------------------ SELECT AVATAR ------------------------------------
+        public MySqlDataAdapter recupererAvatarViaIdentifiant(string identifiant)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command.Parameters.AddWithValue("@identifiant", identifiant);
+            command = new MySqlCommand("SELECT avatar FROM utilisateurs WHERE identifiant = @identifiant", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(command);
+
+            conn.Close();
+            return sda;
         }
     }
 }

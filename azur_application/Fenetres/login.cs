@@ -15,6 +15,7 @@ using azur_application.Services;
 
 namespace azur_application
 {
+    using azur_application.Modeles;
     using BCrypt.Net;
     public partial class Connexion : Form
     {
@@ -188,6 +189,8 @@ namespace azur_application
                             message_erreur.Text = "Vous êtes connecté";
                             message_erreur.ForeColor = vert;
 
+                            Utilisateur utilisateur = new Utilisateur(identifiantSaisi);
+                            utilisateur->Identifiant
                             this.Close();
                             th = new Thread(ouvrirNouvellePage);
                             th.SetApartmentState(ApartmentState.STA);
