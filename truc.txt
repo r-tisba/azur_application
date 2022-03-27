@@ -176,3 +176,67 @@ namespace azur_application.Onglets
         }
     }
 }
+
+
+
+////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using azur_application.Modeles;
+using System.Globalization;
+using azur_application.Fenetres.Onglets;
+
+namespace azur_application.Onglets
+{
+    public partial class ongletProfil : Form
+    {
+        MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
+        Utilisateur utilisateur = new Utilisateur();
+        public ongletProfil()
+        {
+            InitializeComponent();
+        }
+
+        private void ongletProfil_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
+            afficherInformationsProfil();
+        }
+        private void LoadTheme()
+        {
+            label_identifiant.ForeColor = ThemeColor.ActiveColor;
+        }
+        public void afficherInformationsProfil()
+        {
+            Utilisateur utilisateur = new Utilisateur();
+            int idUtilisateur = utilisateur.IdUtilisateurSession;
+            Utilisateur utilisateurSession = new Utilisateur(idUtilisateur);
+
+            string avatar = utilisateur.recupererAvatarViaIdentifiant(utilisateurSession.Identifiant);
+            string pathImage = avatar.Replace("..", @"C:\wamp64\www\ap\azur_web");
+            pictureBox_avatar.Image = new Bitmap(pathImage);
+            label_identifiant.Text = utilisateurSession.Identifiant;
+            label_poste_u.Text = utilisateurSession.Poste;
+            label_role_u.Text = utilisateurSession.Role;
+            string[] equipes = utilisateurSession.Equipes;
+            MessageBox.Show(equipes.Length.ToString());
+            MessageBox.Show(equipes.ToString());
+            foreach (string element in equipes)
+            {
+                label_equipes_u.Text += element;
+                MessageBox.Show(element);
+            }
+        }
+    }   
+}
+
+////

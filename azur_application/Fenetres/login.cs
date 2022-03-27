@@ -189,19 +189,18 @@ namespace azur_application
                             message_erreur.Text = "Vous êtes connecté";
                             message_erreur.ForeColor = vert;
 
-                            Utilisateur utilisateur = new Utilisateur(identifiantSaisi);
-                            utilisateur->Identifiant
+                            Utilisateur utilisateur = new Utilisateur();
+                            int idUtilisateur = utilisateur.recupererIdUtilisateurViaIdentifiant(identifiantSaisi);
+                            utilisateur.IdUtilisateurSession = idUtilisateur;
                             this.Close();
                             th = new Thread(ouvrirNouvellePage);
                             th.SetApartmentState(ApartmentState.STA);
                             th.Start();
-
                             /*
                             this.Hide();
                             gestion gest = new gestion();
                             gest.ShowDialog();
                             */
-
                         }
                     }
                 }

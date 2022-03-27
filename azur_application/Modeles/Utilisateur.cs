@@ -16,8 +16,9 @@ using System.Configuration;
 namespace azur_application.Modeles
 {
     using BCrypt.Net;
-    class Utilisateur
+    public class Utilisateur
     {
+        public static int idUtilisateurSession;
         private int idUtilisateur;
         private string nom;
         private string prenom;
@@ -25,64 +26,98 @@ namespace azur_application.Modeles
         private string identifiant;
         private string mdp;
         private string role;
+        private string avatar;
+        private int validation;
+        private string[] equipes;
 
+        public int IdUtilisateurSession
+        {
+            get { return idUtilisateurSession; } set { idUtilisateurSession = value; }
+        }
         public int IdUtilisateur
         {
-            get { return idUtilisateur; }
-            protected set { idUtilisateur = value; }
+            get { return idUtilisateur; } set { idUtilisateur = value; }
         }
         public string Nom
         {
-            get { return nom; }
-            protected set { nom = value; }
+            get { return nom; } set { nom = value; }
         }
         public string Prenom
         {
-            get { return prenom; }
-            protected set { prenom = value; }
+            get { return prenom; } set { prenom = value; }
         }
         public string Poste
         {
-            get { return poste; }
-            protected set { poste = value; }
+            get { return poste; } set { poste = value; }
         }
         public string Identifiant
         {
-            get { return identifiant; }
-            protected set { identifiant = value; }
+            get { return identifiant; } set { identifiant = value; }
         }
         public string Mdp
         {
-            get { return mdp; }
-            protected set { mdp = value; }
+            get { return mdp; } set { mdp = value; }
         }
         public string Role
         { 
-            get { return role; }
-            protected set { role = value; }
+            get { return role; } set { role = value; }
+        }
+        public string Avatar
+        {
+            get { return avatar; } set { avatar = value; }
+        }
+        public int Validation
+        {
+            get { return validation; } set { validation = value; }
+        }
+        public string[] Equipes
+        {
+            get { return equipes; } set { equipes = value; }
         }
 
-        public Utilisateur(int IdUtilisateur = 0)
+        public Utilisateur(int idUtilisateur = 0)
         {
-            if (IdUtilisateur != 0)
+            if (idUtilisateur != 0)
             {
                 conn.Open();
                 MySqlCommand query = conn.CreateCommand();
                 query.CommandText = "SELECT * FROM utilisateurs WHERE idUtilisateur = @idUtilisateur";
-                query.Parameters.AddWithValue("@idUtilisateur", IdUtilisateur);
+                query.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
                 MySqlDataReader reader = query.ExecuteReader();
                 while (reader.Read())
                 {
                     this.IdUtilisateur = reader.GetInt32(0);
-                    this.Email = reader.GetString(1);
-                    this.Mdp = reader.GetString(2);
-                    this.Nom = reader.GetString(3);
-                    this.Prenom = reader.GetString(4);
-                    this.IdRole = reader.GetInt32(5);
-                    this.AcceptRGPD = reader.GetBoolean(6);
-                    this.DateAcceptRGPD = reader.GetDateTime(7);
-                    this.DateOfBirth = reader.GetString(8);
+                    this.Nom = reader.GetString(1);
+                    this.Prenom = reader.GetString(2);
+                    this.Poste = reader.GetString(3);
+                    this.Identifiant = reader.GetString(4);
+                    this.Mdp = reader.GetString(5);
+                    this.Role = reader.GetString(6);
+                    this.Avatar = reader.GetString(8);
+                    this.Validation = reader.GetInt32(9);
                 }
+                reader.Close();
+
+                int i = 0;
+                query = conn.CreateCommand();
+                query.CommandText = "SELECT e.nomEquipe, u.identifiant FROM equipes e LEFT JOIN composition_equipes ce USING(idEquipe) LEFT JOIN utilisateurs u USING(idUtilisateur) WHERE idUtilisateur = 1";
+                query.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
+                reader = query.ExecuteReader();
+
+                int count = 0;
+                while (reader.Read()) { count++; }
+                reader.Close();
+                string[] arrayAvatar = new string[count];
+
+                query.CommandText = "SELECT e.nomEquipe, u.identifiant FROM equipes e LEFT JOIN composition_equipes ce USING(idEquipe) LEFT JOIN utilisateurs u USING(idUtilisateur) WHERE idUtilisateur = 1";
+                reader = query.ExecuteReader();
+                while (reader.Read() == true)
+                {
+                    arrayAvatar[i] = reader.GetString(0);
+                    i++;
+                }
+                reader.Close();
+                this.Equipes = arrayAvatar;
                 conn.Close();
             }
         }
@@ -245,13 +280,13 @@ namespace azur_application.Modeles
             conn.Close();
             return sda;
         }
-        // --------------- Récupération réduite info utilisateur pour facilité la lecteur dans Ajout Utilisateur ---------------
+        // ------------------------------------ SELECT INFOS UTILISATEURS ONGLET AFFECTATIONS ------------------------------------
         public MySqlDataAdapter recuperationReduiteInfosUtilisateur()
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
 
-            command = new MySqlCommand("SELECT idUtilisateur AS ID, identifiant AS IDENTIFIANT FROM utilisateurs", conn);
+            command = new MySqlCommand("SELECT identifiant AS IDENTIFIANT, poste AS POSTE FROM utilisateurs", conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(command);
 
             conn.Close();
@@ -276,15 +311,54 @@ namespace azur_application.Modeles
             return idUtilisateur;
         }
 
-
         // ------------------------------------ SELECT AVATAR ------------------------------------
-        public MySqlDataAdapter recupererAvatarViaIdentifiant(string identifiant)
+        public string recupererAvatarViaIdentifiant(string identifiant)
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
 
-            command.Parameters.AddWithValue("@identifiant", identifiant);
             command = new MySqlCommand("SELECT avatar FROM utilisateurs WHERE identifiant = @identifiant", conn);
+            command.Parameters.AddWithValue("@identifiant", identifiant);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                avatar = (string)reader["avatar"];
+            }
+
+            reader.Close();
+            conn.Close();
+            return avatar;
+        }
+        // ------------------------------------ MODIFIER AVATAR ------------------------------------
+        public bool modifierAvatar(int idUtilisateur, string nomImage)
+        {
+            conn.Open();
+            string pathImageSaisi = "../images/avatar/" + nomImage;
+
+            MySqlCommand command = conn.CreateCommand();
+            command.Parameters.AddWithValue("@pathImageSaisi", pathImageSaisi);
+            command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
+            command.CommandText = "UPDATE utilisateurs SET avatar = @pathImageSaisi WHERE idUtilisateur = @idUtilisateur";
+            try
+            {
+                command.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                conn.Close();
+                return false;
+            }
+        }
+
+        public MySqlDataAdapter recupererEquipesUtilisateur(int idUtilisateur)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            command = new MySqlCommand("SELECT e.nomEquipe, u.identifiant FROM equipes e LEFT JOIN composition_equipes ce USING(idEquipe) LEFT JOIN utilisateurs u USING(idUtilisateur) WHERE idUtilisateur = 1");
+            command.Parameters.AddWithValue("@idUtilisateur", idUtilisateur);
             MySqlDataAdapter sda = new MySqlDataAdapter(command);
 
             conn.Close();

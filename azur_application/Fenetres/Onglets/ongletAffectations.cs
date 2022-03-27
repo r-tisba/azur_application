@@ -59,7 +59,7 @@ namespace azur_application.Fenetres.Onglets
             utilisateur.recuperationReduiteInfosUtilisateur().Fill(dt);
             dataGrid_utilisateurs.DataSource = dt;
             // Par défaut : Tri croissant par idUtilisateur
-            this.dataGrid_utilisateurs.Sort(this.dataGrid_utilisateurs.Columns["ID"], ListSortDirection.Ascending);
+            this.dataGrid_utilisateurs.Sort(this.dataGrid_utilisateurs.Columns["IDENTIFIANT"], ListSortDirection.Ascending);
         }
 
         // Tableau Compositions
@@ -163,18 +163,37 @@ namespace azur_application.Fenetres.Onglets
         }
 
         // SearchBar
-        private void input_rechercher_KeyUp(object sender, KeyEventArgs e)
+        private void filtrageDatagrid()
         {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = dataGrid_utilisateurs.DataSource;
-            bs.Filter = "identifiant" + " like '%" + input_rechercher.Text + "%'";
-            dataGrid_utilisateurs.DataSource = bs;
+            if (radiobtn_identifiant.Checked == true) 
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGrid_utilisateurs.DataSource;
+                bs.Filter = "identifiant" + " like '%" + input_rechercher.Text + "%'";
+                dataGrid_utilisateurs.DataSource = bs;
 
-            BindingSource bs2 = new BindingSource();
-            bs2.DataSource = dataGrid_compositionEquipes.DataSource;
-            bs2.Filter = "identifiant" + " like '%" + input_rechercher.Text + "%'";
-            dataGrid_compositionEquipes.DataSource = bs2;
+                BindingSource bs2 = new BindingSource();
+                bs2.DataSource = dataGrid_compositionEquipes.DataSource;
+                bs2.Filter = "identifiant" + " like '%" + input_rechercher.Text + "%'";
+                dataGrid_compositionEquipes.DataSource = bs2;
+            }
+            else 
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGrid_utilisateurs.DataSource;
+                bs.Filter = "identifiant" + " like '%%'";
+                dataGrid_utilisateurs.DataSource = bs;
+
+                BindingSource bs2 = new BindingSource();
+                bs2.DataSource = dataGrid_compositionEquipes.DataSource;
+                bs2.Filter = "equipe" + " like '%" + input_rechercher.Text + "%'";
+                dataGrid_compositionEquipes.DataSource = bs2;
+            }
         }
+
+        private void input_rechercher_KeyUp(object sender, KeyEventArgs e) { filtrageDatagrid(); }
+        private void radiobtn_identifiant_CheckedChanged(object sender, EventArgs e) { filtrageDatagrid(); }
+        private void radiobtn_equipe_CheckedChanged(object sender, EventArgs e) { filtrageDatagrid(); }
 
         // ------------------------------------ RESET VALEUR INPUT ------------------------------------
         public void clear()

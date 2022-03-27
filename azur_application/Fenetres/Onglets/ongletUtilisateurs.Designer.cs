@@ -54,6 +54,9 @@ namespace azur_application.Onglets
             this.label_rechercher = new System.Windows.Forms.Label();
             this.input_rechercher = new System.Windows.Forms.TextBox();
             this.btn_reinitialisation = new System.Windows.Forms.Button();
+            this.radiobtn_identifiant = new System.Windows.Forms.RadioButton();
+            this.radiobtn_role = new System.Windows.Forms.RadioButton();
+            this.radiobtn_poste = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_utilisateurs)).BeginInit();
             this.panel_inputs.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +84,7 @@ namespace azur_application.Onglets
             this.dataGrid_utilisateurs.AllowUserToResizeColumns = false;
             this.dataGrid_utilisateurs.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             this.dataGrid_utilisateurs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_utilisateurs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -103,7 +106,7 @@ namespace azur_application.Onglets
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGrid_utilisateurs.DefaultCellStyle = dataGridViewCellStyle3;
@@ -351,7 +354,7 @@ namespace azur_application.Onglets
             this.label_rechercher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_rechercher.AutoSize = true;
             this.label_rechercher.Font = new System.Drawing.Font("Lato", 10F);
-            this.label_rechercher.Location = new System.Drawing.Point(920, 244);
+            this.label_rechercher.Location = new System.Drawing.Point(921, 223);
             this.label_rechercher.Name = "label_rechercher";
             this.label_rechercher.Size = new System.Drawing.Size(86, 17);
             this.label_rechercher.TabIndex = 36;
@@ -360,7 +363,7 @@ namespace azur_application.Onglets
             // input_rechercher
             // 
             this.input_rechercher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.input_rechercher.Location = new System.Drawing.Point(1012, 241);
+            this.input_rechercher.Location = new System.Drawing.Point(1013, 220);
             this.input_rechercher.Name = "input_rechercher";
             this.input_rechercher.Size = new System.Drawing.Size(175, 23);
             this.input_rechercher.TabIndex = 37;
@@ -382,11 +385,52 @@ namespace azur_application.Onglets
             this.btn_reinitialisation.UseVisualStyleBackColor = false;
             this.btn_reinitialisation.Click += new System.EventHandler(this.btn_reinitialisation_Click);
             // 
+            // radiobtn_identifiant
+            // 
+            this.radiobtn_identifiant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radiobtn_identifiant.AutoSize = true;
+            this.radiobtn_identifiant.Checked = true;
+            this.radiobtn_identifiant.Location = new System.Drawing.Point(982, 247);
+            this.radiobtn_identifiant.Name = "radiobtn_identifiant";
+            this.radiobtn_identifiant.Size = new System.Drawing.Size(84, 20);
+            this.radiobtn_identifiant.TabIndex = 39;
+            this.radiobtn_identifiant.TabStop = true;
+            this.radiobtn_identifiant.Text = "Identifiant";
+            this.radiobtn_identifiant.UseVisualStyleBackColor = true;
+            this.radiobtn_identifiant.CheckedChanged += new System.EventHandler(this.radiobtn_identifiant_CheckedChanged);
+            // 
+            // radiobtn_role
+            // 
+            this.radiobtn_role.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radiobtn_role.AutoSize = true;
+            this.radiobtn_role.Location = new System.Drawing.Point(1137, 247);
+            this.radiobtn_role.Name = "radiobtn_role";
+            this.radiobtn_role.Size = new System.Drawing.Size(51, 20);
+            this.radiobtn_role.TabIndex = 40;
+            this.radiobtn_role.Text = "Rôle";
+            this.radiobtn_role.UseVisualStyleBackColor = true;
+            this.radiobtn_role.CheckedChanged += new System.EventHandler(this.radiobtn_role_CheckedChanged);
+            // 
+            // radiobtn_poste
+            // 
+            this.radiobtn_poste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radiobtn_poste.AutoSize = true;
+            this.radiobtn_poste.Location = new System.Drawing.Point(1072, 247);
+            this.radiobtn_poste.Name = "radiobtn_poste";
+            this.radiobtn_poste.Size = new System.Drawing.Size(59, 20);
+            this.radiobtn_poste.TabIndex = 41;
+            this.radiobtn_poste.Text = "Poste";
+            this.radiobtn_poste.UseVisualStyleBackColor = true;
+            this.radiobtn_poste.CheckedChanged += new System.EventHandler(this.radiobtn_poste_CheckedChanged);
+            // 
             // ongletUtilisateurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 540);
+            this.Controls.Add(this.radiobtn_poste);
+            this.Controls.Add(this.radiobtn_role);
+            this.Controls.Add(this.radiobtn_identifiant);
             this.Controls.Add(this.btn_reinitialisation);
             this.Controls.Add(this.input_rechercher);
             this.Controls.Add(this.label_rechercher);
@@ -435,5 +479,8 @@ namespace azur_application.Onglets
         private System.Windows.Forms.Label label_rechercher;
         private System.Windows.Forms.TextBox input_rechercher;
         private System.Windows.Forms.Button btn_reinitialisation;
+        private System.Windows.Forms.RadioButton radiobtn_identifiant;
+        private System.Windows.Forms.RadioButton radiobtn_role;
+        private System.Windows.Forms.RadioButton radiobtn_poste;
     }
 }

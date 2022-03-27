@@ -12,6 +12,7 @@ using System.Threading;
 using MySql.Data.MySqlClient;
 using azur_application.Modeles;
 using azur_application.Services;
+using System.Globalization;
 
 namespace azur_application.Onglets
 {
@@ -224,13 +225,21 @@ namespace azur_application.Onglets
         }
 
         // SearchBar
-        private void input_rechercher_KeyUp(object sender, KeyEventArgs e)
+        private void filtrageDatagrid()
         {
+            string colonne;
+            if (radiobtn_identifiant.Checked == true) { colonne = "identifiant"; }
+            else if (radiobtn_poste.Checked == true) { colonne = "poste"; }
+            else { colonne = "role"; }
             BindingSource bs = new BindingSource();
             bs.DataSource = dataGrid_utilisateurs.DataSource;
-            bs.Filter = "identifiant" + " like '%" + input_rechercher.Text + "%'";
+            bs.Filter = colonne + " like '%" + input_rechercher.Text + "%'";
             dataGrid_utilisateurs.DataSource = bs;
         }
+        private void input_rechercher_KeyUp(object sender, KeyEventArgs e) { filtrageDatagrid(); }
+        private void radiobtn_identifiant_CheckedChanged(object sender, EventArgs e) { filtrageDatagrid(); }
+        private void radiobtn_poste_CheckedChanged(object sender, EventArgs e) { filtrageDatagrid(); }
+        private void radiobtn_role_CheckedChanged(object sender, EventArgs e) { filtrageDatagrid(); }
 
         // ------------------------------------ RESET VALEUR INPUT ------------------------------------
         public void clear()

@@ -108,10 +108,18 @@ namespace azur_application.Onglets
                     }
                     else
                     {
-                        File.Copy(input_image.Text, Path.Combine(@"C:\wamp64\www\ap\azur_web\images\design\", Path.GetFileName(input_image.Text)), true);
-                        displayDataEquipe();
-                        clear();
-                        clearImage();
+                        try
+                        {
+                            using (Stream stream = new FileStream(input_image.Text, FileMode.Open))
+                            {
+                                File.Copy(input_image.Text, Path.Combine(@"C:\wamp64\www\ap\azur_web\images\design\", Path.GetFileName(input_image.Text)), true);
+                                displayDataEquipe();
+                                clear();
+                                clearImage();
+                            }
+                        }
+                        catch
+                        { }
                     }
                 }
                 else
@@ -149,7 +157,13 @@ namespace azur_application.Onglets
                     }
                     else
                     {
-                        File.Copy(input_image.Text, Path.Combine(@"C:\wamp64\www\ap\azur_web\images\design\", Path.GetFileName(input_image.Text)), true);
+                        try 
+                        {
+                            File.Copy(input_image.Text, Path.Combine(@"C:\wamp64\www\ap\azur_web\images\design\", Path.GetFileName(input_image.Text)), true);
+                        }
+                        catch
+                        { }
+
                         displayDataEquipe();
                         clear();
                         clearImage();

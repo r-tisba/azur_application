@@ -275,14 +275,35 @@ namespace azur_application.Onglets
         }
 
         // SearchBar
-        private void input_rechercher_KeyUp(object sender, KeyEventArgs e)
+        private void filtrageDatagrid()
         {
+            string colonne;
+            if (radiobtn_nom.Checked == true) { colonne = "nom"; }
+            else if (radiobtn_debut.Checked == true) { colonne = "debut"; }
+            else if (radiobtn_fin.Checked == true) { colonne = "fin"; }
+            else { colonne = "etat"; }
             BindingSource bs = new BindingSource();
             bs.DataSource = dataGrid_projets.DataSource;
-            bs.Filter = "nom" + " like '%" + input_rechercher.Text + "%'";
+            if (colonne == "debut" || colonne == "fin")
+            {
+                bs.Filter = string.Format(colonne + " >= '{0} 12:00:00 AM' AND " + colonne + " <= '{0} 11:59:59 PM'", input_rechercher_dtp.Text);
+            }
+            else
+            {
+                bs.Filter = string.Format("convert(" + colonne + ", 'System.String') Like '%{0}%' ", input_rechercher.Text);
+
+            }
             dataGrid_projets.DataSource = bs;
         }
 
+        private void input_rechercher_KeyUp(object sender, KeyEventArgs e) { filtrageDatagrid(); }
+        private void input_rechercher_dtp_KeyUp(object sender, KeyEventArgs e) { filtrageDatagrid(); }
+        private void input_rechercher_dtp_CloseUp(object sender, EventArgs e) { filtrageDatagrid(); }
+        private void radiobtn_nom_CheckedChanged(object sender, EventArgs e) { input_rechercher.Visible = true; input_rechercher_dtp.Visible = false; filtrageDatagrid(); }
+        private void radiobtn_debut_CheckedChanged(object sender, EventArgs e) { input_rechercher.Visible = false; input_rechercher_dtp.Visible = true; filtrageDatagrid(); }
+        private void radiobtn_fin_CheckedChanged(object sender, EventArgs e) { input_rechercher.Visible = false; input_rechercher_dtp.Visible = true; filtrageDatagrid(); }
+        private void radiobtn_etat_CheckedChanged(object sender, EventArgs e) { input_rechercher.Visible = true; input_rechercher_dtp.Visible = false; filtrageDatagrid(); }
+        private void btn_filtre_Click(object sender, EventArgs e) { filtrageDatagrid(); }
         public void clear()
         {
             label_erreur.Text = "";
