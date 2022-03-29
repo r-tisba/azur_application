@@ -22,6 +22,7 @@ namespace azur_application.Modeles
         private string title;
         private string start;
         private string end;
+        private string date;
         private string backgroundColor;
         private string nomCreateur;
 
@@ -39,6 +40,11 @@ namespace azur_application.Modeles
         {
             get { return title; }
             set { title = value; }
+        }
+        public string Date
+        {
+            get { return date; }
+            set { date = value; }
         }
         public string Start
         {
@@ -76,11 +82,12 @@ namespace azur_application.Modeles
                 {
                     this.IdEvenement = reader.GetInt32(0);
                     this.Title = reader.GetString(1);
-                    DateTime startDT = reader.GetDateTime(2);
-                    string x = startDT.ToString("dd-MM-dd");
-                    this.Start = reader.GetString(2);
-                    DateTime endDT = reader.GetDateTime(3);
-                    this.End = reader.GetString(3);
+                    DateTime dateDt = reader.GetDateTime(2);
+                    this.Date = dateDt.ToString("d/MM");
+                    DateTime startDt = reader.GetDateTime(2);
+                    this.Start = startDt.ToString("HH:mm");
+                    DateTime endDt = reader.GetDateTime(3);
+                    this.End = endDt.ToString("HH:mm");
                     this.BackgroundColor = reader.GetString(4);
                     this.NomCreateur = reader.GetString(5);
                 }

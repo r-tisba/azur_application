@@ -34,7 +34,7 @@ namespace azur_application.Onglets
         }
         private void LoadTheme()
         {
-            label_identifiant.ForeColor = ThemeColor.ActiveColor;
+            label_identifiant_u.ForeColor = ThemeColor.ActiveColor;
         }
 
 
@@ -48,9 +48,10 @@ namespace azur_application.Onglets
 
             string avatar = utilisateur.recupererAvatarViaIdentifiant(utilisateurSession.Identifiant);
             string pathImage = avatar.Replace("..", @"C:\wamp64\www\ap\azur_web");
+            try { pictureBox_avatar.Image = new Bitmap(pathImage); }
+            catch { MessageBox.Show("Erreur lors du chargement de l'image ", "Erreur", MessageBoxButtons.OK ,MessageBoxIcon.Error); }
 
-            pictureBox_avatar.Image = new Bitmap(pathImage);
-            label_identifiant.Text = utilisateurSession.Identifiant;
+            label_identifiant_u.Text = utilisateurSession.Identifiant;
             label_poste_u.Text = utilisateurSession.Poste;
             label_role_u.Text = utilisateurSession.Role;
             string[] equipes = utilisateurSession.Equipes;
@@ -88,13 +89,11 @@ namespace azur_application.Onglets
                 {
                     try
                     {
+                        statutBtnAvatar = 0;
                         File.Copy(label_image_selectionnee.Text, Path.Combine(@"C:\wamp64\www\ap\azur_web\images\avatar\", Path.GetFileName(label_image_selectionnee.Text)), true);
                         clear();
                     } 
-                    catch
-                    {
-                        clear();
-                    }
+                    catch { clear(); }
                 }
             }
 
@@ -111,6 +110,7 @@ namespace azur_application.Onglets
             Color _couleur = System.Drawing.ColorTranslator.FromHtml(evenement.BackgroundColor);
 
             panel_evenement.BackColor = _couleur;
+            date_evenement.Text = evenement.Date;
             heure_deb.Text = evenement.Start;
             heure_fin.Text = evenement.End;
             label_nomEvenement.Text = evenement.Title;
@@ -124,5 +124,15 @@ namespace azur_application.Onglets
             btn_modifier_avatar.Text = "Modifier avatar";
             btn_modifier_avatar.BackColor = System.Drawing.Color.CornflowerBlue;
         }
-    }   
+
+        private void ligne_evenement_t_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, ligne_evenement_t.DisplayRectangle, Color.White, ButtonBorderStyle.Solid);
+        }
+        private void ligne_evenement_b_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, ligne_evenement_b.DisplayRectangle, Color.White, ButtonBorderStyle.Solid);
+        }
+
+    }
 }

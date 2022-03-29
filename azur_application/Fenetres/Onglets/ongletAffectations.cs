@@ -77,7 +77,7 @@ namespace azur_application.Fenetres.Onglets
         {
             if (e.RowIndex >= 0)
             {
-                input_identifiant.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[1].Value.ToString();
+                input_identifiant.Text = dataGrid_utilisateurs.Rows[e.RowIndex].Cells[0].Value.ToString();
             }
         }
 
