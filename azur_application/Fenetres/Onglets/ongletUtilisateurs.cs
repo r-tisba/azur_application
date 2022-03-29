@@ -223,7 +223,6 @@ namespace azur_application.Onglets
                 }
             }
         }
-
         // SearchBar
         private void filtrageDatagrid()
         {

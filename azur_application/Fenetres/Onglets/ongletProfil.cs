@@ -12,6 +12,7 @@ using azur_application.Modeles;
 using System.Globalization;
 using azur_application.Fenetres.Onglets;
 using System.IO;
+using azur_application.Services;
 
 namespace azur_application.Onglets
 {
@@ -29,11 +30,15 @@ namespace azur_application.Onglets
         {
             LoadTheme();
             afficherInformationsProfil();
+            afficherEvenement();
         }
         private void LoadTheme()
         {
             label_identifiant.ForeColor = ThemeColor.ActiveColor;
         }
+
+
+        // ------------------------------------ AFFICHAGE INFOS GENERALES ------------------------------------
         public void afficherInformationsProfil()
         {
             Utilisateur utilisateur = new Utilisateur();
@@ -94,6 +99,24 @@ namespace azur_application.Onglets
             }
 
         }
+
+        // ------------------------------------ AFFICHAGE PROCHAIN EVEN ------------------------------------
+        public void afficherEvenement()
+        {
+            /* int idUtilisateur = utilisateur.IdUtilisateurSession; */
+            int idUtilisateur = 1;
+            Evenement evenement = new Evenement();
+            int idEvenement = evenement.recupererIdEvenement(idUtilisateur);
+            evenement = new Evenement(idEvenement);
+            Color _couleur = System.Drawing.ColorTranslator.FromHtml(evenement.BackgroundColor);
+
+            panel_evenement.BackColor = _couleur;
+            heure_deb.Text = evenement.Start;
+            heure_fin.Text = evenement.End;
+            label_nomEvenement.Text = evenement.Title;
+            label_nomCreateur.Text = evenement.NomCreateur;
+        }
+
         public void clear()
         {
             label_image.Visible = false;

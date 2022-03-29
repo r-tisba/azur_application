@@ -192,6 +192,7 @@
     </Compile>
     <Compile Include="Modeles\Affectation.cs" />
     <Compile Include="Modeles\Etape.cs" />
+    <Compile Include="Modeles\Evenement.cs" />
     <Compile Include="Modeles\Projet.cs" />
     <Compile Include="Modeles\Equipe.cs" />
     <Compile Include="Fenetres\Onglets\ongletEquipe.cs">
