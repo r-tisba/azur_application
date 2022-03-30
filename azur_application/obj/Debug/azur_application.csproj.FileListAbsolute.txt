@@ -49,7 +49,6 @@ C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\Syncfusion.SpellChe
 C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\Syncfusion.Tools.Base.xml
 C:\wamp64\www\ap\azur_application\azur_application\bin\Debug\Syncfusion.Tools.Windows.xml
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletUtilisateurs.resources
-C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.csproj.AssemblyReference.cache
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletStatistiques.resources
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletProjets.resources
 C:\wamp64\www\ap\azur_application\azur_application\obj\Debug\azur_application.Onglets.ongletEquipe.resources
