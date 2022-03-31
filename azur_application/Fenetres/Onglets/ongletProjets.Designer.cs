@@ -33,7 +33,6 @@ namespace azur_application.Onglets
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ongletProjets));
             this.dataGrid_projets = new System.Windows.Forms.DataGridView();
             this.label_titreProjet = new System.Windows.Forms.Label();
             this.btn_ajouter = new System.Windows.Forms.Button();
@@ -61,7 +60,6 @@ namespace azur_application.Onglets
             this.label_tableProjet = new System.Windows.Forms.Label();
             this.label_asterisque = new System.Windows.Forms.Label();
             this.panel_body = new System.Windows.Forms.Panel();
-            this.btn_filtre = new System.Windows.Forms.Button();
             this.input_rechercher_dtp = new System.Windows.Forms.DateTimePicker();
             this.radiobtn_etat = new System.Windows.Forms.RadioButton();
             this.radiobtn_debut = new System.Windows.Forms.RadioButton();
@@ -440,7 +438,6 @@ namespace azur_application.Onglets
             // 
             // panel_body
             // 
-            this.panel_body.Controls.Add(this.btn_filtre);
             this.panel_body.Controls.Add(this.input_rechercher_dtp);
             this.panel_body.Controls.Add(this.radiobtn_etat);
             this.panel_body.Controls.Add(this.radiobtn_debut);
@@ -465,20 +462,6 @@ namespace azur_application.Onglets
             this.panel_body.Size = new System.Drawing.Size(1196, 579);
             this.panel_body.TabIndex = 39;
             // 
-            // btn_filtre
-            // 
-            this.btn_filtre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_filtre.FlatAppearance.BorderSize = 0;
-            this.btn_filtre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_filtre.Font = new System.Drawing.Font("Lato", 12F);
-            this.btn_filtre.Image = ((System.Drawing.Image)(resources.GetObject("btn_filtre.Image")));
-            this.btn_filtre.Location = new System.Drawing.Point(1137, 284);
-            this.btn_filtre.Name = "btn_filtre";
-            this.btn_filtre.Size = new System.Drawing.Size(30, 24);
-            this.btn_filtre.TabIndex = 47;
-            this.btn_filtre.UseVisualStyleBackColor = true;
-            this.btn_filtre.Click += new System.EventHandler(this.btn_filtre_Click);
-            // 
             // input_rechercher_dtp
             // 
             this.input_rechercher_dtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -495,7 +478,7 @@ namespace azur_application.Onglets
             // 
             this.radiobtn_etat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radiobtn_etat.AutoSize = true;
-            this.radiobtn_etat.Location = new System.Drawing.Point(1081, 288);
+            this.radiobtn_etat.Location = new System.Drawing.Point(1118, 284);
             this.radiobtn_etat.Name = "radiobtn_etat";
             this.radiobtn_etat.Size = new System.Drawing.Size(50, 20);
             this.radiobtn_etat.TabIndex = 45;
@@ -507,7 +490,7 @@ namespace azur_application.Onglets
             // 
             this.radiobtn_debut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radiobtn_debut.AutoSize = true;
-            this.radiobtn_debut.Location = new System.Drawing.Point(964, 288);
+            this.radiobtn_debut.Location = new System.Drawing.Point(1001, 284);
             this.radiobtn_debut.Name = "radiobtn_debut";
             this.radiobtn_debut.Size = new System.Drawing.Size(62, 20);
             this.radiobtn_debut.TabIndex = 44;
@@ -519,7 +502,7 @@ namespace azur_application.Onglets
             // 
             this.radiobtn_fin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radiobtn_fin.AutoSize = true;
-            this.radiobtn_fin.Location = new System.Drawing.Point(1032, 288);
+            this.radiobtn_fin.Location = new System.Drawing.Point(1069, 284);
             this.radiobtn_fin.Name = "radiobtn_fin";
             this.radiobtn_fin.Size = new System.Drawing.Size(43, 20);
             this.radiobtn_fin.TabIndex = 43;
@@ -532,7 +515,7 @@ namespace azur_application.Onglets
             this.radiobtn_nom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radiobtn_nom.AutoSize = true;
             this.radiobtn_nom.Checked = true;
-            this.radiobtn_nom.Location = new System.Drawing.Point(904, 288);
+            this.radiobtn_nom.Location = new System.Drawing.Point(941, 284);
             this.radiobtn_nom.Name = "radiobtn_nom";
             this.radiobtn_nom.Size = new System.Drawing.Size(54, 20);
             this.radiobtn_nom.TabIndex = 42;
@@ -629,6 +612,5 @@ namespace azur_application.Onglets
         private System.Windows.Forms.RadioButton radiobtn_nom;
         private System.Windows.Forms.RadioButton radiobtn_etat;
         private System.Windows.Forms.DateTimePicker input_rechercher_dtp;
-        private System.Windows.Forms.Button btn_filtre;
     }
 }
