@@ -90,12 +90,11 @@ namespace azur_application.Fenetres.Onglets
             // 
             // btn_associer
             // 
-            this.btn_associer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_associer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btn_associer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_associer.Font = new System.Drawing.Font("Lato", 12F);
             this.btn_associer.ForeColor = System.Drawing.Color.White;
-            this.btn_associer.Location = new System.Drawing.Point(35, 447);
+            this.btn_associer.Location = new System.Drawing.Point(35, 261);
             this.btn_associer.Margin = new System.Windows.Forms.Padding(5);
             this.btn_associer.Name = "btn_associer";
             this.btn_associer.Size = new System.Drawing.Size(142, 52);
@@ -153,12 +152,11 @@ namespace azur_application.Fenetres.Onglets
             // 
             // btn_supprimer
             // 
-            this.btn_supprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_supprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.btn_supprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_supprimer.Font = new System.Drawing.Font("Lato", 12F);
             this.btn_supprimer.ForeColor = System.Drawing.Color.White;
-            this.btn_supprimer.Location = new System.Drawing.Point(186, 447);
+            this.btn_supprimer.Location = new System.Drawing.Point(186, 261);
             this.btn_supprimer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_supprimer.Name = "btn_supprimer";
             this.btn_supprimer.Size = new System.Drawing.Size(142, 52);

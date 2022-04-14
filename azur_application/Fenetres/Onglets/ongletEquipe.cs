@@ -188,16 +188,20 @@ namespace azur_application.Onglets
             else
             {
                 int idEquipe = equipe.recupererIdEquipeViaNomEquipe(nomEquipeSaisi);
-                if(equipe.supprimerEquipe(idEquipe))
+                DialogResult dialogResult = MessageBox.Show("Êtes vous sûr de vouloir supprimer l'équipe " + nomEquipeSaisi + " ?", "Supression de l'équipe " + nomEquipeSaisi, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    displayDataEquipe();
-                    clear();
-                    clearImage();
-                }
-                else
-                {
-                    label_erreur.Text = "Erreur lors de la suppression";
-                    label_erreur.ForeColor = rouge;
+                    if (equipe.supprimerEquipe(idEquipe))
+                    {
+                        displayDataEquipe();
+                        clear();
+                        clearImage();
+                    }
+                    else
+                    {
+                        label_erreur.Text = "Erreur lors de la suppression";
+                        label_erreur.ForeColor = rouge;
+                    }
                 }
             }
         }

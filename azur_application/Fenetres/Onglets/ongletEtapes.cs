@@ -75,8 +75,8 @@ namespace azur_application.Fenetres.Onglets
         // Barre de progression
         private void LoadBarreProgression()
         {
-            int nbEtapes = projet.recupererEtapesProjet(idProjet);
-            int nbEtapesFinies = projet.recupererEtapesTermineesProjet(idProjet);
+            int nbEtapes = projet.recupererNbEtapesProjet(idProjet);
+            int nbEtapesFinies = projet.recupererNbEtapesTermineesProjet(idProjet);
 
             if (nbEtapes == 0 || nbEtapesFinies == 0)
             {

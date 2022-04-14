@@ -83,7 +83,7 @@ namespace azur_application.Modeles
                     this.IdEvenement = reader.GetInt32(0);
                     this.Title = reader.GetString(1);
                     DateTime dateDt = reader.GetDateTime(2);
-                    this.Date = dateDt.ToString("d/MM");
+                    this.Date = dateDt.ToString("dd/MM");
                     DateTime startDt = reader.GetDateTime(2);
                     this.Start = startDt.ToString("HH:mm");
                     DateTime endDt = reader.GetDateTime(3);
