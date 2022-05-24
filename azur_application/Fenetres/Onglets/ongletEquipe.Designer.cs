@@ -109,9 +109,9 @@ namespace azur_application.Onglets
             this.nom_equipe.Font = new System.Drawing.Font("Lato", 10F);
             this.nom_equipe.Location = new System.Drawing.Point(14, 63);
             this.nom_equipe.Name = "nom_equipe";
-            this.nom_equipe.Size = new System.Drawing.Size(93, 17);
+            this.nom_equipe.Size = new System.Drawing.Size(92, 17);
             this.nom_equipe.TabIndex = 3;
-            this.nom_equipe.Text = "Nom Équipe :";
+            this.nom_equipe.Text = "Nom équipe :";
             // 
             // image
             // 

@@ -21,7 +21,6 @@ namespace azur_application.Modeles
             get { return idEquipe; }
             protected set { idEquipe = value; }
         }
-     
         public string NomEquipe
         {
             get { return nomEquipe; }
@@ -35,6 +34,27 @@ namespace azur_application.Modeles
 
         MySqlConnection conn = new MySqlConnection("database=gestion; server=localhost; user id=root; pwd=");
 
+        public Equipe(int idEquipe = 0)
+        {
+            if (idEquipe != 0)
+            {
+                conn.Open();
+                MySqlCommand query = conn.CreateCommand();
+                query.CommandText = "SELECT idEquipe, nomEquipe, image FROM equipes e WHERE idEquipe = @idEquipe";
+                query.Parameters.AddWithValue("@idEquipe", idEquipe);
+                MySqlDataReader reader = query.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    this.idEquipe = reader.GetInt32(0);
+                    this.nomEquipe = reader.GetString(1);
+                    this.image = reader.GetString(2);
+                }
+
+                reader.Close();
+                conn.Close();
+            }
+        }
         // ------------------------------------ AJOUTER ------------------------------------
         public bool ajouterEquipe(string nomEquipeSaisi, string nomImageSaisi)
         {
@@ -174,6 +194,59 @@ namespace azur_application.Modeles
             reader.Close();
             conn.Close();
             return idEquipe;
+        }
+        public List<int> recupererIdEquipes()
+        {
+            conn.Open();
+            List<int> listIdEquipes = new List<int>();
+
+            MySqlCommand command;
+            command = new MySqlCommand("SELECT idEquipe FROM equipes", conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read()) { 
+                listIdEquipes.Add((int)reader["idEquipe"]); 
+            }
+            reader.Close();
+            conn.Close();
+            return listIdEquipes;
+        }
+        public List<int> recupererIdProjetsEquipe(int idEquipe)
+        {
+            conn.Open();
+            List<int> listIdProjetsEquipes = new List<int>();
+
+            MySqlCommand command;
+            command = new MySqlCommand("SELECT idProjet FROM projets WHERE idEquipe = @idEquipe", conn);
+            command.Parameters.AddWithValue("@idEquipe", idEquipe);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read()) {
+                listIdProjetsEquipes.Add((int)reader["idProjet"]);
+            }
+            reader.Close();
+            conn.Close();
+            return listIdProjetsEquipes;
+        }
+        public int recupererNbEtapesTermineesEquipe(int idEquipe)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            command = new MySqlCommand("SELECT COUNT(idEtape) FROM etapes LEFT JOIN projets USING(idProjet) LEFT JOIN equipes USING(idEquipe) WHERE idEquipe = @idEquipe AND etatEtape = 1", conn);
+            command.Parameters.AddWithValue("@idEquipe", idEquipe);
+
+            Int32 nbTotalEtapes = Convert.ToInt32(command.ExecuteScalar());
+            conn.Close();
+            return nbTotalEtapes;
+        }
+        public int recupererNbProjetsEquipe(int idEquipe)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            command = new MySqlCommand("SELECT COUNT(idProjet) FROM projets WHERE idEquipe = @idEquipe", conn);
+            command.Parameters.AddWithValue("@idEquipe", idEquipe);
+
+            Int32 nbTotalProjets = Convert.ToInt32(command.ExecuteScalar());
+            conn.Close();
+            return nbTotalProjets;
         }
     }
 }

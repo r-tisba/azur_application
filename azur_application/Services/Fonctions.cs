@@ -233,5 +233,39 @@ namespace azur_application.Services
             return nbEvenementsSemaine;
            
         }
+        // Récupère le nombre d'étapes max pour un projet en vérifiant tout les projets existants
+        public int recupererMaxEtapesProjets()
+        {
+            conn.Open();
+            int maxEtapes = 0;
+            MySqlCommand command = conn.CreateCommand();
+            command = new MySqlCommand("SELECT MAX(count) AS maxEtapes FROM (SELECT COUNT(idEtape) AS count FROM etapes e GROUP BY e.idProjet) AS countEtapesParProjet", conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read()) { maxEtapes = Convert.ToInt32(reader["maxEtapes"]); }
+            conn.Close();
+            return maxEtapes;
+        }
+        public string recupererPremiereDateValidationEtapes()
+        {
+            conn.Open();
+            string minDateValidation = "";
+            MySqlCommand command = conn.CreateCommand();
+            command = new MySqlCommand("SELECT MIN(dateValidation) AS minDateValidation FROM etapes LEFT JOIN projets USING(idProjet) WHERE etatProjet = 0", conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read()) { minDateValidation = Convert.ToDateTime(reader["minDateValidation"]).ToString("dd/MM/yyyy"); }
+            conn.Close();
+            return minDateValidation;
+        }
+        public string recupererDerniereDateValidationEtapes()
+        {
+            conn.Open();
+            string maxDateValidation = "";
+            MySqlCommand command = conn.CreateCommand();
+            command = new MySqlCommand("SELECT MAX(dateValidation) AS maxDateValidation FROM etapes LEFT JOIN projets USING(idProjet) WHERE etatProjet = 0", conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read()) { maxDateValidation = Convert.ToDateTime(reader["maxDateValidation"]).ToString("dd/MM/yyyy"); }
+            conn.Close();
+            return maxDateValidation;
+        }
     }
 }

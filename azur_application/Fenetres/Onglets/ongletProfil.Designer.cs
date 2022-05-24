@@ -79,7 +79,7 @@
             this.pictureBox_avatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_avatar.Location = new System.Drawing.Point(35, 32);
             this.pictureBox_avatar.Name = "pictureBox_avatar";
-            this.pictureBox_avatar.Size = new System.Drawing.Size(350, 350);
+            this.pictureBox_avatar.Size = new System.Drawing.Size(400, 400);
             this.pictureBox_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_avatar.TabIndex = 21;
             this.pictureBox_avatar.TabStop = false;
@@ -90,7 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_identifiant_u.AutoSize = true;
             this.label_identifiant_u.Font = new System.Drawing.Font("Lato", 12.5F);
-            this.label_identifiant_u.Location = new System.Drawing.Point(535, 65);
+            this.label_identifiant_u.Location = new System.Drawing.Point(584, 65);
             this.label_identifiant_u.Name = "label_identifiant_u";
             this.label_identifiant_u.Size = new System.Drawing.Size(0, 21);
             this.label_identifiant_u.TabIndex = 22;
@@ -101,7 +101,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_poste.AutoSize = true;
             this.label_poste.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_poste.Location = new System.Drawing.Point(478, 92);
+            this.label_poste.Location = new System.Drawing.Point(527, 92);
             this.label_poste.Name = "label_poste";
             this.label_poste.Size = new System.Drawing.Size(57, 19);
             this.label_poste.TabIndex = 23;
@@ -113,7 +113,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_poste_u.AutoSize = true;
             this.label_poste_u.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_poste_u.Location = new System.Drawing.Point(535, 93);
+            this.label_poste_u.Location = new System.Drawing.Point(584, 93);
             this.label_poste_u.Name = "label_poste_u";
             this.label_poste_u.Size = new System.Drawing.Size(0, 19);
             this.label_poste_u.TabIndex = 24;
@@ -124,7 +124,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_role.AutoSize = true;
             this.label_role.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_role.Location = new System.Drawing.Point(488, 120);
+            this.label_role.Location = new System.Drawing.Point(537, 120);
             this.label_role.Name = "label_role";
             this.label_role.Size = new System.Drawing.Size(47, 19);
             this.label_role.TabIndex = 25;
@@ -136,7 +136,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_role_u.AutoSize = true;
             this.label_role_u.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_role_u.Location = new System.Drawing.Point(535, 120);
+            this.label_role_u.Location = new System.Drawing.Point(584, 120);
             this.label_role_u.Name = "label_role_u";
             this.label_role_u.Size = new System.Drawing.Size(0, 19);
             this.label_role_u.TabIndex = 26;
@@ -147,7 +147,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_equipe.AutoSize = true;
             this.label_equipe.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_equipe.Location = new System.Drawing.Point(455, 148);
+            this.label_equipe.Location = new System.Drawing.Point(504, 148);
             this.label_equipe.Name = "label_equipe";
             this.label_equipe.Size = new System.Drawing.Size(80, 19);
             this.label_equipe.TabIndex = 27;
@@ -159,7 +159,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_equipes_u.AutoSize = true;
             this.label_equipes_u.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_equipes_u.Location = new System.Drawing.Point(535, 148);
+            this.label_equipes_u.Location = new System.Drawing.Point(584, 148);
             this.label_equipes_u.Name = "label_equipes_u";
             this.label_equipes_u.Size = new System.Drawing.Size(0, 19);
             this.label_equipes_u.TabIndex = 28;
@@ -170,9 +170,9 @@
             this.btn_modifier_avatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modifier_avatar.Font = new System.Drawing.Font("Lato", 12F);
             this.btn_modifier_avatar.ForeColor = System.Drawing.Color.White;
-            this.btn_modifier_avatar.Location = new System.Drawing.Point(35, 388);
+            this.btn_modifier_avatar.Location = new System.Drawing.Point(35, 438);
             this.btn_modifier_avatar.Name = "btn_modifier_avatar";
-            this.btn_modifier_avatar.Size = new System.Drawing.Size(350, 45);
+            this.btn_modifier_avatar.Size = new System.Drawing.Size(400, 45);
             this.btn_modifier_avatar.TabIndex = 29;
             this.btn_modifier_avatar.Text = "Modifier avatar";
             this.btn_modifier_avatar.UseVisualStyleBackColor = false;
@@ -182,7 +182,7 @@
             // 
             this.label_image.AutoSize = true;
             this.label_image.Font = new System.Drawing.Font("Lato", 12F);
-            this.label_image.Location = new System.Drawing.Point(31, 445);
+            this.label_image.Location = new System.Drawing.Point(31, 486);
             this.label_image.Name = "label_image";
             this.label_image.Size = new System.Drawing.Size(150, 19);
             this.label_image.TabIndex = 30;
@@ -193,7 +193,7 @@
             // 
             this.label_image_selectionnee.AutoSize = true;
             this.label_image_selectionnee.Font = new System.Drawing.Font("Lato", 12F);
-            this.label_image_selectionnee.Location = new System.Drawing.Point(31, 464);
+            this.label_image_selectionnee.Location = new System.Drawing.Point(31, 505);
             this.label_image_selectionnee.Name = "label_image_selectionnee";
             this.label_image_selectionnee.Size = new System.Drawing.Size(0, 19);
             this.label_image_selectionnee.TabIndex = 31;
@@ -201,33 +201,33 @@
             // label_infos_generales
             // 
             this.label_infos_generales.AutoSize = true;
-            this.label_infos_generales.Font = new System.Drawing.Font("Lato", 12F);
-            this.label_infos_generales.Location = new System.Drawing.Point(460, 18);
+            this.label_infos_generales.Font = new System.Drawing.Font("Lato", 14F);
+            this.label_infos_generales.Location = new System.Drawing.Point(509, 18);
             this.label_infos_generales.Name = "label_infos_generales";
-            this.label_infos_generales.Size = new System.Drawing.Size(177, 19);
+            this.label_infos_generales.Size = new System.Drawing.Size(212, 23);
             this.label_infos_generales.TabIndex = 0;
             this.label_infos_generales.Text = "Informations générales :";
             // 
             // ligne_tr
             // 
             this.ligne_tr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ligne_tr.Location = new System.Drawing.Point(647, 30);
+            this.ligne_tr.Location = new System.Drawing.Point(722, 30);
             this.ligne_tr.Name = "ligne_tr";
-            this.ligne_tr.Size = new System.Drawing.Size(224, 2);
+            this.ligne_tr.Size = new System.Drawing.Size(256, 2);
             this.ligne_tr.TabIndex = 32;
             // 
             // ligne_b
             // 
             this.ligne_b.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ligne_b.Location = new System.Drawing.Point(429, 185);
+            this.ligne_b.Location = new System.Drawing.Point(478, 185);
             this.ligne_b.Name = "ligne_b";
-            this.ligne_b.Size = new System.Drawing.Size(440, 2);
+            this.ligne_b.Size = new System.Drawing.Size(500, 2);
             this.ligne_b.TabIndex = 33;
             // 
             // ligne_r
             // 
             this.ligne_r.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ligne_r.Location = new System.Drawing.Point(869, 32);
+            this.ligne_r.Location = new System.Drawing.Point(976, 32);
             this.ligne_r.Name = "ligne_r";
             this.ligne_r.Size = new System.Drawing.Size(2, 155);
             this.ligne_r.TabIndex = 34;
@@ -235,7 +235,7 @@
             // ligne_l
             // 
             this.ligne_l.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ligne_l.Location = new System.Drawing.Point(429, 32);
+            this.ligne_l.Location = new System.Drawing.Point(478, 32);
             this.ligne_l.Name = "ligne_l";
             this.ligne_l.Size = new System.Drawing.Size(2, 155);
             this.ligne_l.TabIndex = 35;
@@ -243,7 +243,7 @@
             // ligne_tl
             // 
             this.ligne_tl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ligne_tl.Location = new System.Drawing.Point(429, 32);
+            this.ligne_tl.Location = new System.Drawing.Point(478, 32);
             this.ligne_tl.Name = "ligne_tl";
             this.ligne_tl.Size = new System.Drawing.Size(25, 2);
             this.ligne_tl.TabIndex = 36;
@@ -252,7 +252,7 @@
             // 
             this.label_evenement.AutoSize = true;
             this.label_evenement.Font = new System.Drawing.Font("Lato", 12F);
-            this.label_evenement.Location = new System.Drawing.Point(425, 210);
+            this.label_evenement.Location = new System.Drawing.Point(474, 197);
             this.label_evenement.Name = "label_evenement";
             this.label_evenement.Size = new System.Drawing.Size(161, 19);
             this.label_evenement.TabIndex = 37;
@@ -269,9 +269,9 @@
             this.panel_evenement.Controls.Add(this.label_trait);
             this.panel_evenement.Controls.Add(this.heure_fin);
             this.panel_evenement.Controls.Add(this.heure_deb);
-            this.panel_evenement.Location = new System.Drawing.Point(429, 240);
+            this.panel_evenement.Location = new System.Drawing.Point(478, 222);
             this.panel_evenement.Name = "panel_evenement";
-            this.panel_evenement.Size = new System.Drawing.Size(157, 142);
+            this.panel_evenement.Size = new System.Drawing.Size(190, 210);
             this.panel_evenement.TabIndex = 38;
             // 
             // date_evenement
@@ -279,7 +279,7 @@
             this.date_evenement.AutoSize = true;
             this.date_evenement.Font = new System.Drawing.Font("Lato", 9.749999F);
             this.date_evenement.ForeColor = System.Drawing.Color.White;
-            this.date_evenement.Location = new System.Drawing.Point(113, 6);
+            this.date_evenement.Location = new System.Drawing.Point(146, 6);
             this.date_evenement.Name = "date_evenement";
             this.date_evenement.Size = new System.Drawing.Size(0, 16);
             this.date_evenement.TabIndex = 42;
@@ -287,9 +287,9 @@
             // ligne_evenement_b
             // 
             this.ligne_evenement_b.ForeColor = System.Drawing.Color.White;
-            this.ligne_evenement_b.Location = new System.Drawing.Point(0, 111);
+            this.ligne_evenement_b.Location = new System.Drawing.Point(0, 179);
             this.ligne_evenement_b.Name = "ligne_evenement_b";
-            this.ligne_evenement_b.Size = new System.Drawing.Size(157, 2);
+            this.ligne_evenement_b.Size = new System.Drawing.Size(190, 2);
             this.ligne_evenement_b.TabIndex = 41;
             this.ligne_evenement_b.Paint += new System.Windows.Forms.PaintEventHandler(this.ligne_evenement_b_Paint);
             // 
@@ -298,7 +298,7 @@
             this.ligne_evenement_t.ForeColor = System.Drawing.Color.White;
             this.ligne_evenement_t.Location = new System.Drawing.Point(0, 28);
             this.ligne_evenement_t.Name = "ligne_evenement_t";
-            this.ligne_evenement_t.Size = new System.Drawing.Size(157, 2);
+            this.ligne_evenement_t.Size = new System.Drawing.Size(190, 2);
             this.ligne_evenement_t.TabIndex = 40;
             this.ligne_evenement_t.Paint += new System.Windows.Forms.PaintEventHandler(this.ligne_evenement_t_Paint);
             // 
@@ -307,7 +307,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lato", 11F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 118);
+            this.label1.Location = new System.Drawing.Point(3, 187);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 18);
             this.label1.TabIndex = 5;
@@ -318,7 +318,7 @@
             this.label_nomCreateur.AutoSize = true;
             this.label_nomCreateur.Font = new System.Drawing.Font("Lato", 11F);
             this.label_nomCreateur.ForeColor = System.Drawing.Color.White;
-            this.label_nomCreateur.Location = new System.Drawing.Point(36, 118);
+            this.label_nomCreateur.Location = new System.Drawing.Point(36, 187);
             this.label_nomCreateur.Name = "label_nomCreateur";
             this.label_nomCreateur.Size = new System.Drawing.Size(0, 18);
             this.label_nomCreateur.TabIndex = 4;
@@ -328,7 +328,7 @@
             this.label_nomEvenement.AutoSize = true;
             this.label_nomEvenement.Font = new System.Drawing.Font("Lato", 12F);
             this.label_nomEvenement.ForeColor = System.Drawing.Color.White;
-            this.label_nomEvenement.Location = new System.Drawing.Point(22, 54);
+            this.label_nomEvenement.Location = new System.Drawing.Point(28, 54);
             this.label_nomEvenement.Name = "label_nomEvenement";
             this.label_nomEvenement.Size = new System.Drawing.Size(0, 19);
             this.label_nomEvenement.TabIndex = 3;
@@ -367,7 +367,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_identifiant.AutoSize = true;
             this.label_identifiant.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_identifiant.Location = new System.Drawing.Point(446, 66);
+            this.label_identifiant.Location = new System.Drawing.Point(495, 66);
             this.label_identifiant.Name = "label_identifiant";
             this.label_identifiant.Size = new System.Drawing.Size(89, 19);
             this.label_identifiant.TabIndex = 39;
@@ -377,7 +377,7 @@
             // 
             this.lbl_nb_discussions.AutoSize = true;
             this.lbl_nb_discussions.Font = new System.Drawing.Font("Lato", 12F);
-            this.lbl_nb_discussions.Location = new System.Drawing.Point(628, 210);
+            this.lbl_nb_discussions.Location = new System.Drawing.Point(729, 222);
             this.lbl_nb_discussions.Name = "lbl_nb_discussions";
             this.lbl_nb_discussions.Size = new System.Drawing.Size(232, 19);
             this.lbl_nb_discussions.TabIndex = 40;
@@ -387,7 +387,7 @@
             // 
             this.lbl_nb_messageE.AutoSize = true;
             this.lbl_nb_messageE.Font = new System.Drawing.Font("Lato", 12F);
-            this.lbl_nb_messageE.Location = new System.Drawing.Point(634, 239);
+            this.lbl_nb_messageE.Location = new System.Drawing.Point(735, 251);
             this.lbl_nb_messageE.Name = "lbl_nb_messageE";
             this.lbl_nb_messageE.Size = new System.Drawing.Size(226, 19);
             this.lbl_nb_messageE.TabIndex = 41;
@@ -397,7 +397,7 @@
             // 
             this.lbl_nb_messageR.AutoSize = true;
             this.lbl_nb_messageR.Font = new System.Drawing.Font("Lato", 12F);
-            this.lbl_nb_messageR.Location = new System.Drawing.Point(653, 268);
+            this.lbl_nb_messageR.Location = new System.Drawing.Point(754, 280);
             this.lbl_nb_messageR.Name = "lbl_nb_messageR";
             this.lbl_nb_messageR.Size = new System.Drawing.Size(207, 19);
             this.lbl_nb_messageR.TabIndex = 42;
@@ -407,7 +407,7 @@
             // 
             this.lbl_nb_evenementsC.AutoSize = true;
             this.lbl_nb_evenementsC.Font = new System.Drawing.Font("Lato", 12F);
-            this.lbl_nb_evenementsC.Location = new System.Drawing.Point(645, 297);
+            this.lbl_nb_evenementsC.Location = new System.Drawing.Point(746, 309);
             this.lbl_nb_evenementsC.Name = "lbl_nb_evenementsC";
             this.lbl_nb_evenementsC.Size = new System.Drawing.Size(215, 19);
             this.lbl_nb_evenementsC.TabIndex = 43;
@@ -417,7 +417,7 @@
             // 
             this.lbl_nb_evenementsP.AutoSize = true;
             this.lbl_nb_evenementsP.Font = new System.Drawing.Font("Lato", 12F);
-            this.lbl_nb_evenementsP.Location = new System.Drawing.Point(613, 326);
+            this.lbl_nb_evenementsP.Location = new System.Drawing.Point(714, 338);
             this.lbl_nb_evenementsP.Name = "lbl_nb_evenementsP";
             this.lbl_nb_evenementsP.Size = new System.Drawing.Size(247, 19);
             this.lbl_nb_evenementsP.TabIndex = 44;
@@ -427,7 +427,7 @@
             // 
             this.lbl_nb_projets.AutoSize = true;
             this.lbl_nb_projets.Font = new System.Drawing.Font("Lato", 12F);
-            this.lbl_nb_projets.Location = new System.Drawing.Point(648, 355);
+            this.lbl_nb_projets.Location = new System.Drawing.Point(749, 367);
             this.lbl_nb_projets.Name = "lbl_nb_projets";
             this.lbl_nb_projets.Size = new System.Drawing.Size(212, 19);
             this.lbl_nb_projets.TabIndex = 45;
@@ -437,7 +437,7 @@
             // 
             this.nb_discussions.AutoSize = true;
             this.nb_discussions.Font = new System.Drawing.Font("Lato", 12F);
-            this.nb_discussions.Location = new System.Drawing.Point(855, 210);
+            this.nb_discussions.Location = new System.Drawing.Point(956, 222);
             this.nb_discussions.Name = "nb_discussions";
             this.nb_discussions.Size = new System.Drawing.Size(0, 19);
             this.nb_discussions.TabIndex = 46;
@@ -446,7 +446,7 @@
             // 
             this.nb_messageE.AutoSize = true;
             this.nb_messageE.Font = new System.Drawing.Font("Lato", 12F);
-            this.nb_messageE.Location = new System.Drawing.Point(855, 239);
+            this.nb_messageE.Location = new System.Drawing.Point(956, 251);
             this.nb_messageE.Name = "nb_messageE";
             this.nb_messageE.Size = new System.Drawing.Size(0, 19);
             this.nb_messageE.TabIndex = 47;
@@ -455,7 +455,7 @@
             // 
             this.nb_messageR.AutoSize = true;
             this.nb_messageR.Font = new System.Drawing.Font("Lato", 12F);
-            this.nb_messageR.Location = new System.Drawing.Point(855, 268);
+            this.nb_messageR.Location = new System.Drawing.Point(956, 280);
             this.nb_messageR.Name = "nb_messageR";
             this.nb_messageR.Size = new System.Drawing.Size(0, 19);
             this.nb_messageR.TabIndex = 48;
@@ -464,7 +464,7 @@
             // 
             this.nb_evenementsC.AutoSize = true;
             this.nb_evenementsC.Font = new System.Drawing.Font("Lato", 12F);
-            this.nb_evenementsC.Location = new System.Drawing.Point(855, 297);
+            this.nb_evenementsC.Location = new System.Drawing.Point(956, 309);
             this.nb_evenementsC.Name = "nb_evenementsC";
             this.nb_evenementsC.Size = new System.Drawing.Size(0, 19);
             this.nb_evenementsC.TabIndex = 49;
@@ -473,7 +473,7 @@
             // 
             this.nb_evenementsP.AutoSize = true;
             this.nb_evenementsP.Font = new System.Drawing.Font("Lato", 12F);
-            this.nb_evenementsP.Location = new System.Drawing.Point(855, 326);
+            this.nb_evenementsP.Location = new System.Drawing.Point(956, 338);
             this.nb_evenementsP.Name = "nb_evenementsP";
             this.nb_evenementsP.Size = new System.Drawing.Size(0, 19);
             this.nb_evenementsP.TabIndex = 50;
@@ -482,7 +482,7 @@
             // 
             this.nb_projets.AutoSize = true;
             this.nb_projets.Font = new System.Drawing.Font("Lato", 12F);
-            this.nb_projets.Location = new System.Drawing.Point(855, 355);
+            this.nb_projets.Location = new System.Drawing.Point(956, 367);
             this.nb_projets.Name = "nb_projets";
             this.nb_projets.Size = new System.Drawing.Size(0, 19);
             this.nb_projets.TabIndex = 51;

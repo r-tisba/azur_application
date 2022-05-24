@@ -13,6 +13,7 @@ using System.Globalization;
 using azur_application.Fenetres.Onglets;
 using System.IO;
 using azur_application.Services;
+using System.Text.RegularExpressions;
 
 namespace azur_application.Onglets
 {
@@ -49,10 +50,8 @@ namespace azur_application.Onglets
         // ------------------------------------ AFFICHAGE INFOS GENERALES ------------------------------------
         public void afficherInformationsProfil()
         {
-            Utilisateur utilisateur = new Utilisateur();
-            int idUtilisateur = utilisateur.IdUtilisateurSession;
-            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! A CHANGER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            Utilisateur utilisateurSession = new Utilisateur(1);
+            int idUtilisateurSession = utilisateur.IdUtilisateurSession;
+            Utilisateur utilisateurSession = new Utilisateur(idUtilisateurSession);
 
             string avatar = utilisateur.recupererAvatarViaIdentifiant(utilisateurSession.Identifiant);
             string pathImage = avatar.Replace("..", @"C:\wamp64\www\ap\azur_web");
@@ -74,8 +73,7 @@ namespace azur_application.Onglets
         // ------------------------------------ SELECTIONNER IMAGE ------------------------------------
         private void btn_modifier_avatar_Click(object sender, EventArgs e)
         {
-            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! A CHANGER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            int idUtilisateur = 1;
+            int idUtilisateurSession = utilisateur.IdUtilisateurSession;
             if (statutBtnAvatar == 0)
             {
                 OpenFileDialog open = new OpenFileDialog();
@@ -94,7 +92,7 @@ namespace azur_application.Onglets
             {
                 string imageSaisi = label_image_selectionnee.Text;
                 string nomImageSaisi = Path.GetFileName(label_image_selectionnee.Text);
-                if (utilisateur.modifierAvatar(idUtilisateur, nomImageSaisi) == true)
+                if (utilisateur.modifierAvatar(idUtilisateurSession, nomImageSaisi) == true)
                 {
                     try
                     {
@@ -111,15 +109,13 @@ namespace azur_application.Onglets
         // ------------------------------------ AFFICHAGE PROCHAIN EVENT ------------------------------------
         public void afficherEvenement()
         {
-            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! A CHANGER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            /* int idUtilisateur = utilisateur.IdUtilisateurSession; */
-            int idUtilisateur = 1;
+            int idUtilisateurSession = utilisateur.IdUtilisateurSession;
             Evenement evenement = new Evenement();
-            int idEvenement = evenement.recupererIdEvenement(idUtilisateur);
+            int idEvenement = evenement.recupererIdEvenement(idUtilisateurSession);
             evenement = new Evenement(idEvenement);
             Color _couleur = System.Drawing.ColorTranslator.FromHtml(evenement.BackgroundColor);
 
-            // Si il n'y a pas d'évenement dans le futur
+            // Si il n'y a pas d'évenements dans le futur
             if (string.IsNullOrEmpty(evenement.Title))
             {
                 panel_evenement.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -136,8 +132,8 @@ namespace azur_application.Onglets
                 date_evenement.Text = evenement.Date;
                 heure_deb.Text = evenement.Start;
                 heure_fin.Text = evenement.End;
-                label_nomEvenement.Left = -1;
-                label_nomEvenement.Text = evenement.Title;
+                label_nomEvenement.Left = 5;
+                label_nomEvenement.Text = SpliceText(evenement.Title, 25);
                 label_nomCreateur.Text = evenement.NomCreateur;
             }
 
@@ -155,17 +151,27 @@ namespace azur_application.Onglets
         // ------------------------------------ AFFICHAGE STATS USER ------------------------------------
         public void afficherStatistiques()
         {
-            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! A CHANGER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            /* int idUtilisateur = utilisateur.IdUtilisateurSession; */
-            int idUtilisateur = 1;
+            int idUtilisateurSession = utilisateur.IdUtilisateurSession;
             Fonctions fonctions = new Fonctions();
-            nb_discussions.Text = fonctions.recupererNbDiscussionsActives(idUtilisateur).ToString();
-            nb_messageE.Text = fonctions.recupererNbMessagesEnvoyes(idUtilisateur).ToString();
-            nb_messageR.Text = fonctions.recupererNbMessagesRecus(idUtilisateur).ToString();
-            nb_evenementsC.Text = fonctions.recupererNbEvenementsCrees(idUtilisateur).ToString();
-            nb_evenementsP.Text = fonctions.recupererNbEvenementsParticipes(idUtilisateur).ToString();
-            nb_projets.Text = fonctions.recupererNbProjetsEnCours(idUtilisateur).ToString();
+            nb_discussions.Text = fonctions.recupererNbDiscussionsActives(idUtilisateurSession).ToString();
+            nb_messageE.Text = fonctions.recupererNbMessagesEnvoyes(idUtilisateurSession).ToString();
+            nb_messageR.Text = fonctions.recupererNbMessagesRecus(idUtilisateurSession).ToString();
+            nb_evenementsC.Text = fonctions.recupererNbEvenementsCrees(idUtilisateurSession).ToString();
+            nb_evenementsP.Text = fonctions.recupererNbEvenementsParticipes(idUtilisateurSession).ToString();
+            nb_projets.Text = fonctions.recupererNbProjetsEnCours(idUtilisateurSession).ToString();
         }
+
+        // Retourne à la ligne après un certain nombre de caractères dans la string sans couper de mots
+        public static string SpliceText(string text, int lineLength)
+        {
+            var charCount = 0;
+            var lines = text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries)
+                            .GroupBy(w => (charCount += w.Length + 1) / lineLength)
+                            .Select(g => string.Join(" ", g));
+
+            return String.Join("\n", lines.ToArray());
+        }
+
         public void clear()
         {
             label_image.Visible = false;
