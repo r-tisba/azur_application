@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 24 mai 2022 à 09:29
+-- Généré le : mar. 24 mai 2022 à 16:03
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.4.9
 
@@ -74,8 +74,8 @@ INSERT INTO `composition_equipes` (`idEquipe`, `idUtilisateur`) VALUES
 (3, 1),
 (5, 2),
 (2, 6),
-(18, 0),
-(2, 0);
+(5, 35),
+(2, 35);
 
 -- --------------------------------------------------------
 
@@ -282,7 +282,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `date` datetime NOT NULL,
   `ip` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idLog`)
-) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `logs`
@@ -321,7 +321,8 @@ INSERT INTO `logs` (`idLog`, `idUtilisateur`, `date`, `ip`) VALUES
 (30, 1, '2022-04-12 12:59:41', '::1'),
 (31, 1, '2022-04-14 14:23:15', '::1'),
 (32, 1, '2022-04-15 12:52:51', '::1'),
-(33, 1, '2022-04-15 12:55:42', '::1');
+(33, 1, '2022-04-15 12:55:42', '::1'),
+(34, 35, '2022-05-24 15:21:29', '::1');
 
 -- --------------------------------------------------------
 
